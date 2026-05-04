@@ -1,5 +1,17 @@
 # Progress Index
 
+## 2026-05-04 — feat-001 ExecPlan Creation
+
+- **Session**: feat-001-plan
+- **Status**: in-progress
+- **What was done**:
+  - Created ExecPlan at `docs/exec-plans/plans/feat-001-landing-page.md`
+  - Updated `harness/features/feat-001-landing-page.json` status to `in-progress`
+  - Updated `harness/feature_index.json` feat-001 status to `in-progress`
+  - Updated `docs/exec-plans/index.md` with active plan entry
+- **Blockers**: none
+- **Next steps**: Implement feat-001 per ExecPlan (create components, update page.tsx, verify build)
+
 ## 2026-05-04 — Boilerplate Cleanup & Content Setup
 
 - **Session**: setup-content
