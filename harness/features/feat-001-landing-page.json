@@ -3,8 +3,8 @@
   "name": "Landing Page",
   "description": "Hero section with couple names (Xuân Tùng & Vân Anh), event details (tiệc đãi khách 08/06/2026, lễ thành hôn 09/06/2026, Sân đình thôn Gia Lương, Đông Anh, Hà Nội), Google Maps embed, and CTAs for RSVP and Our Story",
   "dependencies": [],
-  "status": "in-progress",
-  "evidence": "",
+  "status": "done",
+  "evidence": "Landing page hero, event cards, venue map embed, RSVP anchor section, and /story placeholder route implemented. Verified with pnpm lint, pnpm typecheck, and ./init.sh on 2026-05-05.",
   "plan": "docs/exec-plans/plans/feat-001-landing-page.md",
   "acceptanceCriteria": [
     "Hero section displays 'Xuân Tùng & Vân Anh' and wedding dates",

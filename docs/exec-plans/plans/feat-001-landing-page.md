@@ -60,7 +60,8 @@ Build the wedding landing page — the first thing guests see when they open the
 
 ## Surprises & Discoveries
 
-_(To be filled during implementation)_
+- `/story` route did not exist yet, so landing-page CTA would have led to 404. Added minimal placeholder route to keep CTA functional without pulling feat-002 story content into this scope.
+- `#rsvp` CTA needed real anchor target for usable scroll behavior. Added placeholder RSVP section only, without form logic, to preserve feat-004 boundary.
 
 ## Decision Log
 
@@ -82,7 +83,9 @@ _(To be filled during implementation)_
 
 ## Outcomes & Retrospective
 
-_(To be filled after implementation)_
+- Landing page now has full hero presentation, event schedule, venue details, Google Maps embed, and working CTAs.
+- Scope stayed bounded: no RSVP submission logic, no guest personalization, no image pipeline work.
+- Verification passed through lint, type-check, and full `./init.sh` run.
 
 ## Context and Orientation
 
