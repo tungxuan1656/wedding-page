@@ -63,8 +63,8 @@
       "name": "Story Animation Polish",
       "description": "Per-image reveal animations (fade-in, gentle zoom) for story chapter photos with scroll-triggered Framer Motion effects, deferred from feat-005 for mobile performance",
       "dependencies": ["feat-002", "feat-005"],
-      "status": "pending",
-      "evidence": ""
+      "status": "in-progress",
+      "evidence": "ExecPlan created at docs/exec-plans/plans/feat-008-story-animation-polish.md on 2026-05-05. Implementation pending."
     },
     {
       "id": "feat-009",

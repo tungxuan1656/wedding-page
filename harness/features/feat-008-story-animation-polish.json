@@ -3,7 +3,7 @@
   "name": "Story Animation Polish",
   "description": "Per-image reveal animations (fade-in, gentle zoom) for story chapter photos, replacing current static placeholder slots with scroll-triggered Framer Motion effects. Deferred from feat-005 for mobile performance",
   "dependencies": ["feat-002", "feat-005"],
-  "status": "pending",
+  "status": "in-progress",
   "acceptanceCriteria": [
     "Story images animate into view with fade-in and gentle zoom on scroll (whileInView)",
     "Animations are subtle and match wedding aesthetic (no flashy effects)",
