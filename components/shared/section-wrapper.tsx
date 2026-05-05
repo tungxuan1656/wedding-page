@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, useReducedMotion } from 'framer-motion'
-import type { ReactNode } from 'react'
+import { type ReactNode, useEffect, useState } from 'react'
 
 type SectionWrapperProps = {
   animate?: boolean
@@ -20,11 +20,18 @@ export const SectionWrapper = ({
   className,
   id,
 }: SectionWrapperProps) => {
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
   const shouldReduceMotion = useReducedMotion()
-  const shouldAnimate = animate && !shouldReduceMotion
+  const shouldAnimate = mounted && animate && !shouldReduceMotion
 
   return (
     <motion.section
+      suppressHydrationWarning
       aria-label={ariaLabel}
       aria-labelledby={ariaLabelledby}
       className={className}

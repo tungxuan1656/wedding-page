@@ -1,6 +1,7 @@
 'use client'
 
 import { motion, useReducedMotion } from 'framer-motion'
+import { useEffect, useState } from 'react'
 
 import { STORY_COPY } from './story-copy'
 
@@ -14,8 +15,14 @@ export const StoryImageSlot = ({
   slotIndex,
 }: StoryImageSlotProps) => {
   const label = STORY_COPY.imageSlotLabel(slotIndex)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
   const shouldReduceMotion = useReducedMotion()
-  const shouldAnimate = !shouldReduceMotion
+  const shouldAnimate = mounted && !shouldReduceMotion
 
   return (
     <motion.div
