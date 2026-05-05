@@ -78,6 +78,7 @@ ANTIGRAVITY_SKILLS=(
   tailwind-patterns
   shadcn
   monorepo-architect
+  ui-ux-pro-max
   # systematic-debugging
   # lint-and-validate
   # verification-before-completion

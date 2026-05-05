@@ -1,7 +1,7 @@
 import './globals.css'
 
 import type { Metadata } from 'next'
-import { Inter, Noto_Serif } from 'next/font/google'
+import { Great_Vibes, Inter, Noto_Serif } from 'next/font/google'
 
 const inter = Inter({
   variable: '--font-inter',
@@ -10,6 +10,12 @@ const inter = Inter({
 
 const notoSerif = Noto_Serif({
   variable: '--font-noto-serif',
+  subsets: ['latin', 'vietnamese'],
+})
+
+const greatVibes = Great_Vibes({
+  weight: '400',
+  variable: '--font-great-vibes',
   subsets: ['latin', 'vietnamese'],
 })
 
@@ -53,7 +59,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      className={`${inter.variable} ${notoSerif.variable} h-full antialiased`}
+      className={`${inter.variable} ${notoSerif.variable} ${greatVibes.variable} h-full antialiased`}
       lang='vi'>
       <body className='flex min-h-full flex-col bg-cream font-sans text-wine'>
         <a

@@ -1,35 +1,53 @@
 'use client'
 
-import Link from 'next/link'
-import { useState } from 'react'
+import { motion, useReducedMotion, type Variants } from 'framer-motion'
 
 import { GuestPersonalization } from '@/components/guest'
-import { HERO_COPY, HERO_MAP_EMBED_URL } from '@/components/hero/hero-copy'
+import { HERO_COPY } from '@/components/hero/hero-copy'
 import { SectionWrapper } from '@/components/shared'
 import type { GuestData } from '@/lib/guests'
-
-const EVENT_CARDS = [HERO_COPY.reception, HERO_COPY.ceremony]
 
 type HeroSectionProps = {
   guest: GuestData | null
 }
 
 export const HeroSection = ({ guest }: HeroSectionProps) => {
-  const [isMapVisible, setIsMapVisible] = useState(false)
+  const shouldReduceMotion = useReducedMotion()
+
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.2, delayChildren: 0.1 },
+    },
+  }
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: 'easeOut' as const },
+    },
+  }
 
   return (
     <div className='bg-cream'>
       <SectionWrapper
         aria-labelledby='hero-heading'
-        className='overflow-hidden bg-linear-to-b from-wine via-wine-dark to-wine px-6 py-16 text-cream sm:px-8 md:min-h-screen md:px-12 md:py-20'>
-        <div className='mx-auto flex max-w-6xl flex-col gap-12 md:justify-center'>
-          <div className='max-w-3xl space-y-6'>
+        className='overflow-hidden bg-linear-to-b from-wine via-wine-dark to-wine px-6 py-16 text-cream sm:px-8 md:px-12 md:py-32'>
+        <motion.div
+          animate='visible'
+          className='mx-auto flex max-w-6xl flex-col gap-12'
+          initial='hidden'
+          variants={containerVariants}>
+          <motion.div className='max-w-3xl space-y-6' variants={itemVariants}>
             <p className='text-sm font-semibold tracking-[0.35em] text-gold-light uppercase'>
               {HERO_COPY.eyebrow}
             </p>
             <div className='space-y-4'>
               <h1
-                className='font-serif text-5xl leading-tight font-semibold text-balance sm:text-6xl md:text-7xl'
+                className='font-script text-6xl leading-tight font-normal text-balance sm:text-7xl md:text-8xl'
                 id='hero-heading'>
                 {HERO_COPY.coupleNames}
               </h1>
@@ -48,104 +66,14 @@ export const HeroSection = ({ guest }: HeroSectionProps) => {
                 )}
               </p>
             </div>
-          </div>
+          </motion.div>
 
-          {guest ? <GuestPersonalization guest={guest} /> : null}
-
-          <div className='grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(320px,420px)] lg:items-start'>
-            <div className='space-y-6'>
-              <div className='grid gap-4 sm:grid-cols-2'>
-                {EVENT_CARDS.map((event) => (
-                  <article
-                    key={event.label}
-                    className='rounded-3xl border border-cream/15 bg-cream/10 p-5 backdrop-blur-sm'>
-                    <p className='text-sm tracking-[0.25em] text-gold-light uppercase'>
-                      {event.label}
-                    </p>
-                    <p className='mt-3 font-serif text-3xl text-cream'>
-                      {event.solarDate}
-                    </p>
-                    <p className='mt-2 text-sm leading-6 text-cream/80'>
-                      {event.lunarDate}
-                    </p>
-                  </article>
-                ))}
-              </div>
-
-              <div className='flex flex-col gap-3 sm:flex-row'>
-                <a
-                  className='inline-flex min-h-12 items-center justify-center rounded-full bg-gold px-6 py-3 text-sm font-semibold text-wine transition hover:bg-gold-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light'
-                  href='#rsvp'>
-                  {HERO_COPY.ctaRsvp}
-                </a>
-                <Link
-                  className='inline-flex min-h-12 items-center justify-center rounded-full border border-cream/30 px-6 py-3 text-sm font-semibold text-cream transition hover:bg-cream/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cream'
-                  href='/story'>
-                  {HERO_COPY.ctaStory}
-                </Link>
-              </div>
-            </div>
-
-            <div className='rounded-4xl border border-cream/15 bg-cream/95 p-4 text-text-primary shadow-2xl shadow-wine-dark/30'>
-              <div className='space-y-3 px-2 pt-2 pb-3'>
-                <p className='text-sm font-semibold tracking-[0.25em] text-wine-light uppercase'>
-                  {HERO_COPY.venue.label}
-                </p>
-                <h2 className='font-serif text-2xl text-wine'>
-                  {HERO_COPY.venue.name}
-                </h2>
-                <address className='text-sm leading-6 text-text-secondary not-italic'>
-                  {HERO_COPY.venue.address}
-                </address>
-              </div>
-              <div
-                aria-label='Bản đồ địa điểm'
-                className='overflow-hidden rounded-3xl border border-beige bg-beige/30'>
-                {isMapVisible ? (
-                  <iframe
-                    allowFullScreen
-                    className='h-72 w-full border-0'
-                    loading='lazy'
-                    referrerPolicy='no-referrer-when-downgrade'
-                    src={HERO_MAP_EMBED_URL}
-                    title='Bản đồ Sân đình thôn Gia Lương'
-                  />
-                ) : (
-                  <div className='flex h-72 flex-col items-center justify-center gap-4 px-6 text-center'>
-                    <p className='max-w-xs text-sm leading-6 text-text-secondary'>
-                      Bản đồ được tải theo yêu cầu để giữ thiệp cưới nhẹ hơn
-                      trên mạng di động.
-                    </p>
-                    <button
-                      className='inline-flex min-h-12 items-center justify-center rounded-full bg-wine px-6 py-3 text-sm font-semibold text-cream transition hover:bg-wine-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-wine'
-                      type='button'
-                      onClick={() => {
-                        setIsMapVisible(true)
-                      }}>
-                      Xem bản đồ
-                    </button>
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
-      </SectionWrapper>
-
-      <SectionWrapper
-        aria-labelledby='rsvp-heading'
-        className='px-6 py-12 sm:px-8 md:px-12 md:py-16'
-        id='rsvp'>
-        <div className='mx-auto max-w-4xl rounded-4xl border border-beige bg-white/80 p-8 shadow-sm'>
-          <h2
-            className='text-sm font-semibold tracking-[0.25em] text-wine-light uppercase'
-            id='rsvp-heading'>
-            {HERO_COPY.ctaRsvp}
-          </h2>
-          <p className='mt-4 max-w-2xl text-base leading-7 text-text-secondary'>
-            {HERO_COPY.rsvpPlaceholder}
-          </p>
-        </div>
+          {guest ? (
+            <motion.div variants={itemVariants}>
+              <GuestPersonalization guest={guest} />
+            </motion.div>
+          ) : null}
+        </motion.div>
       </SectionWrapper>
     </div>
   )
