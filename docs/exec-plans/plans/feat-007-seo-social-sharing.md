@@ -228,15 +228,15 @@ pnpm build
 
 ## Progress
 
-- [ ] Create `app/robots.ts`
-- [ ] Create `app/sitemap.ts`
-- [ ] Create placeholder OG image at `public/images/og-image.png`
-- [ ] Enhance root layout metadata in `app/layout.tsx`
-- [ ] Add `generateMetadata` to `app/page.tsx`
-- [ ] Add JSON-LD structured data to `app/page.tsx`
-- [ ] Add `generateMetadata` to `app/story/page.tsx`
-- [ ] Verify: `pnpm lint`, `pnpm typecheck`, `pnpm build`, `./init.sh`
-- [ ] Update harness files with evidence
+- [x] Create `app/robots.ts`
+- [x] Create `app/sitemap.ts`
+- [x] Create placeholder OG image at `public/images/og-image.png`
+- [x] Enhance root layout metadata in `app/layout.tsx`
+- [x] Add `generateMetadata` to `app/page.tsx`
+- [x] Add JSON-LD structured data to `app/page.tsx`
+- [x] Add `generateMetadata` to `app/story/page.tsx`
+- [x] Verify: `pnpm lint`, `pnpm typecheck`, `pnpm build`, `./init.sh`
+- [x] Update harness files with evidence
 
 ## Surprises & Discoveries
 
@@ -262,4 +262,9 @@ pnpm build
 
 ## Outcomes & Retrospective
 
-- (To be filled after implementation)
+- All acceptance criteria met: robots.txt, sitemap, OG metadata, Twitter Cards, JSON-LD, OG image placeholder, Vietnamese content, build passes.
+- Build confirms `/robots.txt` and `/sitemap.xml` are statically generated.
+- Story page HTML verified to contain correct `og:title`, `og:description`, `og:image`, `og:url`, `twitter:card`, `twitter:title`, `twitter:description`, `twitter:image`.
+- Landing page has `generateMetadata` with OG + Twitter + JSON-LD `Event` schema with `eventType: "WeddingEvent"`.
+- OG image is a minimal 1200×630 wine-colored placeholder (3.6KB). Real OG image design deferred to tech debt.
+- Guest-specific OG metadata per `?g=<id>` deferred per plan decision.

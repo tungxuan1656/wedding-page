@@ -13,7 +13,11 @@ const notoSerif = Noto_Serif({
   subsets: ['latin', 'vietnamese'],
 })
 
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL || 'https://tx-va-wedding.vercel.app'
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: 'Xuân Tùng & Vân Anh — Thiệp cưới',
   description:
     'Thiệp cưới Xuân Tùng & Vân Anh. Tiệc đãi khách 08/06/2026, lễ thành hôn 09/06/2026 tại Sân đình thôn Gia Lương, Đông Anh, Hà Nội.',
@@ -22,6 +26,23 @@ export const metadata: Metadata = {
     description:
       'Thiệp cưới Xuân Tùng & Vân Anh. Tiệc đãi khách 08/06/2026, lễ thành hôn 09/06/2026 tại Sân đình thôn Gia Lương, Đông Anh, Hà Nội.',
     type: 'website',
+    locale: 'vi_VN',
+    siteName: 'Xuân Tùng & Vân Anh',
+    images: [
+      {
+        url: '/images/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Thiệp cưới Xuân Tùng & Vân Anh',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Xuân Tùng & Vân Anh — Thiệp cưới',
+    description:
+      'Thiệp cưới Xuân Tùng & Vân Anh. Tiệc đãi khách 08/06/2026, lễ thành hôn 09/06/2026 tại Sân đình thôn Gia Lương, Đông Anh, Hà Nội.',
+    images: ['/images/og-image.png'],
   },
 }
 

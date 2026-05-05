@@ -1,5 +1,24 @@
 # Progress Index
 
+## 2026-05-05 — feat-007 SEO & Social Sharing Implementation
+
+- **Session**: feat-007-implement
+- **Status**: completed
+- **What was done**:
+  - Created `app/robots.ts` — allows all crawlers, disallows `/private/`, references sitemap
+  - Created `app/sitemap.ts` — generates sitemap with `/` (priority 1.0) and `/story` (priority 0.8) routes
+  - Created `public/images/og-image.png` — 1200×630 wine-colored placeholder OG image (3.6KB)
+  - Enhanced `app/layout.tsx` — added `metadataBase`, `openGraph.locale`, `openGraph.siteName`, `openGraph.images`, `twitter.card`, `twitter.title`, `twitter.description`, `twitter.images`
+  - Added `generateMetadata` to `app/page.tsx` — page-specific OG title, description, image, Twitter card, and JSON-LD `Event` structured data with `eventType: "WeddingEvent"`
+  - Added `generateMetadata` to `app/story/page.tsx` — story-specific OG title, description, image, Twitter card
+  - Updated `.env.example` with `NEXT_PUBLIC_SITE_URL` variable
+  - Fixed lint issues (import sort, prettier formatting)
+  - Verified `pnpm lint`, `pnpm typecheck`, `pnpm build`, and `./init.sh`
+  - Build output confirms `/robots.txt` and `/sitemap.xml` routes are statically generated
+  - Story page HTML contains correct `og:title`, `og:description`, `og:image`, `og:url`, `twitter:card`, `twitter:title`, `twitter:description`, `twitter:image`
+- **Blockers**: none
+- **Next steps**: Start feat-008 (Story Animation Polish) or feat-009 (Accessibility Compliance)
+
 ## 2026-05-05 — feat-007 SEO & Social Sharing ExecPlan Creation
 
 - **Session**: feat-007-plan

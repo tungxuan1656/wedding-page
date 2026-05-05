@@ -55,8 +55,8 @@
       "name": "SEO & Social Sharing",
       "description": "robots.txt, sitemap generation, comprehensive Open Graph metadata, and JSON-LD structured data for wedding event so invitation links render rich previews when shared",
       "dependencies": ["feat-001"],
-      "status": "in-progress",
-      "evidence": "ExecPlan created at docs/exec-plans/plans/feat-007-seo-social-sharing.md on 2026-05-05. Implementation pending."
+      "status": "done",
+      "evidence": "Implemented robots.ts, sitemap.ts, OG metadata for both pages, Twitter Cards, JSON-LD Event schema, and placeholder OG image. Verified with pnpm lint, pnpm typecheck, pnpm build, and ./init.sh on 2026-05-05."
     },
     {
       "id": "feat-008",
