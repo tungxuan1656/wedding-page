@@ -1,6 +1,7 @@
 'use client'
 
 import { motion, useReducedMotion, type Variants } from 'framer-motion'
+import { useEffect, useState } from 'react'
 
 import { GuestPersonalization } from '@/components/guest'
 import { HERO_COPY } from '@/components/hero/hero-copy'
@@ -12,7 +13,12 @@ type HeroSectionProps = {
 }
 
 export const HeroSection = ({ guest }: HeroSectionProps) => {
+  const [isMounted, setIsMounted] = useState(false)
   const shouldReduceMotion = useReducedMotion()
+
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
 
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -37,11 +43,15 @@ export const HeroSection = ({ guest }: HeroSectionProps) => {
         aria-labelledby='hero-heading'
         className='overflow-hidden bg-linear-to-b from-wine via-wine-dark to-wine px-6 py-16 text-cream sm:px-8 md:px-12 md:py-32'>
         <motion.div
-          animate='visible'
+          suppressHydrationWarning
+          animate={isMounted ? 'visible' : 'hidden'}
           className='mx-auto flex max-w-6xl flex-col gap-12'
           initial='hidden'
           variants={containerVariants}>
-          <motion.div className='max-w-3xl space-y-6' variants={itemVariants}>
+          <motion.div
+            suppressHydrationWarning
+            className='max-w-3xl space-y-6'
+            variants={itemVariants}>
             <p className='text-sm font-semibold tracking-[0.35em] text-gold-light uppercase'>
               {HERO_COPY.eyebrow}
             </p>
