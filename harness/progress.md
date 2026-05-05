@@ -1,5 +1,21 @@
 # Progress Index
 
+## 2026-05-05 — feat-004 RSVP System ExecPlan Creation
+
+- **Session**: feat-004-plan
+- **Status**: in-progress
+- **What was done**:
+  - Identified `feat-004` as next pending feature from `harness/feature_index.json`
+  - Created ExecPlan at `docs/exec-plans/plans/feat-004-rsvp-system.md`
+  - Captured scope, layer impact, standards, validation matrix, Apps Script contract notes, risks, and harness update requirements for RSVP form flow
+  - Updated `docs/exec-plans/index.md` with active plan entry
+  - Updated `harness/features/feat-004-rsvp-system.json` status to `in-progress` and attached plan path
+  - Updated `harness/feature_index.json` feat-004 status to `in-progress`
+- **Blockers**:
+  - Need final Google Apps Script payload/response contract and target Google Sheet column order confirmed during implementation
+- **Next steps**:
+  - Implement feat-004 per ExecPlan: create `lib/api.ts`, build `components/rsvp/`, replace hero RSVP placeholder, document Apps Script deployment snippet, and verify submission/validation flows
+
 ## 2026-05-05 — feat-003 Guest Personalization Implementation
 
 - **Session**: feat-003-implement

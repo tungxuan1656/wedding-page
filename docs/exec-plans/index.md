@@ -5,6 +5,7 @@ Do not move files between folders; update sections below to reflect status.
 
 ## Active
 
+- **feat-004-rsvp-system** — RSVP System (`Họ tên` + 2 event checkboxes, client validation, Google Apps Script POST, success/error feedback, mobile-friendly layout). Plan: `plans/feat-004-rsvp-system.md`
 
 ## Completed
 

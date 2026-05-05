@@ -31,8 +31,8 @@
       "name": "RSVP System",
       "description": "RSVP form with name + 2 event checkboxes (tiệc đãi khách 8/6, lễ thành hôn 9/6), submitting to Google Apps Script, with success/error feedback",
       "dependencies": ["feat-001"],
-      "status": "pending",
-      "evidence": ""
+      "status": "in-progress",
+      "evidence": "ExecPlan created at docs/exec-plans/plans/feat-004-rsvp-system.md on 2026-05-05. Implementation pending."
     },
     {
       "id": "feat-005",

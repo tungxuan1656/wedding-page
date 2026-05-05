@@ -3,8 +3,9 @@
   "name": "RSVP System",
   "description": "RSVP form with name field and 2 event attendance checkboxes, submitting to Google Apps Script, with success/error feedback. Google Sheets as data store",
   "dependencies": ["feat-001"],
-  "status": "pending",
-  "evidence": "",
+  "status": "in-progress",
+  "evidence": "ExecPlan created at docs/exec-plans/plans/feat-004-rsvp-system.md on 2026-05-05. Implementation pending.",
+  "plan": "docs/exec-plans/plans/feat-004-rsvp-system.md",
   "acceptanceCriteria": [
     "RSVP form with fields: Họ tên (name) + 2 event checkboxes",
     "Checkbox 1: Đi ăn ngày 8/6 dương lịch (23/4 âm lịch Bính Ngọ) — tiệc đãi khách",
