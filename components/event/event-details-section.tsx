@@ -8,15 +8,15 @@ const EVENTS = {
   groom: {
     party: {
       time: '16:30',
-      date: 'Thứ Bảy',
+      date: 'Thứ Hai',
       fullDate: '08/06/2026',
       lunar: '23/4 âm lịch (Bính Ngọ)',
-      location: 'Tại Tư Gia Nhà Trai',
+      location: 'Sân đình thôn Gia Lương, xã Đông Anh, TP Hà Nội',
     },
     ceremony: {
       title: 'Lễ Thành Hôn',
       time: '10:30',
-      date: 'Chủ Nhật',
+      date: 'Thứ Ba',
       fullDate: '09/06/2026',
       lunar: '24/4 âm lịch',
       location: 'Sân đình thôn Gia Lương, xã Đông Anh, TP Hà Nội',
@@ -25,7 +25,7 @@ const EVENTS = {
   bride: {
     party: {
       time: '16:30',
-      date: 'Thứ Bảy',
+      date: 'Thứ Hai',
       fullDate: '08/06/2026',
       lunar: '23/4 âm lịch (Bính Ngọ)',
       location: 'Tại Tư Gia Nhà Gái',
@@ -33,7 +33,7 @@ const EVENTS = {
     ceremony: {
       title: 'Lễ Vu Quy',
       time: '09:00',
-      date: 'Chủ Nhật',
+      date: 'Thứ Ba',
       fullDate: '09/06/2026',
       lunar: '24/4 âm lịch',
       location: 'Tư gia nhà gái, thôn Gia Lương, xã Đông Anh, TP Hà Nội',
