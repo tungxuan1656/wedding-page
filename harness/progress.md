@@ -1,5 +1,22 @@
 # Progress Index
 
+## 2026-05-05 — feat-006 Error & Navigation Pages ExecPlan Creation
+
+- **Session**: feat-006-plan
+- **Status**: in-progress
+- **What was done**:
+  - Identified `feat-006` as next pending feature from `harness/feature_index.json`
+  - Read all required source documents: AGENTS.md, ARCHITECTURE.md, FRONTEND.md, harness state, Next.js 16 docs for error/not-found/loading conventions
+  - Created ExecPlan at `docs/exec-plans/plans/feat-006-error-navigation.md`
+  - Captured scope, layer impact, standards, validation matrix, Next.js 16 API notes (unstable_retry, global-error, not-found conventions), risks, and harness update requirements
+  - Updated `docs/exec-plans/index.md` with active plan entry
+  - Updated `harness/features/feat-006-error-navigation.json` status to `in-progress` and attached plan path
+  - Updated `harness/feature_index.json` feat-006 status to `in-progress`
+- **Blockers**:
+  - Need to verify Next.js 16 version supports `unstable_retry` prop; if earlier version, fall back to `reset` pattern
+- **Next steps**:
+  - Implement feat-006 per ExecPlan: create not-found.tsx, error.tsx, global-error.tsx, loading.tsx, story/loading.tsx, and shared loading skeleton; verify all pages render correctly
+
 ## 2026-05-05 — feat-005 Performance & Mobile Optimization ExecPlan Creation
 
 - **Session**: feat-005-plan
