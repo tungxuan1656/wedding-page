@@ -3,7 +3,7 @@
   "name": "Accessibility Compliance",
   "description": "Comprehensive accessibility audit and fixes: ARIA labels, keyboard navigation, screen reader support, color contrast verification, focus management, and semantic HTML improvements across all pages",
   "dependencies": ["feat-001", "feat-002", "feat-003"],
-  "status": "pending",
+  "status": "in-progress",
   "acceptanceCriteria": [
     "All interactive elements (buttons, links, form inputs) reachable via keyboard Tab navigation",
     "Focus indicators visible and styled consistently with wedding palette",
@@ -16,5 +16,7 @@
     "prefers-reduced-motion already handled (verified in feat-001/feat-002)",
     "pnpm lint, pnpm typecheck, pnpm build pass"
   ],
-  "notes": "Wedding guests will include elderly users and users with disabilities. Accessibility is not optional for a real product. Current reduced-motion support exists but broader a11y has not been audited. Focus on practical improvements, not theoretical perfection."
+  "notes": "Wedding guests will include elderly users and users with disabilities. Accessibility is not optional for a real product. Current reduced-motion support exists but broader a11y has not been audited. Focus on practical improvements, not theoretical perfection.",
+  "planPath": "docs/exec-plans/plans/feat-009-accessibility-compliance.md",
+  "updated_at": "2026-05-05"
 }

@@ -1,5 +1,24 @@
 # Progress Index
 
+## 2026-05-05 — feat-009 Accessibility Compliance ExecPlan Creation
+
+- **Session**: feat-009-plan
+- **Status**: in-progress
+- **What was done**:
+  - Identified `feat-009` as next pending feature from `harness/feature_index.json`
+  - Read all required source documents: AGENTS.md, ARCHITECTURE.md, FRONTEND.md, harness state, all component files
+  - Audited current accessibility state: reduced-motion ✅, lang attribute ✅, main landmarks ✅, heading hierarchy ✅, focus-visible ✅, map title ✅
+  - Identified gaps: no skip-to-content link, no ARIA landmarks, no screen reader announcements for loading/error, color contrast failures (text-muted, gold), no focus management in error pages, image slots lack role/aria-label
+  - Created ExecPlan at `docs/exec-plans/plans/feat-009-accessibility-compliance.md`
+  - Captured scope, layer impact, standards, validation matrix, color contrast audit results, risks, and harness update requirements
+  - Key decisions: darken `text-muted` from `#9a8578` to `#7d6b5e`, darken `gold` from `#c9a96e` to `#b08f4a`, use `role="img"` + `aria-label` on image slots, defer automated a11y testing to tech debt
+  - Updated `docs/exec-plans/index.md` with active plan entry
+  - Updated `harness/features/feat-009-accessibility-compliance.json` status to `in-progress` and attached plan path
+  - Updated `harness/feature_index.json` feat-009 status to `in-progress`
+- **Blockers**: none
+- **Next steps**:
+  - Implement feat-009 per ExecPlan: add skip link, ARIA landmarks, screen reader announcements, focus management, color contrast fixes, semantic HTML improvements
+
 ## 2026-05-05 — feat-008 Story Animation Polish Implementation
 
 - **Session**: feat-008-implement
