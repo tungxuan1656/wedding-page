@@ -3,8 +3,9 @@
   "name": "Performance & Mobile Optimization",
   "description": "Image optimization (WebP/AVIF, Next.js Image), dynamic imports for heavy components, mobile-first responsive design, <2s initial load target",
   "dependencies": ["feat-001", "feat-002"],
-  "status": "pending",
-  "evidence": "",
+  "status": "in-progress",
+  "evidence": "ExecPlan created at docs/exec-plans/plans/feat-005-performance-mobile-optimization.md on 2026-05-05. Implementation pending.",
+  "plan": "docs/exec-plans/plans/feat-005-performance-mobile-optimization.md",
   "acceptanceCriteria": [
     "All images use Next.js Image component with proper sizing",
     "Images served in WebP/AVIF format",
