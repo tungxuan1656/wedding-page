@@ -1,10 +1,11 @@
 import './globals.css'
 
 import type { Metadata } from 'next'
-import { Great_Vibes, Inter, Noto_Serif } from 'next/font/google'
+import { Be_Vietnam_Pro, Great_Vibes, Noto_Serif } from 'next/font/google'
 
-const inter = Inter({
-  variable: '--font-inter',
+const sans = Be_Vietnam_Pro({
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-sans',
   subsets: ['latin', 'vietnamese'],
 })
 
@@ -60,7 +61,7 @@ export default function RootLayout({
   return (
     <html
       suppressHydrationWarning
-      className={`${inter.variable} ${notoSerif.variable} ${greatVibes.variable} h-full antialiased`}
+      className={`${sans.variable} ${notoSerif.variable} ${greatVibes.variable} h-full antialiased`}
       lang='vi'>
       <body
         suppressHydrationWarning
