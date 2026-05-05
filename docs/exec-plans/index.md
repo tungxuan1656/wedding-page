@@ -5,6 +5,7 @@ Do not move files between folders; update sections below to reflect status.
 
 ## Active
 
+- **feat-007-seo-social-sharing** — SEO & Social Sharing (robots.txt, sitemap, Open Graph metadata, Twitter Cards, JSON-LD structured data for wedding event, OG image placeholder). Plan: `plans/feat-007-seo-social-sharing.md`
 - **feat-005-performance-mobile-optimization** — Performance & Mobile Optimization (Next.js `<Image>` adoption for real media, WebP/AVIF assets, story route lazy-load validation, mobile viewport polish, Lighthouse/perf evidence). Plan: `plans/feat-005-performance-mobile-optimization.md`
 - **feat-004-rsvp-system** — RSVP System (`Họ tên` + 2 event checkboxes, client validation, Google Apps Script POST, success/error feedback, mobile-friendly layout). Plan: `plans/feat-004-rsvp-system.md`
 

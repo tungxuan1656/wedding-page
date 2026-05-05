@@ -1,5 +1,23 @@
 # Progress Index
 
+## 2026-05-05 — feat-007 SEO & Social Sharing ExecPlan Creation
+
+- **Session**: feat-007-plan
+- **Status**: in-progress
+- **What was done**:
+  - Identified `feat-007` as next pending feature from `harness/feature_index.json`
+  - Read all required source documents: AGENTS.md, ARCHITECTURE.md, FRONTEND.md, harness state, Next.js 16 metadata API docs
+  - Created ExecPlan at `docs/exec-plans/plans/feat-007-seo-social-sharing.md`
+  - Captured scope, layer impact, standards, validation matrix, Next.js 16 API notes (robots.ts, sitemap.ts, generateMetadata, JSON-LD), risks, and harness update requirements
+  - Key decisions: static OG image placeholder (not dynamic opengraph-image.tsx), `@type: Event` with `eventType: "WeddingEvent"` for JSON-LD, defer guest-specific OG metadata, use `NEXT_PUBLIC_SITE_URL` env var for metadataBase
+  - Updated `docs/exec-plans/index.md` with active plan entry
+  - Updated `harness/features/feat-007-seo-social-sharing.json` status to `in-progress` and attached plan path
+  - Updated `harness/feature_index.json` feat-007 status to `in-progress`
+- **Blockers**:
+  - OG image placeholder will need a real design asset eventually; current placeholder is minimal
+- **Next steps**:
+  - Implement feat-007 per ExecPlan: create robots.ts, sitemap.ts, OG image placeholder, enhance layout metadata, add generateMetadata to both pages, add JSON-LD to landing page
+
 ## 2026-05-05 — feat-006 Error & Navigation Pages Implementation
 
 - **Session**: feat-006-implement

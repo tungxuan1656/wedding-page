@@ -3,7 +3,7 @@
   "name": "SEO & Social Sharing",
   "description": "robots.txt, sitemap generation, comprehensive Open Graph metadata, and JSON-LD structured data for wedding event so invitation links render rich previews when shared on messaging apps and social media",
   "dependencies": ["feat-001"],
-  "status": "pending",
+  "status": "in-progress",
   "acceptanceCriteria": [
     "robots.txt allows all crawlers and references sitemap",
     "Sitemap generated listing / and /story routes",
@@ -14,5 +14,7 @@
     "Metadata is Vietnamese and matches hero copy content",
     "pnpm lint, pnpm typecheck, pnpm build pass"
   ],
-  "notes": "Wedding invitations are shared primarily via messaging apps (Zalo, Messenger) which use OG metadata for link previews. This is critical for real-world usage. Use Next.js Metadata API and generateMetadata for dynamic OG. JSON-LD helps search engines understand the event."
+  "notes": "Wedding invitations are shared primarily via messaging apps (Zalo, Messenger) which use OG metadata for link previews. This is critical for real-world usage. Use Next.js Metadata API and generateMetadata for dynamic OG. JSON-LD helps search engines understand the event.",
+  "planPath": "docs/exec-plans/plans/feat-007-seo-social-sharing.md",
+  "updated_at": "2026-05-05"
 }
