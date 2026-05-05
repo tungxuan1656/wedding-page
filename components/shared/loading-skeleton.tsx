@@ -3,17 +3,20 @@ type LoadingSkeletonProps = {
   lines?: number
   /** Optional heading skeleton above the lines. */
   heading?: boolean
+  /** Accessible label describing which content is loading. Defaults to generic message. */
+  'aria-label'?: string
   className?: string
 }
 
 export const LoadingSkeleton = ({
   lines = 3,
   heading = false,
+  'aria-label': ariaLabel = 'Đang tải nội dung',
   className,
 }: LoadingSkeletonProps) => {
   return (
     <div
-      aria-label='Đang tải nội dung'
+      aria-label={ariaLabel}
       aria-live='polite'
       className={`flex flex-col items-center gap-4 py-16 ${className ?? ''}`}
       role='status'>

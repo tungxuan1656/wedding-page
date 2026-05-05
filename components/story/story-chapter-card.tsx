@@ -9,7 +9,7 @@ type StoryChapterCardProps = {
 }
 
 export const StoryChapterCard = ({ chapter, index }: StoryChapterCardProps) => {
-  const headingId = `chapter-${chapter.year}-heading`
+  const headingId = `chapter-${chapter.year}-${index}-heading`
 
   return (
     <SectionWrapper aria-labelledby={headingId} className='relative'>
