@@ -257,6 +257,8 @@ main() {
   install_skill_batch "antigravity-awesome-skills" "$ANTIGRAVITY_REPO_DIR/skills" "${ANTIGRAVITY_SKILLS[@]}"
   install_skill_batch "superpowers" "$SUPERPOWERS_REPO_DIR/skills" "${SUPERPOWERS_SKILLS[@]}"
 
+  ./scripts/install_harness_skills.sh
+
   echo ""
   echo "Done."
   echo "- Skills installed: $COPIED_SKILLS"

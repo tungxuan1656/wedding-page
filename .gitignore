@@ -1,11 +1,6 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 .agents/skills/**
-!.agents/skills/
-!.agents/skills/create-plan-for-implement/
-!.agents/skills/create-plan-for-implement/**
-!.agents/skills/harness-creator/
-!.agents/skills/harness-creator/**
 
 # dependencies
 /node_modules
