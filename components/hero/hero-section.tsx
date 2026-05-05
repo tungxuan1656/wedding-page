@@ -79,7 +79,7 @@ export const HeroSection = ({ guest }: HeroSectionProps) => {
               </div>
             </div>
 
-            <div className='rounded-[2rem] border border-cream/15 bg-cream/95 p-4 text-text-primary shadow-2xl shadow-wine-dark/30'>
+            <div className='rounded-4xl border border-cream/15 bg-cream/95 p-4 text-text-primary shadow-2xl shadow-wine-dark/30'>
               <div className='space-y-3 px-2 pt-2 pb-3'>
                 <p className='text-sm font-semibold tracking-[0.25em] text-wine-light uppercase'>
                   {HERO_COPY.venue.label}
@@ -109,7 +109,7 @@ export const HeroSection = ({ guest }: HeroSectionProps) => {
       <SectionWrapper
         className='px-6 py-12 sm:px-8 md:px-12 md:py-16'
         id='rsvp'>
-        <div className='mx-auto max-w-4xl rounded-[2rem] border border-beige bg-white/80 p-8 shadow-sm'>
+        <div className='mx-auto max-w-4xl rounded-4xl border border-beige bg-white/80 p-8 shadow-sm'>
           <p className='text-sm font-semibold tracking-[0.25em] text-wine-light uppercase'>
             {HERO_COPY.ctaRsvp}
           </p>

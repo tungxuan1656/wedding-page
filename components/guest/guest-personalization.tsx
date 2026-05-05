@@ -8,7 +8,7 @@ type GuestPersonalizationProps = {
 
 export const GuestPersonalization = ({ guest }: GuestPersonalizationProps) => {
   return (
-    <div className='grid gap-5 rounded-[2rem] border border-cream/15 bg-cream/10 p-5 backdrop-blur-sm sm:p-6 md:grid-cols-[minmax(0,1fr)_160px] md:items-center'>
+    <div className='grid gap-5 rounded-4xl border border-cream/15 bg-cream/10 p-5 backdrop-blur-sm sm:p-6 md:grid-cols-[minmax(0,1fr)_160px] md:items-center'>
       <div className='space-y-3'>
         <p className='text-sm font-semibold tracking-[0.25em] text-gold-light uppercase'>
           Lời nhắn riêng

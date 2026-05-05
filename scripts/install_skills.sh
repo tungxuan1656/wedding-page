@@ -266,7 +266,7 @@ main() {
   echo "- Agents converted: $CONVERTED_AGENTS"
   echo "- Agents skipped: $SKIPPED_AGENTS"
   echo "- Destination: $DEST_DIR"
-  rm -rf "$TMP_ROOT"
+  rm -rf "$PROJECT_ROOT/.tmp"
 }
 
 main "$@"
