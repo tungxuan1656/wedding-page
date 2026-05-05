@@ -2,12 +2,18 @@
 
 import Link from 'next/link'
 
+import { GuestPersonalization } from '@/components/guest'
 import { HERO_COPY, HERO_MAP_EMBED_URL } from '@/components/hero/hero-copy'
 import { SectionWrapper } from '@/components/shared'
+import type { GuestData } from '@/lib/guests'
 
 const EVENT_CARDS = [HERO_COPY.reception, HERO_COPY.ceremony]
 
-export const HeroSection = () => {
+type HeroSectionProps = {
+  guest: GuestData | null
+}
+
+export const HeroSection = ({ guest }: HeroSectionProps) => {
   return (
     <div className='bg-cream'>
       <SectionWrapper className='overflow-hidden bg-linear-to-b from-wine via-wine-dark to-wine px-6 py-16 text-cream sm:px-8 md:min-h-screen md:px-12 md:py-20'>
@@ -22,10 +28,22 @@ export const HeroSection = () => {
               </h1>
               <div className='h-px w-24 bg-gold/70' />
               <p className='max-w-2xl text-base leading-7 text-cream/85 sm:text-lg'>
-                {HERO_COPY.intro}
+                {guest ? (
+                  <>
+                    {HERO_COPY.invitation.leading}{' '}
+                    <span className='font-semibold text-gold-light'>
+                      {guest.name}
+                    </span>{' '}
+                    {HERO_COPY.invitation.trailing}
+                  </>
+                ) : (
+                  HERO_COPY.intro
+                )}
               </p>
             </div>
           </div>
+
+          {guest ? <GuestPersonalization guest={guest} /> : null}
 
           <div className='grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(320px,420px)] lg:items-start'>
             <div className='space-y-6'>

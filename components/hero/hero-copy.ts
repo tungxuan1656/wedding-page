@@ -3,6 +3,10 @@ export const HERO_COPY = {
   coupleNames: 'Xuân Tùng & Vân Anh',
   intro:
     'Trân trọng mời bạn cùng gia đình đến chung vui trong ngày trọng đại của chúng mình.',
+  invitation: {
+    leading: 'Thân mời',
+    trailing: 'đến dự và chung vui cùng gia đình trong ngày đặc biệt này.',
+  },
   reception: {
     label: 'Tiệc đãi khách',
     solarDate: '08/06/2026',

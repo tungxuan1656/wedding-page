@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" role="img" aria-labelledby="title desc">
+  <title id="title">Minh hoạ khách mời Anh Tú</title>
+  <desc id="desc">Hình minh hoạ chân dung khách mời trên nền màu kem và rượu vang.</desc>
+  <rect width="320" height="320" rx="40" fill="#f7f1e3"/>
+  <circle cx="160" cy="120" r="58" fill="#7b2d3a" opacity="0.12"/>
+  <circle cx="160" cy="112" r="44" fill="#d9b56b" opacity="0.65"/>
+  <path d="M100 252c12-44 42-66 60-66s48 22 60 66" fill="#7b2d3a" opacity="0.85"/>
+  <path d="M126 118c8-18 22-28 34-28 15 0 29 12 37 28-5 18-20 32-37 32-16 0-30-13-34-32Z" fill="#7b2d3a"/>
+  <path d="M120 83c12-20 29-31 48-31 23 0 41 14 52 38-13-7-28-10-44-10-19 0-37 4-56 12Z" fill="#5a1f2b"/>
+  <text x="160" y="290" text-anchor="middle" fill="#7b2d3a" font-size="24" font-family="Georgia, serif">Anh Tú</text>
+</svg>

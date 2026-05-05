@@ -1,5 +1,20 @@
 # Progress Index
 
+## 2026-05-05 — feat-003 Guest Personalization Implementation
+
+- **Session**: feat-003-implement
+- **Status**: completed
+- **What was done**:
+  - Added `lib/guests.ts` with `GuestId`, `GuestData`, `GuestMap`, sample guest records, and `getGuestById()` lookup helper
+  - Updated `app/page.tsx` to await Next.js 16 `searchParams` and resolve `g` at route boundary
+  - Added `components/guest/guest-personalization.tsx` and `components/guest/index.ts`
+  - Updated `components/hero/hero-section.tsx` to render guest-specific invitation text, greeting/message card, and optional photo
+  - Updated `components/hero/hero-copy.ts` with invitation copy fragments for highlighted guest name path
+  - Added sample local asset `public/guests/anh-tu.svg` to exercise optional photo path safely
+  - Verified `pnpm lint`, `pnpm typecheck`, `pnpm build`, and `./init.sh`
+- **Blockers**: none
+- **Next steps**: Start feat-004 (RSVP System) or feat-005 (Performance & Mobile Optimization)
+
 ## 2026-05-05 — feat-003 Guest Personalization ExecPlan Creation
 
 - **Session**: feat-003-plan

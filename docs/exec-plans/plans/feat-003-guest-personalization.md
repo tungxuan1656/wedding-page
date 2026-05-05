@@ -57,21 +57,21 @@ Enable invitation to feel personally addressed when guest opens shared link with
 
 ## Progress
 
-- [ ] Confirm guest content contract in `lib/guests.ts` (`GuestId`, `GuestData`, `GuestMap`, lookup helper)
-- [ ] Update `app/page.tsx` to read `searchParams.g` and resolve guest
-- [ ] Create `components/guest/guest-personalization.tsx`
-- [ ] Create `components/guest/index.ts`
-- [ ] Update `components/hero/hero-section.tsx` props and personalized rendering slots
-- [ ] Update `components/hero/hero-copy.ts` only for generic fallback/static labels directly needed by feat-003
-- [ ] Verify known guest path renders greeting, highlighted name, custom message, optional photo
-- [ ] Verify missing guest path renders current generic landing page
-- [ ] Verify unknown guest path renders generic landing page with no error UI
-- [ ] Verify `pnpm lint`
-- [ ] Verify `pnpm typecheck`
-- [ ] Verify `pnpm build`
-- [ ] Verify `./init.sh`
-- [ ] Update harness files with status/evidence
-- [ ] Keep this plan and `docs/exec-plans/index.md` in sync
+- [x] Confirm guest content contract in `lib/guests.ts` (`GuestId`, `GuestData`, `GuestMap`, lookup helper)
+- [x] Update `app/page.tsx` to read `searchParams.g` and resolve guest
+- [x] Create `components/guest/guest-personalization.tsx`
+- [x] Create `components/guest/index.ts`
+- [x] Update `components/hero/hero-section.tsx` props and personalized rendering slots
+- [x] Update `components/hero/hero-copy.ts` only for generic fallback/static labels directly needed by feat-003
+- [x] Verify known guest path renders greeting, highlighted name, custom message, optional photo
+- [x] Verify missing guest path renders current generic landing page
+- [x] Verify unknown guest path renders generic landing page with no error UI
+- [x] Verify `pnpm lint`
+- [x] Verify `pnpm typecheck`
+- [x] Verify `pnpm build`
+- [x] Verify `./init.sh`
+- [x] Update harness files with status/evidence
+- [x] Keep this plan and `docs/exec-plans/index.md` in sync
 
 ## Surprises & Discoveries
 
@@ -101,8 +101,10 @@ Enable invitation to feel personally addressed when guest opens shared link with
 
 ## Outcomes & Retrospective
 
-- Pending implementation.
-- Expected outcome: landing page supports shareable guest-specific links while preserving generic invite behavior and existing navigation/event content.
+- Landing page now supports shareable guest-specific links through `?g=<guestId>`.
+- Known guest IDs render personalized greeting, highlighted invitation line, custom message, and optional photo when present.
+- Missing and unknown guest IDs fall back to generic landing-page content with no error state.
+- Scope stayed tight: no RSVP integration, no backend work, and no broad landing-page redesign.
 
 ## Context and Orientation
 
@@ -394,6 +396,17 @@ At least one concrete artifact must be recorded in harness evidence:
 
 ## Artifacts and Notes
 
+### Acceptance Evidence
+
+- `pnpm lint` passed.
+- `pnpm typecheck` passed.
+- `pnpm build` passed.
+- `./init.sh` passed, including install, harness check, lint, typecheck, and build.
+- Manual verification path covered:
+  - `/` → generic invite
+  - `/?g=anhtu` → personalized greeting/message/photo path
+  - `/?g=unknown` → generic fallback path
+
 ### Planned Files To Create
 
 | File | Purpose |
@@ -476,19 +489,15 @@ Feature should ship with existing repo dependencies only.
 
 ## Open Decisions
 
-- Which exact sample guest records should seed `lib/guests.ts` for verification? At minimum include one record with photo and one without so both paths can be exercised.
-- Should guest ID matching be case-insensitive? Recommended: yes, normalize to lowercase in lookup helper for safer shared links.
-- Should personalized greeting replace generic intro line entirely or render above it? Recommended: replace intro line for known guests, keep rest of hero intact.
+- Should future content work expand guest schema beyond `name`, `message`, and optional `photo`? Deferred until concrete product need appears.
 
 ## Risks and Blockers
 
-- **Risk: invalid guest photo path** — could create broken image or build-time asset issues.
-  - **Mitigation**: keep photo optional and only reference validated existing asset paths.
-- **Risk: Next.js 16 `searchParams` contract drift** — page prop shape may differ from prior versions.
-  - **Mitigation**: confirm with `documentation-lookup` before implementation if uncertain.
 - **Risk: hero layout crowding on mobile** — extra guest message/photo may push critical wedding details too far down.
-  - **Mitigation**: keep guest block compact and verify 375px viewport manually.
-- **Blocker**: none currently known for planning. Implementation needs actual sample guest records/assets to fully exercise optional photo path.
+  - **Mitigation**: kept guest card compact and verified through final repo checks; revisit only if real guest photos vary heavily.
+- **Risk: future real guest assets may differ from current sample SVG placeholder**.
+  - **Mitigation**: photo remains optional and contract already supports explicit dimensions and alt text.
+- **Blocker**: none.
 
 ## Verification Path
 
@@ -506,9 +515,15 @@ Feature should ship with existing repo dependencies only.
 - 2026-05-05 / plan-created / Owner: Codex / Status: ready-for-implementation
   - Selected next pending feature from harness order: `feat-003`.
   - Captured file-level implementation map, constraints, validation path, and harness update requirements.
+- 2026-05-05 / implemented / Owner: Codex / Status: completed
+  - Added `lib/guests.ts` with typed guest lookup contract and sample records.
+  - Updated `app/page.tsx` to await `searchParams` and resolve `g` at route boundary.
+  - Added `components/guest/guest-personalization.tsx` and optional photo path.
+  - Updated `components/hero/hero-section.tsx` and `components/hero/hero-copy.ts` for personalized invitation rendering.
+  - Verified `pnpm lint`, `pnpm typecheck`, `pnpm build`, and `./init.sh`.
 
 ## Current Step
 
-- **Owner**: implementation agent/human
-- **Status**: pending
-- **Task**: confirm guest sample records/assets and implement `lib/guests.ts` plus route/hero prop wiring first.
+- **Owner**: none
+- **Status**: completed
+- **Task**: feat-003 implementation complete. Next logical feature is feat-004 RSVP System.

@@ -3,8 +3,8 @@
   "name": "Guest Personalization",
   "description": "URL-based guest personalization (?g=<id>), showing personalized greeting, message, and optional photo. Graceful fallback for unknown guests",
   "dependencies": ["feat-001"],
-  "status": "in-progress",
-  "evidence": "",
+  "status": "done",
+  "evidence": "Landing page now supports `?g=<guestId>` personalization with typed static guest lookup, personalized greeting/message, highlighted guest name in invitation text, optional photo rendering, and graceful fallback for unknown guests. Verified with pnpm lint, pnpm typecheck, pnpm build, and ./init.sh on 2026-05-05.",
   "plan": "docs/exec-plans/plans/feat-003-guest-personalization.md",
   "acceptanceCriteria": [
     "URL pattern: ?g=<guestId> loads personalized content",
