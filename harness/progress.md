@@ -1,5 +1,24 @@
 # Progress Index
 
+## 2026-05-05 — feat-006 Error & Navigation Pages Implementation
+
+- **Session**: feat-006-implement
+- **Status**: completed
+- **What was done**:
+  - Created `components/shared/loading-skeleton.tsx` — reusable skeleton component with configurable lines and heading, using wedding palette (`bg-beige-dark`, `animate-pulse`)
+  - Created `app/not-found.tsx` — custom 404 page with Vietnamese heading "404", message "Trang bạn tìm kiếm không tồn tại", and "Về lại trang chính" home link
+  - Created `app/error.tsx` — route-level error boundary (client component) with Vietnamese message "Đã xảy ra lỗi" and `unstable_retry` button "Thử lại"
+  - Created `app/global-error.tsx` — root-level error boundary (client component) with own `<html>`/`<body>` tags, importing `globals.css` for branded styling
+  - Created `app/loading.tsx` — root loading state using `LoadingSkeleton` with heading and 2 lines
+  - Created `app/story/loading.tsx` — story page loading state with 3 skeleton blocks
+  - Updated `components/shared/index.ts` barrel export to include `LoadingSkeleton`
+  - Fixed lint error: prefixed unused `error` param with `_error` in `global-error.tsx`
+  - Fixed lint warnings: auto-fixed prettier formatting and prop sorting across all new files
+  - Verified `pnpm lint`, `pnpm typecheck`, `pnpm build`, and `./init.sh`
+  - Build output confirms `/_not-found` route is statically generated
+- **Blockers**: none
+- **Next steps**: Start feat-007 (SEO & Social Sharing) or feat-008 (Story Animation Polish)
+
 ## 2026-05-05 — feat-006 Error & Navigation Pages ExecPlan Creation
 
 - **Session**: feat-006-plan

@@ -5,9 +5,12 @@ Do not move files between folders; update sections below to reflect status.
 
 ## Active
 
-- **feat-006-error-navigation** — Error & Navigation Pages (custom 404 page, error boundary with retry, global error boundary, loading states for root and story routes, wedding-themed design, mobile-friendly). Plan: `plans/feat-006-error-navigation.md`
 - **feat-005-performance-mobile-optimization** — Performance & Mobile Optimization (Next.js `<Image>` adoption for real media, WebP/AVIF assets, story route lazy-load validation, mobile viewport polish, Lighthouse/perf evidence). Plan: `plans/feat-005-performance-mobile-optimization.md`
 - **feat-004-rsvp-system** — RSVP System (`Họ tên` + 2 event checkboxes, client validation, Google Apps Script POST, success/error feedback, mobile-friendly layout). Plan: `plans/feat-004-rsvp-system.md`
+
+## Completed
+
+- **feat-006-error-navigation** — Error & Navigation Pages (custom 404 page, error boundary with retry, global error boundary, loading states for root and story routes, wedding-themed design, mobile-friendly). Plan: `plans/feat-006-error-navigation.md`
 
 ## Completed
 

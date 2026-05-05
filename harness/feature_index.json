@@ -47,8 +47,8 @@
       "name": "Error & Navigation Pages",
       "description": "Custom 404 page, error boundary, and loading states for graceful UX when routes are not found, components fail, or content is loading",
       "dependencies": ["feat-001"],
-      "status": "in-progress",
-      "evidence": "ExecPlan created at docs/exec-plans/plans/feat-006-error-navigation.md on 2026-05-05. Implementation pending."
+      "status": "done",
+      "evidence": "Implemented not-found, error, global-error, loading, and story/loading pages with wedding-themed design. Verified with pnpm lint, pnpm typecheck, pnpm build, and ./init.sh on 2026-05-05."
     },
     {
       "id": "feat-007",
