@@ -23,7 +23,7 @@
       "name": "Guest Personalization",
       "description": "URL-based guest personalization (?g=<id>), showing personalized greeting, message, and optional photo. Graceful fallback for unknown guests",
       "dependencies": ["feat-001"],
-      "status": "pending",
+      "status": "in-progress",
       "evidence": ""
     },
     {
