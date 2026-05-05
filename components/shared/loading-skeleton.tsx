@@ -13,7 +13,10 @@ export const LoadingSkeleton = ({
 }: LoadingSkeletonProps) => {
   return (
     <div
-      className={`flex flex-col items-center gap-4 py-16 ${className ?? ''}`}>
+      aria-label='Đang tải nội dung'
+      aria-live='polite'
+      className={`flex flex-col items-center gap-4 py-16 ${className ?? ''}`}
+      role='status'>
       {heading && (
         <div className='h-8 w-48 animate-pulse rounded-lg bg-beige-dark' />
       )}

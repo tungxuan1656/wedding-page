@@ -1,5 +1,27 @@
 # Progress Index
 
+## 2026-05-05 — feat-009 Accessibility Compliance Implementation
+
+- **Session**: feat-009-implement
+- **Status**: completed
+- **What was done**:
+  - Added skip-to-content link to `app/layout.tsx` — hidden link "Chuyển đến nội dung chính" visible on focus, targets `#main-content`
+  - Added `id="main-content"` to `<main>` elements in `app/page.tsx`, `app/story/page.tsx` (via `StoryPageShell`), `app/not-found.tsx`, `app/error.tsx`, and `app/global-error.tsx` (on `<body>`)
+  - Added ARIA landmarks: `aria-labelledby` on hero section (pointing to `#hero-heading`), RSVP section (pointing to `#rsvp-heading`), story intro (pointing to `#story-heading`), story chapters (`aria-label="Các chương câu chuyện"`), each chapter card (pointing to `#chapter-{year}-heading`)
+  - Added `aria-label="Lời nhắn riêng"` on guest personalization card
+  - Added `aria-label="Bản đồ địa điểm"` on map container
+  - Added `aria-label` and `role="img"` on story image slots
+  - Added `role="status"` and `aria-live="polite"` on `LoadingSkeleton`
+  - Added `role="alert"` and auto-focus on error pages (`error.tsx`, `global-error.tsx`)
+  - Added `<address>` element for venue address (replacing `<p>`)
+  - Changed RSVP heading from `<p>` to `<h2>` with `id="rsvp-heading"`
+  - Updated `SectionWrapper` to accept `aria-label` and `aria-labelledby` props
+  - Fixed color contrast: `--color-text-muted` from `#9a8578` to `#7d6b5e`, `--color-gold` from `#c9a96e` to `#b08f4a`
+  - Added `focus-visible` outline styles to not-found link and error page buttons
+  - Verified `pnpm lint`, `pnpm typecheck`, `pnpm build`, and `./init.sh`
+- **Blockers**: none
+- **Next steps**: Start feat-004 (RSVP System) or feat-005 (Performance & Mobile Optimization)
+
 ## 2026-05-05 — feat-009 Accessibility Compliance ExecPlan Creation
 
 - **Session**: feat-009-plan

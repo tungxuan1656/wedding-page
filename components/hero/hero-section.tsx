@@ -19,14 +19,18 @@ export const HeroSection = ({ guest }: HeroSectionProps) => {
 
   return (
     <div className='bg-cream'>
-      <SectionWrapper className='overflow-hidden bg-linear-to-b from-wine via-wine-dark to-wine px-6 py-16 text-cream sm:px-8 md:min-h-screen md:px-12 md:py-20'>
+      <SectionWrapper
+        aria-labelledby='hero-heading'
+        className='overflow-hidden bg-linear-to-b from-wine via-wine-dark to-wine px-6 py-16 text-cream sm:px-8 md:min-h-screen md:px-12 md:py-20'>
         <div className='mx-auto flex max-w-6xl flex-col gap-12 md:justify-center'>
           <div className='max-w-3xl space-y-6'>
             <p className='text-sm font-semibold tracking-[0.35em] text-gold-light uppercase'>
               {HERO_COPY.eyebrow}
             </p>
             <div className='space-y-4'>
-              <h1 className='font-serif text-5xl leading-tight font-semibold text-balance sm:text-6xl md:text-7xl'>
+              <h1
+                className='font-serif text-5xl leading-tight font-semibold text-balance sm:text-6xl md:text-7xl'
+                id='hero-heading'>
                 {HERO_COPY.coupleNames}
               </h1>
               <div className='h-px w-24 bg-gold/70' />
@@ -90,11 +94,13 @@ export const HeroSection = ({ guest }: HeroSectionProps) => {
                 <h2 className='font-serif text-2xl text-wine'>
                   {HERO_COPY.venue.name}
                 </h2>
-                <p className='text-sm leading-6 text-text-secondary'>
+                <address className='text-sm leading-6 text-text-secondary not-italic'>
                   {HERO_COPY.venue.address}
-                </p>
+                </address>
               </div>
-              <div className='overflow-hidden rounded-3xl border border-beige bg-beige/30'>
+              <div
+                aria-label='Bản đồ địa điểm'
+                className='overflow-hidden rounded-3xl border border-beige bg-beige/30'>
                 {isMapVisible ? (
                   <iframe
                     allowFullScreen
@@ -127,12 +133,15 @@ export const HeroSection = ({ guest }: HeroSectionProps) => {
       </SectionWrapper>
 
       <SectionWrapper
+        aria-labelledby='rsvp-heading'
         className='px-6 py-12 sm:px-8 md:px-12 md:py-16'
         id='rsvp'>
         <div className='mx-auto max-w-4xl rounded-4xl border border-beige bg-white/80 p-8 shadow-sm'>
-          <p className='text-sm font-semibold tracking-[0.25em] text-wine-light uppercase'>
+          <h2
+            className='text-sm font-semibold tracking-[0.25em] text-wine-light uppercase'
+            id='rsvp-heading'>
             {HERO_COPY.ctaRsvp}
-          </p>
+          </h2>
           <p className='mt-4 max-w-2xl text-base leading-7 text-text-secondary'>
             {HERO_COPY.rsvpPlaceholder}
           </p>

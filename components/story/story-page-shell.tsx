@@ -7,14 +7,18 @@ import { STORY_COPY } from './story-copy'
 
 export const StoryPageShell = () => {
   return (
-    <main className='min-h-screen bg-cream'>
+    <main className='min-h-screen bg-cream' id='main-content'>
       {/* Intro header */}
-      <section className='px-6 pt-16 pb-10 sm:px-8 sm:pt-20 md:px-12 md:pt-24'>
+      <section
+        aria-labelledby='story-heading'
+        className='px-6 pt-16 pb-10 sm:px-8 sm:pt-20 md:px-12 md:pt-24'>
         <div className='mx-auto max-w-3xl text-center'>
           <p className='mb-4 text-sm font-semibold tracking-[0.25em] text-wine-light uppercase'>
             {STORY_COPY.eyebrow}
           </p>
-          <h1 className='mb-6 font-serif text-4xl text-wine sm:text-5xl md:text-6xl'>
+          <h1
+            className='mb-6 font-serif text-4xl text-wine sm:text-5xl md:text-6xl'
+            id='story-heading'>
             {STORY_COPY.title}
           </h1>
           <p className='mx-auto max-w-xl text-base leading-7 text-text-secondary'>
@@ -29,7 +33,9 @@ export const StoryPageShell = () => {
       </div>
 
       {/* Chapter list */}
-      <section className='px-6 py-16 sm:px-8 sm:py-20 md:px-12 md:py-24'>
+      <section
+        aria-label='Các chương câu chuyện'
+        className='px-6 py-16 sm:px-8 sm:py-20 md:px-12 md:py-24'>
         <div className='mx-auto max-w-4xl'>
           <StoryChapterList />
         </div>

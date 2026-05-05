@@ -66,7 +66,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
   }
 
   return (
-    <main>
+    <main id='main-content'>
       <script
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c'),

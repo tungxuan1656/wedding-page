@@ -9,8 +9,10 @@ type StoryChapterCardProps = {
 }
 
 export const StoryChapterCard = ({ chapter, index }: StoryChapterCardProps) => {
+  const headingId = `chapter-${chapter.year}-heading`
+
   return (
-    <SectionWrapper className='relative'>
+    <SectionWrapper aria-labelledby={headingId} className='relative'>
       <div className='flex flex-col gap-8 md:flex-row md:gap-12'>
         {/* Year marker */}
         <div className='flex shrink-0 flex-row items-baseline gap-3 md:w-32 md:flex-col md:items-start md:gap-1'>
@@ -24,7 +26,9 @@ export const StoryChapterCard = ({ chapter, index }: StoryChapterCardProps) => {
 
         {/* Content */}
         <div className='flex flex-1 flex-col gap-6'>
-          <h2 className='font-serif text-2xl font-semibold text-wine sm:text-3xl'>
+          <h2
+            className='font-serif text-2xl font-semibold text-wine sm:text-3xl'
+            id={headingId}>
             {chapter.title}
           </h2>
 

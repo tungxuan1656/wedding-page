@@ -56,6 +56,11 @@ export default function RootLayout({
       className={`${inter.variable} ${notoSerif.variable} h-full antialiased`}
       lang='vi'>
       <body className='flex min-h-full flex-col bg-cream font-sans text-wine'>
+        <a
+          className='sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-lg focus:bg-wine focus:px-4 focus:py-2 focus:text-cream focus:outline-2 focus:outline-offset-2 focus:outline-gold-light'
+          href='#main-content'>
+          Chuyển đến nội dung chính
+        </a>
         {children}
       </body>
     </html>

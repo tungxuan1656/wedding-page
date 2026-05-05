@@ -19,8 +19,10 @@ export const StoryImageSlot = ({
 
   return (
     <motion.div
+      aria-label={label}
       className='flex aspect-[4/5] flex-col items-center justify-center rounded-2xl border-2 border-dashed border-beige bg-cream-dark p-4 text-center'
       initial={shouldAnimate ? { opacity: 0, scale: 1.03 } : false}
+      role='img'
       transition={{ duration: 0.5, ease: 'easeOut' }}
       viewport={{ once: true, amount: 0.2 }}
       whileInView={shouldAnimate ? { opacity: 1, scale: 1 } : undefined}>

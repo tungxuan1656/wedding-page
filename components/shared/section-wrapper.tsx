@@ -5,6 +5,8 @@ import type { ReactNode } from 'react'
 
 type SectionWrapperProps = {
   animate?: boolean
+  'aria-label'?: string
+  'aria-labelledby'?: string
   children: ReactNode
   className?: string
   id?: string
@@ -12,6 +14,8 @@ type SectionWrapperProps = {
 
 export const SectionWrapper = ({
   animate = true,
+  'aria-label': ariaLabel,
+  'aria-labelledby': ariaLabelledby,
   children,
   className,
   id,
@@ -21,6 +25,8 @@ export const SectionWrapper = ({
 
   return (
     <motion.section
+      aria-label={ariaLabel}
+      aria-labelledby={ariaLabelledby}
       className={className}
       id={id}
       initial={shouldAnimate ? { opacity: 0, y: 20 } : false}
