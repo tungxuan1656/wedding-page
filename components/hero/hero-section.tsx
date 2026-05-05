@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { useState } from 'react'
 
 import { GuestPersonalization } from '@/components/guest'
 import { HERO_COPY, HERO_MAP_EMBED_URL } from '@/components/hero/hero-copy'
@@ -14,6 +15,8 @@ type HeroSectionProps = {
 }
 
 export const HeroSection = ({ guest }: HeroSectionProps) => {
+  const [isMapVisible, setIsMapVisible] = useState(false)
+
   return (
     <div className='bg-cream'>
       <SectionWrapper className='overflow-hidden bg-linear-to-b from-wine via-wine-dark to-wine px-6 py-16 text-cream sm:px-8 md:min-h-screen md:px-12 md:py-20'>
@@ -92,14 +95,31 @@ export const HeroSection = ({ guest }: HeroSectionProps) => {
                 </p>
               </div>
               <div className='overflow-hidden rounded-3xl border border-beige bg-beige/30'>
-                <iframe
-                  allowFullScreen
-                  className='h-72 w-full border-0'
-                  loading='lazy'
-                  referrerPolicy='no-referrer-when-downgrade'
-                  src={HERO_MAP_EMBED_URL}
-                  title='Bản đồ Sân đình thôn Gia Lương'
-                />
+                {isMapVisible ? (
+                  <iframe
+                    allowFullScreen
+                    className='h-72 w-full border-0'
+                    loading='lazy'
+                    referrerPolicy='no-referrer-when-downgrade'
+                    src={HERO_MAP_EMBED_URL}
+                    title='Bản đồ Sân đình thôn Gia Lương'
+                  />
+                ) : (
+                  <div className='flex h-72 flex-col items-center justify-center gap-4 px-6 text-center'>
+                    <p className='max-w-xs text-sm leading-6 text-text-secondary'>
+                      Bản đồ được tải theo yêu cầu để giữ thiệp cưới nhẹ hơn
+                      trên mạng di động.
+                    </p>
+                    <button
+                      className='inline-flex min-h-12 items-center justify-center rounded-full bg-wine px-6 py-3 text-sm font-semibold text-cream transition hover:bg-wine-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-wine'
+                      type='button'
+                      onClick={() => {
+                        setIsMapVisible(true)
+                      }}>
+                      Xem bản đồ
+                    </button>
+                  </div>
+                )}
               </div>
             </div>
           </div>

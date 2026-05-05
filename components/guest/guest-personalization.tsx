@@ -29,6 +29,7 @@ export const GuestPersonalization = ({ guest }: GuestPersonalizationProps) => {
             alt={guest.photo.alt}
             className='h-full w-full object-cover'
             height={guest.photo.height}
+            sizes='(min-width: 768px) 160px, 128px'
             src={guest.photo.src}
             width={guest.photo.width}
           />
