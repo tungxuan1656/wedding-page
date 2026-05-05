@@ -3,7 +3,7 @@
   "name": "Story Animation Polish",
   "description": "Per-image reveal animations (fade-in, gentle zoom) for story chapter photos, replacing current static placeholder slots with scroll-triggered Framer Motion effects. Deferred from feat-005 for mobile performance",
   "dependencies": ["feat-002", "feat-005"],
-  "status": "in-progress",
+  "status": "done",
   "acceptanceCriteria": [
     "Story images animate into view with fade-in and gentle zoom on scroll (whileInView)",
     "Animations are subtle and match wedding aesthetic (no flashy effects)",
@@ -13,5 +13,6 @@
     "Animations work with real images (next/image) and placeholder slots alike",
     "pnpm lint, pnpm typecheck, pnpm build pass"
   ],
-  "notes": "Originally part of feat-002 scope but deferred during feat-005 performance pass to avoid per-card animation overload on mobile. Re-enable with care: use Intersection Observer thresholds and consider stagger only on larger viewports. Keep animation count bounded per viewport."
+  "evidence": "Implemented per-image fade-in + gentle zoom animation in StoryImageSlot using Framer Motion whileInView with useReducedMotion() guard. No stagger between images (all animate together when entering viewport). Animation: initial opacity:0 scale:1.03 → whileInView opacity:1 scale:1, duration 0.5s easeOut, viewport once:true amount:0.2. Reduced-motion users see no animation (initial:false, whileInView:undefined). Verified with pnpm lint, pnpm typecheck, pnpm build, and ./init.sh on 2026-05-05.",
+  "notes": "Originally part of feat-002 scope but deferred during feat-005 performance pass to avoid per-card animation overload on mobile. Re-enable with care: use Intersection Observer thresholds and consider stagger only on larger viewports. Keep animation count bounded per viewport. Decision: no stagger at all — all images in a chapter animate simultaneously for mobile performance. 'use client' directive is now necessary again since Framer Motion hooks are used."
 }

@@ -1,5 +1,19 @@
 # Progress Index
 
+## 2026-05-05 — feat-008 Story Animation Polish Implementation
+
+- **Session**: feat-008-implement
+- **Status**: completed
+- **What was done**:
+  - Added Framer Motion animation to `components/story/story-image-slot.tsx`
+  - Animation: `initial={{ opacity: 0, scale: 1.03 }}` → `whileInView={{ opacity: 1, scale: 1 }}` with `transition={{ duration: 0.5, ease: 'easeOut' }}` and `viewport={{ once: true, amount: 0.2 }}`
+  - Added `useReducedMotion()` guard: when reduced-motion is preferred, `initial` is `false` and `whileInView` is `undefined` (no animation)
+  - No stagger between images — all slots in a chapter animate simultaneously for mobile performance
+  - `'use client'` directive retained since Framer Motion hooks require client-side rendering
+  - Verified `pnpm lint`, `pnpm typecheck`, `pnpm build`, and `./init.sh`
+- **Blockers**: none
+- **Next steps**: Start feat-009 (Accessibility Compliance) or feat-004 (RSVP System)
+
 ## 2026-05-05 — feat-008 Story Animation Polish ExecPlan Creation
 
 - **Session**: feat-008-plan
