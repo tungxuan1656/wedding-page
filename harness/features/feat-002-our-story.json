@@ -3,8 +3,9 @@
   "name": "Our Story",
   "description": "Chapter-based scroll storytelling with 10 chapters covering 10 years (2016–2025), each with title, images, text, and Framer Motion animations (fade-in, slide-up, zoom)",
   "dependencies": [],
-  "status": "pending",
-  "evidence": "",
+  "status": "done",
+  "evidence": "Story page now renders 10 scroll-based chapters for 2016-2025 with Vietnamese placeholder copy, 39 image slots, reduced-motion-safe Framer Motion reveals, and lazy-loaded route shell. Verified with pnpm lint, pnpm typecheck, pnpm build, and ./init.sh on 2026-05-05.",
+  "plan": "docs/exec-plans/plans/feat-002-our-story.md",
   "acceptanceCriteria": [
     "10 story chapters displayed in scroll-based layout",
     "Each chapter has: year, title, 1-2 paragraphs of text, 3-5 images",
@@ -79,5 +80,5 @@
       }
     ]
   },
-  "notes": "Content to be provided later. Build template with 10 chapters for 10 years."
+  "notes": "Content to be provided later. Build template with 10 chapters for 10 years. Real story copy and real images remain future content work."
 }

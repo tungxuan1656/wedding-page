@@ -1,5 +1,19 @@
 # Progress Index
 
+## 2026-05-05 — feat-002 Our Story Implementation
+
+- **Session**: feat-002-implement
+- **Status**: completed
+- **What was done**:
+  - Created `docs/product-specs/feat-002-our-story.md`
+  - Replaced `/story` placeholder route with lazy-loaded story page shell in `app/story/page.tsx`
+  - Added `components/story/` feature set: story copy, local type, chapter list/card, image slot, page shell, barrel export
+  - Added 10 placeholder chapters for 2016–2025 with 39 total image slots and Vietnamese copy
+  - Removed stale `storyPlaceholder` field from `components/hero/hero-copy.ts`
+  - Verified `pnpm lint`, `pnpm typecheck`, `pnpm build`, and `./init.sh`
+- **Blockers**: none
+- **Next steps**: Start feat-003 (Guest Personalization), feat-004 (RSVP System), or feat-005 (Performance & Mobile Optimization)
+
 ## 2026-05-05 — feat-001 Landing Page Implementation
 
 - **Session**: feat-001-implement

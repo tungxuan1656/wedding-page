@@ -22,8 +22,6 @@ export const HERO_COPY = {
   ctaStory: 'Xem hành trình',
   rsvpPlaceholder:
     'Khu vực xác nhận tham dự sẽ sớm được mở trong bước tiếp theo.',
-  storyPlaceholder:
-    'Hành trình của chúng mình sẽ được kể đầy đủ tại đây trong feat-002.',
 } as const
 
 export const HERO_MAP_EMBED_URL =

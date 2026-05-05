@@ -15,8 +15,8 @@
       "name": "Our Story",
       "description": "Chapter-based scroll storytelling with 10 chapters covering 10 years (2016–2025), each with title, images, text, and Framer Motion animations (fade-in, slide-up, zoom)",
       "dependencies": [],
-      "status": "pending",
-      "evidence": ""
+      "status": "done",
+      "evidence": "Story page now renders 10 scroll-based chapters for 2016-2025 with Vietnamese placeholder copy, 39 image slots, reduced-motion-safe Framer Motion reveals, and lazy-loaded route shell. Verified with pnpm lint, pnpm typecheck, pnpm build, and ./init.sh on 2026-05-05."
     },
     {
       "id": "feat-003",
