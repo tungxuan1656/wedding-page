@@ -47,13 +47,19 @@ const Calendar = () => {
   const dates = Array.from({ length: 30 }, (_, i) => i + 1)
 
   return (
-    <div className='mx-auto w-full max-w-sm rounded-3xl border border-beige bg-white/80 p-6 shadow-lg backdrop-blur-sm'>
+    <div className='relative mx-auto w-full max-w-[320px] rounded-3xl border border-gold/20 bg-white/90 p-6 shadow-[0_0_40px_rgba(212,175,55,0.15)] backdrop-blur-md sm:p-8'>
+      {/* Decorative corner accents */}
+      <div className='absolute top-3 left-3 h-4 w-4 border-t border-l border-gold/40' />
+      <div className='absolute top-3 right-3 h-4 w-4 border-t border-r border-gold/40' />
+      <div className='absolute bottom-3 left-3 h-4 w-4 border-b border-l border-gold/40' />
+      <div className='absolute right-3 bottom-3 h-4 w-4 border-r border-b border-gold/40' />
+
       <div className='mb-6 text-center'>
         <h4 className='font-serif text-2xl text-wine'>Tháng 6</h4>
       </div>
-      <div className='mb-4 grid grid-cols-7 gap-x-2 gap-y-4 text-center text-sm'>
+      <div className='mb-2 grid grid-cols-7 gap-x-2 gap-y-4 text-center text-sm'>
         {days.map((d) => (
-          <div key={d} className='font-medium text-wine/60'>
+          <div key={d} className='text-xs font-medium text-wine/60 sm:text-sm'>
             {d}
           </div>
         ))}
@@ -81,8 +87,9 @@ const Calendar = () => {
 
 export const EventDetailsSection = () => {
   return (
-    <div className='bg-cream-dark'>
-      <SectionWrapper className='relative overflow-hidden px-6 py-16 sm:px-8 md:px-12 md:py-24'>
+    <div className='relative bg-cream-dark'>
+      <div className='pointer-events-none absolute top-0 right-0 h-64 w-64 rounded-full bg-gold/5 blur-[80px]' />
+      <SectionWrapper className='relative z-10 overflow-hidden px-6 py-12 sm:px-8 md:px-12 md:py-24'>
         <motion.div
           className='mx-auto max-w-6xl'
           initial={{ opacity: 0, y: 20 }}

@@ -35,8 +35,8 @@ const FamilySide = ({ info }: { info: typeof FAMILY_INFO.groom }) => (
       </p>
     </div>
     <p className='mt-2 text-sm text-text-muted'>{info.address}</p>
-    <div className='mt-6'>
-      <p className='mt-4 font-script text-4xl text-wine-light sm:text-5xl'>
+    <div className='mt-4 sm:mt-6'>
+      <p className='font-script text-4xl text-wine drop-shadow-sm sm:text-5xl'>
         {info.name}
       </p>
     </div>
@@ -45,8 +45,11 @@ const FamilySide = ({ info }: { info: typeof FAMILY_INFO.groom }) => (
 
 export const FamilySection = () => {
   return (
-    <div className='bg-cream'>
-      <SectionWrapper className='relative px-6 py-16 sm:px-8 md:px-12 md:py-24'>
+    <div className='relative overflow-hidden bg-cream'>
+      {/* Subtle background glow */}
+      <div className='pointer-events-none absolute top-1/2 left-1/2 h-64 w-full max-w-2xl -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold/5 blur-[100px]' />
+
+      <SectionWrapper className='relative z-10 px-6 py-12 sm:px-8 md:px-12 md:py-24'>
         <motion.div
           className='mx-auto max-w-5xl'
           initial={{ opacity: 0, y: 20 }}

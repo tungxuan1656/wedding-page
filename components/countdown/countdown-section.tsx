@@ -53,23 +53,26 @@ export const CountdownSection = () => {
     <div className='bg-cream'>
       <SectionWrapper className='px-6 py-12 sm:px-8 md:px-12'>
         <motion.div
-          className='mx-auto max-w-3xl rounded-4xl border border-wine/10 bg-wine p-8 text-center text-cream shadow-xl shadow-wine/5'
+          className='relative mx-auto max-w-3xl overflow-hidden rounded-4xl border border-gold/30 bg-wine/95 p-6 text-center text-cream shadow-[0_0_40px_rgba(212,175,55,0.15)] backdrop-blur-md sm:p-8'
           initial={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
           whileInView={{ opacity: 1, y: 0 }}>
-          <h2 className='mb-6 text-sm font-semibold tracking-[0.25em] text-gold-light uppercase'>
+          {/* Subtle glowing orb in background */}
+          <div className='pointer-events-none absolute top-0 left-1/2 h-32 w-full max-w-md -translate-x-1/2 rounded-full bg-gold/10 blur-[60px]' />
+
+          <h2 className='relative mb-6 text-xs font-semibold tracking-[0.25em] text-gold-light uppercase sm:mb-8 sm:text-sm'>
             Đếm ngược tới ngày chung đôi
           </h2>
-          <div className='flex justify-center gap-4 sm:gap-8'>
+          <div className='relative flex justify-center gap-3 sm:gap-8'>
             {timeUnits.map((unit) => (
               <div
                 key={unit.label}
-                className='flex min-w-[60px] flex-col items-center sm:min-w-[80px]'>
-                <span className='font-serif text-4xl text-gold sm:text-5xl lg:text-6xl'>
+                className='flex min-w-[50px] flex-col items-center sm:min-w-[80px]'>
+                <span className='font-serif text-4xl text-gold drop-shadow-sm sm:text-5xl lg:text-6xl'>
                   {unit.value.toString().padStart(2, '0')}
                 </span>
-                <span className='mt-2 text-xs tracking-widest text-cream/70 uppercase sm:text-sm'>
+                <span className='mt-2 text-[10px] tracking-widest text-cream/80 uppercase sm:text-sm'>
                   {unit.label}
                 </span>
               </div>
