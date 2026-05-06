@@ -1,0 +1,9 @@
+{
+  "id": "feat-011",
+  "name": "Gift Registry",
+  "description": "Gửi quà cưới section with bank QR codes and account details for guests who cannot attend or wish to send gifts online",
+  "dependencies": ["feat-001"],
+  "status": "in-progress",
+  "evidence": "ExecPlan created at docs/exec-plans/plans/feat-011-gift-registry.md",
+  "updated_at": "2026-05-06"
+}

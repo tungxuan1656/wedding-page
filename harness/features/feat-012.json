@@ -1,0 +1,9 @@
+{
+  "id": "feat-012",
+  "name": "Background Audio Player",
+  "description": "Optional background music player to enhance the emotional storytelling experience, with play/pause controls",
+  "dependencies": ["feat-001"],
+  "status": "in-progress",
+  "evidence": "ExecPlan created at docs/exec-plans/plans/feat-012-background-audio.md",
+  "updated_at": "2026-05-06"
+}

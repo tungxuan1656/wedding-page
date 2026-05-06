@@ -1,0 +1,9 @@
+{
+  "id": "feat-010",
+  "name": "Homepage Floating CTA",
+  "description": "Mobile-first floating action button for 'Xem hành trình' to improve story discovery on mobile devices",
+  "dependencies": ["feat-001", "feat-005"],
+  "status": "in-progress",
+  "evidence": "ExecPlan created at docs/exec-plans/plans/feat-010-homepage-floating-cta.md",
+  "updated_at": "2026-05-06"
+}

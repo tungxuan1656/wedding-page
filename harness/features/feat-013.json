@@ -1,0 +1,9 @@
+{
+  "id": "feat-013",
+  "name": "Footer Thank You",
+  "description": "Elegant footer section with a thank you message from the couple to conclude the homepage experience",
+  "dependencies": ["feat-001"],
+  "status": "in-progress",
+  "evidence": "ExecPlan created at docs/exec-plans/plans/feat-013-footer-thank-you.md",
+  "updated_at": "2026-05-06"
+}
