@@ -10,6 +10,7 @@ Do not move files between folders; update sections below to reflect status.
 
 ## Completed
 
+- **feat-010-homepage-floating-cta** — Homepage Floating CTA (Mobile-first sticky button for 'Xem hành trình'). Plan: `plans/feat-010-homepage-floating-cta.md`
 - **feat-009-accessibility-compliance** — Accessibility Compliance (skip-to-content link, ARIA landmarks, screen reader announcements, focus management, color contrast fixes, semantic HTML improvements). Plan: `plans/feat-009-accessibility-compliance.md`
 - **feat-008-story-animation-polish** — Story Animation Polish (per-image fade-in + gentle zoom reveal animations for story chapter photos, scroll-triggered Framer Motion, reduced-motion support, mobile performance). Plan: `plans/feat-008-story-animation-polish.md`
 - **feat-007-seo-social-sharing** — SEO & Social Sharing (robots.txt, sitemap, Open Graph metadata, Twitter Cards, JSON-LD structured data, OG image placeholder). Plan: `plans/feat-007-seo-social-sharing.md`

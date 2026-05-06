@@ -8,6 +8,7 @@ import { PhotoGallerySection } from '@/components/gallery/mini-gallery-section'
 import { HeroSection } from '@/components/hero'
 import { HERO_COPY } from '@/components/hero/hero-copy'
 import { RsvpSection } from '@/components/rsvp/rsvp-section'
+import { FloatingCta } from '@/components/shared'
 import { getGuestById } from '@/lib/guests'
 
 type HomePageProps = {
@@ -86,6 +87,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
       <PhotoGallerySection />
       <MapSection />
       <RsvpSection />
+      <FloatingCta />
     </main>
   )
 }

@@ -73,6 +73,14 @@
       "dependencies": ["feat-001", "feat-002", "feat-003"],
       "status": "done",
       "evidence": "Skip-to-content link, ARIA landmarks, screen reader announcements, color contrast fixes, semantic HTML improvements, focus management. Verified with pnpm lint, pnpm typecheck, pnpm build, and ./init.sh on 2026-05-05."
+    },
+    {
+      "id": "feat-010",
+      "name": "Homepage Floating CTA",
+      "description": "Mobile-first floating action button for 'Xem hành trình' to improve story discovery on mobile devices",
+      "dependencies": ["feat-001", "feat-005"],
+      "status": "done",
+      "evidence": "Implemented components/shared/floating-cta.tsx using Framer Motion for scroll-based reveal. Fixed to bottom on mobile. Verified with ./init.sh on 2026-05-06."
     }
   ]
 }

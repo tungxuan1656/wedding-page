@@ -14,12 +14,12 @@ Add a floating call-to-action (CTA) button "Xem hành trình" to the homepage th
 - Must include `docs/references/frontend/component-structure-pattern.md`.
 
 ## Progress
-- [ ] Create `FloatingCta` component.
-- [ ] Add it to `app/page.tsx`.
-- [ ] Verify styling on mobile and desktop viewports.
+- [x] Create `FloatingCta` component.
+- [x] Add it to `app/page.tsx`.
+- [x] Verify styling on mobile and desktop viewports.
 
 ## Surprises & Discoveries
-- (To be filled during implementation)
+- Implementation was straightforward. Component is hidden on desktop via `md:hidden` and visible on mobile using `fixed bottom-6`. Build and lint passed via `./init.sh`.
 
 ## Decision Log
 - Decision: Place the button fixed at the bottom on mobile, but hidden on desktop.

@@ -3,7 +3,7 @@
   "name": "Homepage Floating CTA",
   "description": "Mobile-first floating action button for 'Xem hành trình' to improve story discovery on mobile devices",
   "dependencies": ["feat-001", "feat-005"],
-  "status": "in-progress",
-  "evidence": "ExecPlan created at docs/exec-plans/plans/feat-010-homepage-floating-cta.md",
+  "status": "done",
+  "evidence": "Implemented components/shared/floating-cta.tsx using Framer Motion for scroll-based reveal. Fixed to bottom on mobile. Verified with ./init.sh on 2026-05-06.",
   "updated_at": "2026-05-06"
 }
