@@ -28,7 +28,7 @@ const EVENTS = {
       date: 'Thứ Hai',
       fullDate: '08/06/2026',
       lunar: '23/4 âm lịch (Bính Ngọ)',
-      location: 'Tại Tư Gia Nhà Gái',
+      location: 'Nhà văn hoá thôn Gia Lương, xã Đông Anh, TP Hà Nội',
     },
     ceremony: {
       title: 'Lễ Vu Quy',
@@ -40,6 +40,40 @@ const EVENTS = {
     },
   },
 }
+
+const MAPS_URLS = {
+  groom: 'https://maps.app.goo.gl/xBVg6Gs3JPenCaC89',
+  brideParty: 'https://maps.app.goo.gl/MXZQYyDs5KQZcRbK7',
+  brideCeremony: 'https://maps.app.goo.gl/86qSi22YiJLT7XkR6',
+} as const
+
+const LocationLink = ({
+  location,
+  mapsUrl,
+}: {
+  location: string
+  mapsUrl: string
+}) => (
+  <a
+    className='hover:text-gold-dark mt-2 text-sm font-medium text-wine underline transition-colors'
+    href={mapsUrl}
+    rel='noopener noreferrer'
+    target='_blank'>
+    {location}
+    <svg
+      className='mb-1 ml-1.5 inline h-3 w-3 shrink-0'
+      fill='none'
+      stroke='currentColor'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      strokeWidth='2'
+      viewBox='0 0 24 24'>
+      <path d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6' />
+      <polyline points='15 3 21 3 21 9' />
+      <line x1='10' x2='21' y1='14' y2='3' />
+    </svg>
+  </a>
+)
 
 const Calendar = () => {
   const days = ['T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'CN']
@@ -125,9 +159,10 @@ export const EventDetailsSection = () => {
                 <p className='text-sm text-text-muted'>
                   {EVENTS.groom.party.lunar}
                 </p>
-                <p className='mt-2 text-sm font-medium'>
-                  {EVENTS.groom.party.location}
-                </p>
+                <LocationLink
+                  location={EVENTS.groom.party.location}
+                  mapsUrl={MAPS_URLS.groom}
+                />
               </div>
 
               <div className='space-y-2'>
@@ -144,9 +179,10 @@ export const EventDetailsSection = () => {
                 <p className='text-sm text-text-muted'>
                   {EVENTS.groom.ceremony.lunar}
                 </p>
-                <p className='mt-2 text-sm font-medium'>
-                  {EVENTS.groom.ceremony.location}
-                </p>
+                <LocationLink
+                  location={EVENTS.groom.ceremony.location}
+                  mapsUrl={MAPS_URLS.groom}
+                />
               </div>
             </div>
 
@@ -174,9 +210,10 @@ export const EventDetailsSection = () => {
                 <p className='text-sm text-text-muted'>
                   {EVENTS.bride.party.lunar}
                 </p>
-                <p className='mt-2 text-sm font-medium'>
-                  {EVENTS.bride.party.location}
-                </p>
+                <LocationLink
+                  location={EVENTS.bride.party.location}
+                  mapsUrl={MAPS_URLS.brideParty}
+                />
               </div>
 
               <div className='space-y-2'>
@@ -193,9 +230,10 @@ export const EventDetailsSection = () => {
                 <p className='text-sm text-text-muted'>
                   {EVENTS.bride.ceremony.lunar}
                 </p>
-                <p className='mt-2 text-sm font-medium'>
-                  {EVENTS.bride.ceremony.location}
-                </p>
+                <LocationLink
+                  location={EVENTS.bride.ceremony.location}
+                  mapsUrl={MAPS_URLS.brideCeremony}
+                />
               </div>
             </div>
           </div>

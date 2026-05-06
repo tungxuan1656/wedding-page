@@ -1,7 +1,7 @@
 import type { StoryChapter } from './story-types'
 
 export const STORY_COPY = {
-  eyebrow: 'Hành trình 10 năm',
+  eyebrow: 'Hành trình 11 năm',
   title: 'Xuân Tùng & Vân Anh',
   intro:
     'Từ những ngày đầu gặp gỡ cho đến khi quyết định cùng nhau đi hết quãng đời còn lại — đây là câu chuyện của chúng mình.',
@@ -100,5 +100,14 @@ export const STORY_CHAPTERS: StoryChapter[] = [
       'Nội dung chi tiết sẽ được cập nhật sau khi có thông tin từ cô dâu chú rể.',
     ],
     imageSlotCount: 4,
+  },
+  {
+    year: 2026,
+    title: 'Ngày cưới',
+    paragraphs: [
+      'Và cuối cùng, sau 10 năm yêu thương, chúng mình đã chính thức về chung một nhà. Khoảnh khắc khoác lên mình bộ váy cưới và bộ vest, nhìn nhau và nói "Em đồng ý" — đó là ngày hạnh phúc nhất của cuộc đời.',
+      'Nội dung chi tiết sẽ được cập nhật sau khi có thông tin từ cô dâu chú rể.',
+    ],
+    imageSlotCount: 3,
   },
 ]

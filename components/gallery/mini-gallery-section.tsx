@@ -11,61 +11,61 @@ const photos = [
   {
     id: 1,
     src: '/images/og-image.png',
-    ratio: 'aspect-[4/5]',
+    ratio: 'aspect-4/5',
     alt: 'Ảnh cưới 1',
   },
   {
     id: 2,
     src: '/images/og-image.png',
-    ratio: 'aspect-[1/1]',
+    ratio: 'aspect-square',
     alt: 'Ảnh cưới 2',
   },
   {
     id: 3,
     src: '/images/og-image.png',
-    ratio: 'aspect-[4/5]',
+    ratio: 'aspect-4/5',
     alt: 'Ảnh cưới 3',
   },
   {
     id: 4,
     src: '/images/og-image.png',
-    ratio: 'aspect-[3/2]',
+    ratio: 'aspect-3/2',
     alt: 'Ảnh cưới 4',
   },
   {
     id: 5,
     src: '/images/og-image.png',
-    ratio: 'aspect-[1/1]',
+    ratio: 'aspect-square',
     alt: 'Ảnh cưới 5',
   },
   {
     id: 6,
     src: '/images/og-image.png',
-    ratio: 'aspect-[4/5]',
+    ratio: 'aspect-4/5',
     alt: 'Ảnh cưới 6',
   },
   {
     id: 7,
     src: '/images/og-image.png',
-    ratio: 'aspect-[1/1]',
+    ratio: 'aspect-square',
     alt: 'Ảnh cưới 7',
   },
   {
     id: 8,
     src: '/images/og-image.png',
-    ratio: 'aspect-[3/4]',
+    ratio: 'aspect-3/4',
     alt: 'Ảnh cưới 8',
   },
   {
     id: 9,
     src: '/images/og-image.png',
-    ratio: 'aspect-[4/5]',
+    ratio: 'aspect-4/5',
     alt: 'Ảnh cưới 9',
   },
   {
     id: 10,
     src: '/images/og-image.png',
-    ratio: 'aspect-[1/1]',
+    ratio: 'aspect-square',
     alt: 'Ảnh cưới 10',
   },
 ]
@@ -83,7 +83,7 @@ export const PhotoGallerySection = () => {
   return (
     <div className='relative overflow-hidden bg-wine text-cream'>
       {/* Background glow effects */}
-      <div className='absolute top-0 left-0 h-64 w-full bg-gradient-to-b from-wine-dark to-transparent opacity-50' />
+      <div className='absolute top-0 left-0 h-64 w-full bg-linear-to-b from-wine-dark to-transparent opacity-50' />
       <div className='pointer-events-none absolute right-0 bottom-0 h-96 w-96 rounded-full bg-gold/10 blur-[120px]' />
 
       <SectionWrapper className='relative z-10 overflow-hidden px-6 py-12 sm:px-8 md:px-12 md:py-24'>
@@ -129,7 +129,7 @@ export const PhotoGallerySection = () => {
                     className='object-cover opacity-85 transition-all duration-700 group-hover:scale-110 group-hover:rotate-1 group-hover:opacity-100'
                     src={photo.src}
                   />
-                  <div className='absolute inset-0 bg-gradient-to-t from-wine-dark/40 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100' />
+                  <div className='absolute inset-0 bg-linear-to-t from-wine-dark/40 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100' />
                 </div>
               </motion.div>
             ))}

@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 
-import { SectionWrapper } from '@/components/shared'
+import { MapPinIcon, SectionWrapper } from '@/components/shared'
 
 export const MapSection = () => {
   return (
@@ -16,20 +16,7 @@ export const MapSection = () => {
           whileInView={{ opacity: 1, y: 0 }}>
           <div className='mb-10 text-center'>
             <div className='mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-wine/10'>
-              <svg
-                className='text-wine'
-                fill='none'
-                height='24'
-                stroke='currentColor'
-                strokeLinecap='round'
-                strokeLinejoin='round'
-                strokeWidth='2'
-                viewBox='0 0 24 24'
-                width='24'
-                xmlns='http://www.w3.org/2000/svg'>
-                <path d='M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z' />
-                <circle cx='12' cy='10' r='3' />
-              </svg>
+              <MapPinIcon className='text-wine' />
             </div>
             <h2 className='mb-4 font-script text-5xl text-wine drop-shadow-sm'>
               Bản đồ chỉ đường
@@ -39,7 +26,7 @@ export const MapSection = () => {
             </p>
           </div>
 
-          <div className='relative h-[400px] w-full overflow-hidden rounded-3xl border-4 border-white shadow-[0_0_30px_rgba(212,175,55,0.15)] md:h-[500px]'>
+          <div className='relative h-100 w-full overflow-hidden rounded-3xl border-4 border-white shadow-[0_0_30px_rgba(212,175,55,0.15)] md:h-125'>
             <iframe
               allowFullScreen={true}
               height='100%'
@@ -55,7 +42,7 @@ export const MapSection = () => {
           <div className='mt-8 text-center'>
             <a
               className='inline-flex min-h-12 items-center justify-center rounded-full border border-gold bg-wine px-8 py-3 text-sm font-semibold text-cream shadow-lg shadow-wine/20 transition-all hover:bg-gold hover:text-wine focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold'
-              href='https://maps.app.goo.gl/YourMapLinkHere'
+              href='https://maps.app.goo.gl/xBVg6Gs3JPenCaC89'
               rel='noopener noreferrer'
               target='_blank'>
               Mở trong Google Maps
