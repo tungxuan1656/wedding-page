@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 
 import { CountdownSection } from '@/components/countdown/countdown-section'
 import { EventDetailsSection } from '@/components/event/event-details-section'
+import { GiftRegistrySection } from '@/components/event/gift-registry-section'
 import { MapSection } from '@/components/event/map-section'
 import { FamilySection } from '@/components/family/family-section'
 import { PhotoGallerySection } from '@/components/gallery/mini-gallery-section'
@@ -86,6 +87,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
       <EventDetailsSection />
       <PhotoGallerySection />
       <MapSection />
+      <GiftRegistrySection />
       <RsvpSection />
       <FloatingCta />
     </main>

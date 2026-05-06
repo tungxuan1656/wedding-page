@@ -14,12 +14,13 @@ Add a "Gửi Quà Cưới" (Gift Registry) section to the homepage. This allows 
 - Must follow the project's elegant design system.
 
 ## Progress
-- [ ] Create `GiftRegistrySection` component.
-- [ ] Add it to `app/page.tsx` (above or below RSVP).
-- [ ] Verify layout on mobile and desktop.
+- [x] Create `GiftRegistrySection` component.
+- [x] Add it to `app/page.tsx` (above or below RSVP).
+- [x] Verify layout on mobile and desktop.
 
 ## Surprises & Discoveries
-- (To be filled during implementation)
+- `AccountCard` sub-component handles copy-to-clipboard with visual feedback (✓ icon for 2s).
+- QR code slots use SVG placeholder until real bank QR images are dropped into `/public/images/qr-groom.png` and `/public/images/qr-bride.png`.
 
 ## Decision Log
 - Decision: Use static images for QR codes instead of generating them client-side.

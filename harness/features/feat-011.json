@@ -3,7 +3,7 @@
   "name": "Gift Registry",
   "description": "Gửi quà cưới section with bank QR codes and account details for guests who cannot attend or wish to send gifts online",
   "dependencies": ["feat-001"],
-  "status": "in-progress",
-  "evidence": "ExecPlan created at docs/exec-plans/plans/feat-011-gift-registry.md",
+  "status": "done",
+  "evidence": "Implemented components/event/gift-registry-section.tsx with two-column layout (desktop), stacked (mobile), copy-to-clipboard account numbers. Verified with pnpm build on 2026-05-06.",
   "updated_at": "2026-05-06"
 }
