@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 
 const AUDIO_SRC =
   'https://assets.cinelove.me/mp3/3a627e88-dbcc-46bd-8b9d-160e5fe75e14.mp3'
-const VOLUME = 0.2
+const VOLUME = 0.15
 
 export const AudioPlayer = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null)
@@ -72,7 +72,7 @@ export const AudioPlayer = () => {
       type='button'
       onClick={toggle}>
       <svg
-        className={`h-5 w-5 ${isPlaying ? 'animate-spin' : ''}`}
+        className={`h-5 w-5 ${isPlaying ? 'animate-spin-slow' : ''}`}
         fill='currentColor'
         viewBox='0 0 24 24'>
         <path d='M12 3v10.55A4 4 0 1014 17V7h4V3h-6z' />
