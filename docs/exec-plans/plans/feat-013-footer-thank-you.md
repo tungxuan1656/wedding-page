@@ -13,9 +13,9 @@ Add an elegant footer section to the bottom of the page containing a short thank
 - Must include a sincere thank you message and the couple's names.
 
 ## Progress
-- [ ] Create `Footer` component.
-- [ ] Add it to `app/layout.tsx` or `app/page.tsx`.
-- [ ] Verify visual appearance.
+- [x] Create `Footer` component.
+- [x] Add it to `app/layout.tsx` or `app/page.tsx`.
+- [x] Verify visual appearance.
 
 ## Surprises & Discoveries
 - (To be filled during implementation)

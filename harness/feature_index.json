@@ -89,6 +89,14 @@
       "dependencies": ["feat-001"],
       "status": "done",
       "evidence": "Implemented components/event/gift-registry-section.tsx with two-column layout (desktop), stacked (mobile), copy-to-clipboard account numbers. Verified with pnpm build on 2026-05-06."
+    },
+    {
+      "id": "feat-013",
+      "name": "Footer Thank You",
+      "description": "Elegant footer section with a thank you message from the couple to conclude the homepage experience",
+      "dependencies": ["feat-001"],
+      "status": "done",
+      "evidence": "Implemented components/shared/footer.tsx with couple names, date, and thank you message in wine theme. Verified with pnpm build on 2026-05-06."
     }
   ]
 }
