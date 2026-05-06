@@ -9,7 +9,8 @@
     "lint": "eslint",
     "lint:fix": "eslint --fix",
     "typecheck": "tsc --noEmit",
-    "prepare": "husky"
+    "prepare": "husky",
+    "fetch-guests": "tsx scripts/fetch-guests.ts"
   },
   "lint-staged": {
     "*.{ts,tsx}": [

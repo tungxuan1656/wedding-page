@@ -4,18 +4,63 @@ export type RsvpFormData = {
   eventThanhHon: boolean
 }
 
-// Outgoing POST body matches Apps Script contract
-export type RsvpPayload = RsvpFormData
+// Outgoing POST body — includes optional slug for guest identification
+export type RsvpPayload = RsvpFormData & { slug?: string }
 
 export type RsvpApiResponse = {
   status: 'success' | 'error'
   message?: string
 }
 
+export type RsvpGetData = {
+  name: string
+  eventDaiKhach: boolean
+  eventThanhHon: boolean
+  submittedAt: string
+}
+
+export type RsvpGetResponse = {
+  status: 'success' | 'error'
+  data: RsvpGetData | null
+  message?: string
+}
+
+// Fetch the last RSVP submission for a given guest slug.
+// Returns null data if no prior submission exists.
+// Silently returns error shape on any network/parse failure — callers should treat as no prior RSVP.
+export async function getRsvp(slug: string): Promise<RsvpGetResponse> {
+  const url = process.env.NEXT_PUBLIC_RSVP_SCRIPT_URL
+  if (!url) {
+    return { status: 'error', data: null, message: 'Endpoint not configured' }
+  }
+
+  try {
+    const res = await fetch(`${url}?slug=${encodeURIComponent(slug)}`)
+    if (!res.ok) {
+      return { status: 'error', data: null }
+    }
+
+    let json: RsvpGetResponse
+    try {
+      json = (await res.json()) as RsvpGetResponse
+    } catch {
+      return { status: 'error', data: null }
+    }
+
+    return json
+  } catch {
+    return { status: 'error', data: null }
+  }
+}
+
 export async function submitRsvp(
   formData: RsvpFormData,
+  slug?: string,
 ): Promise<RsvpApiResponse> {
-  const url = process.env.NEXT_PUBLIC_APPS_SCRIPT_URL
+  // Prefer slug-aware endpoint; fall back to legacy POST-only endpoint
+  const url =
+    process.env.NEXT_PUBLIC_RSVP_SCRIPT_URL ||
+    process.env.NEXT_PUBLIC_APPS_SCRIPT_URL
 
   if (!url) {
     return {
@@ -28,6 +73,7 @@ export async function submitRsvp(
     name: formData.name.trim(),
     eventDaiKhach: formData.eventDaiKhach,
     eventThanhHon: formData.eventThanhHon,
+    ...(slug ? { slug } : {}),
   }
 
   try {

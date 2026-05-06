@@ -1,9 +1,11 @@
-'use client'
-
 import { RsvpForm } from '@/components/rsvp/rsvp-form'
 import { SectionWrapper } from '@/components/shared'
 
-export const RsvpSection = () => {
+type RsvpSectionProps = {
+  slug?: string
+}
+
+export const RsvpSection = ({ slug }: RsvpSectionProps) => {
   return (
     <div className='bg-cream'>
       <SectionWrapper
@@ -24,7 +26,7 @@ export const RsvpSection = () => {
                 cách chu đáo nhất.
               </p>
             </div>
-            <RsvpForm />
+            <RsvpForm slug={slug} />
           </div>
         </div>
       </SectionWrapper>

@@ -5,6 +5,7 @@ Do not move files between folders; update sections below to reflect status.
 
 ## Active
 
+- **feat-014-guest-sheet-rsvp-api** — Guest Sheet + RSVP API with Slug (build-time guest fetch + slug-aware GET/POST RSVP). Plan: `plans/feat-014-guest-sheet-rsvp-api.md`
 
 ## Completed
 

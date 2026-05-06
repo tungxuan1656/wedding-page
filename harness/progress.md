@@ -1,6 +1,31 @@
 # Progress Index
 
-## 2026-05-06 — feat-004 RSVP System Implementation + feat-005 Harness Close
+## 2026-05-06 — feat-014 Guest Sheet + RSVP API (GET/POST with Slug)
+
+- **Session**: feat-014-implement
+- **Status**: in-progress (pending AppScript deployment + env vars)
+- **What was done**:
+  - Created `docs/product-specs/feat-014-guest-sheet-rsvp-api.md` — full spec with both AppScript snippets, sheet layouts, env vars, deployment steps, and workflow.
+  - Created `scripts/fetch-guests.ts` — build-time script: reads `GUEST_SCRIPT_URL` from env (loads `.env.local` automatically), fetches guest AppScript GET, writes `lib/guests-generated.json`. Exits with error if env var missing.
+  - Created `lib/guests-generated.json` — initial sample matching existing guest records (committed to repo so Vercel builds without env var).
+  - Updated `lib/guests.ts` — now imports `guests-generated.json`; personalised messages remain as `GUEST_MESSAGES` const in code; all exports (`GuestId`, `GuestData`, `GuestMap`, `getGuestById`) unchanged.
+  - Updated `lib/api.ts` — added `RsvpGetResponse`, `RsvpGetData` types and `getRsvp(slug)` function; `submitRsvp` now accepts optional `slug` param and includes it in POST payload; prefers `NEXT_PUBLIC_RSVP_SCRIPT_URL`, falls back to `NEXT_PUBLIC_APPS_SCRIPT_URL`.
+  - Updated `components/rsvp/rsvp-form.tsx` — added `slug?: string` prop; `useEffect` on mount fetches prior RSVP via `getRsvp(slug)` and pre-fills form; pulse animation on name input during fetch; GET failure silent; slug forwarded to `submitRsvp`.
+  - Updated `components/rsvp/rsvp-section.tsx` — removed `'use client'` (no longer needed); accepts and forwards `slug?: string`.
+  - Updated `app/page.tsx` — extracts `slug` from `searchParams.g`, passes to `<RsvpSection slug={slug}>`.
+  - Added `"fetch-guests": "tsx scripts/fetch-guests.ts"` to `package.json` scripts.
+  - Updated `.env.example` with `GUEST_SCRIPT_URL` and `NEXT_PUBLIC_RSVP_SCRIPT_URL`.
+  - Created `harness/features/feat-014-guest-sheet-rsvp-api.json`, updated `harness/feature_index.json`, `docs/exec-plans/index.md`.
+  - Ran `pnpm lint && pnpm typecheck && pnpm build` — all pass, exit code 0.
+- **Blockers**: AppScript deployments not yet set up (pending user action). `GUEST_SCRIPT_URL` and `NEXT_PUBLIC_RSVP_SCRIPT_URL` not yet in Vercel env.
+- **Next steps**:
+  1. User creates Google Sheets: `guests` (cols: name, slug, image) + `rsvp` (cols: submittedAt, slug, name, eventDaiKhach, eventThanhHon).
+  2. User deploys AppScript 1 (guest GET) → sets `GUEST_SCRIPT_URL` in `.env.local` → runs `pnpm fetch-guests` → commits `lib/guests-generated.json`.
+  3. User deploys AppScript 2 (rsvp GET+POST) → sets `NEXT_PUBLIC_RSVP_SCRIPT_URL` in Vercel + `.env.local`.
+  4. Push → Vercel deploys → test `/?g=<slug>` pre-fill and RSVP submission end-to-end.
+  5. Mark feat-014 as done in harness.
+
+
 
 - **Session**: feat-004-implement-feat-005-close
 - **Status**: completed

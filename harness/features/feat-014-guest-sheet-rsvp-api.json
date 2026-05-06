@@ -1,0 +1,19 @@
+{
+  "id": "feat-014",
+  "name": "Guest Sheet + RSVP API (GET/POST with Slug)",
+  "description": "Migrate guest data from static lib/guests.ts to Google Sheets with a build-time fetch script. Add slug-aware RSVP AppScript (GET last response by slug + POST append with slug). RSVP form pre-fills for returning guests who visit via personalized link.",
+  "dependencies": ["feat-003", "feat-004"],
+  "status": "in-progress",
+  "plan": "docs/exec-plans/plans/feat-014-guest-sheet-rsvp-api.md",
+  "acceptanceCriteria": [
+    "pnpm fetch-guests writes lib/guests-generated.json from GUEST_SCRIPT_URL",
+    "pnpm fetch-guests fails with clear error when GUEST_SCRIPT_URL is unset",
+    "lib/guests.ts exports same GuestMap/getGuestById API as before",
+    "/?g=<slug> with prior RSVP: form pre-filled with last submission",
+    "/?g=<slug> with no prior RSVP: form empty, works normally",
+    "/ (no slug): form empty, POST has no slug field",
+    "GET failure silently ignored, form stays empty",
+    "pnpm lint && pnpm typecheck && pnpm build all pass"
+  ],
+  "notes": "messages per guest remain hardcoded in GUEST_MESSAGES in lib/guests.ts. Commit lib/guests-generated.json to repo so Vercel builds without needing GUEST_SCRIPT_URL at build time."
+}

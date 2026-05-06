@@ -1,15 +1,19 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import type { RsvpFormData } from '@/lib/api'
-import { submitRsvp } from '@/lib/api'
+import { getRsvp, submitRsvp } from '@/lib/api'
 
 type SubmitState = 'idle' | 'submitting' | 'success' | 'error'
 
 type FieldErrors = {
   name?: string
   events?: string
+}
+
+type RsvpFormProps = {
+  slug?: string
 }
 
 const COPY = {
@@ -45,11 +49,42 @@ function validate(form: RsvpFormData): FieldErrors {
   return errors
 }
 
-export function RsvpForm() {
+export function RsvpForm({ slug }: RsvpFormProps) {
   const [form, setForm] = useState<RsvpFormData>(INITIAL_FORM)
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({})
   const [submitState, setSubmitState] = useState<SubmitState>('idle')
   const [errorMessage, setErrorMessage] = useState<string>('')
+  const [prefilling, setPrefilling] = useState(false)
+
+  // Pre-fill form from last RSVP submission for this guest slug
+  useEffect(() => {
+    if (!slug) return
+
+    let cancelled = false
+    setPrefilling(true)
+
+    getRsvp(slug)
+      .then((res) => {
+        if (cancelled) return
+        if (res.status === 'success' && res.data) {
+          setForm({
+            name: res.data.name,
+            eventDaiKhach: res.data.eventDaiKhach,
+            eventThanhHon: res.data.eventThanhHon,
+          })
+        }
+      })
+      .catch(() => {
+        // Silently ignore — form stays empty
+      })
+      .finally(() => {
+        if (!cancelled) setPrefilling(false)
+      })
+
+    return () => {
+      cancelled = true
+    }
+  }, [slug])
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target
@@ -77,7 +112,7 @@ export function RsvpForm() {
     }
     setSubmitState('submitting')
 
-    const result = await submitRsvp(form)
+    const result = await submitRsvp(form, slug)
     if (result.status === 'success') {
       setSubmitState('success')
     } else {
@@ -126,19 +161,21 @@ export function RsvpForm() {
         </label>
         <div className='relative'>
           <input
+            aria-busy={prefilling}
             aria-describedby={fieldErrors.name ? 'rsvp-name-error' : undefined}
             aria-invalid={!!fieldErrors.name}
             autoComplete='name'
             className={[
               'w-full rounded-2xl border-2 px-5 py-4 text-sm font-medium text-text-primary transition-all outline-none',
               'placeholder:font-normal placeholder:text-text-muted/50',
+              prefilling ? 'animate-pulse bg-beige/20' : '',
               fieldErrors.name
                 ? 'border-red-100 bg-red-50/30 focus:border-red-200'
                 : 'border-beige/40 bg-cream/20 focus:border-gold/50 focus:bg-white focus:shadow-xl focus:shadow-wine/5',
             ].join(' ')}
             id='rsvp-name'
             name='name'
-            placeholder={COPY.namePlaceholder}
+            placeholder={prefilling ? 'Đang tải...' : COPY.namePlaceholder}
             type='text'
             value={form.name}
             onChange={handleChange}

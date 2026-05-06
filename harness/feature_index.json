@@ -105,6 +105,14 @@
       "dependencies": ["feat-001"],
       "status": "done",
       "evidence": "Implemented components/shared/audio-player.tsx in root layout. Volume 0.2, top-right floating button with spinning music note icon. Autoplay attempted on mount. Verified with ./init.sh on 2026-05-06."
+    },
+    {
+      "id": "feat-014",
+      "name": "Guest Sheet + RSVP API (GET/POST with Slug)",
+      "description": "Migrate guest data to Google Sheets with build-time fetch script. Slug-aware RSVP AppScript (GET + POST). RSVP form pre-fills for returning guests.",
+      "dependencies": ["feat-003", "feat-004"],
+      "status": "in-progress",
+      "plan": "docs/exec-plans/plans/feat-014-guest-sheet-rsvp-api.md"
     }
   ]
 }

@@ -53,6 +53,10 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function HomePage({ searchParams }: HomePageProps) {
   const resolvedSearchParams = await searchParams
   const guest = getGuestById(resolvedSearchParams?.g)
+  const slug =
+    typeof resolvedSearchParams?.g === 'string'
+      ? resolvedSearchParams.g.trim().toLowerCase()
+      : undefined
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -88,7 +92,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
       <PhotoGallerySection />
       <MapSection />
       <GiftRegistrySection />
-      <RsvpSection />
+      <RsvpSection slug={slug} />
       <Footer />
       <FloatingCta />
     </main>
