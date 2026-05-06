@@ -11,8 +11,8 @@ export const RsvpSection = () => {
         className='px-6 py-12 sm:px-8 md:px-12 md:py-24'
         id='rsvp'>
         <div className='mx-auto max-w-lg overflow-hidden rounded-3xl border border-beige/60 bg-white shadow-2xl shadow-wine/5 md:rounded-[2.5rem]'>
-          <div className='bg-linear-to-b from-beige/20 to-transparent p-8 md:p-12'>
-            <div className='mb-8 text-center'>
+          <div className='bg-linear-to-b from-beige/20 to-transparent p-6 md:p-8'>
+            <div className='mb-5 text-center'>
               <h2
                 className='font-serif text-3xl font-medium tracking-tight text-wine'
                 id='rsvp-heading'>
