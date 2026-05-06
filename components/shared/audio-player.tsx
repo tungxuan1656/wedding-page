@@ -16,13 +16,41 @@ export const AudioPlayer = () => {
     audio.volume = VOLUME
     audioRef.current = audio
 
+    const playAudio = () => {
+      audio
+        .play()
+        .then(() => {
+          setIsPlaying(true)
+          // Remove listener once played
+          window.removeEventListener('click', playAudio)
+          window.removeEventListener('touchstart', playAudio)
+          window.removeEventListener('scroll', playAudio)
+        })
+        .catch(() => {
+          // Still blocked
+        })
+    }
+
+    // Try to autoplay immediately
+    playAudio()
+
+    // Add listeners for interaction to unlock audio
+    window.addEventListener('click', playAudio)
+    window.addEventListener('touchstart', playAudio)
+    window.addEventListener('scroll', playAudio)
+
     return () => {
       audio.pause()
       audio.src = ''
+      window.removeEventListener('click', playAudio)
+      window.removeEventListener('touchstart', playAudio)
+      window.removeEventListener('scroll', playAudio)
     }
   }, [])
 
-  const toggle = () => {
+  const toggle = (e: React.MouseEvent) => {
+    e.stopPropagation() // Prevent triggering the window listener
+
     const audio = audioRef.current
     if (!audio) return
 
@@ -40,20 +68,15 @@ export const AudioPlayer = () => {
   return (
     <button
       aria-label={isPlaying ? 'Tắt nhạc nền' : 'Bật nhạc nền'}
-      className='fixed top-6 right-4 z-50 flex h-10 w-10 items-center justify-center rounded-full border border-gold/30 bg-wine/80 text-cream shadow-lg backdrop-blur-sm transition-all hover:bg-wine active:scale-95 md:top-8 md:right-8'
+      className={`fixed top-6 right-4 z-50 flex h-10 w-10 items-center justify-center rounded-full border border-gold/30 bg-wine/80 text-cream shadow-lg backdrop-blur-sm transition-all hover:bg-wine active:scale-95 md:top-8 md:right-8`}
       type='button'
       onClick={toggle}>
-      {isPlaying ? (
-        // Pause icon
-        <svg className='h-5 w-5' fill='currentColor' viewBox='0 0 24 24'>
-          <path d='M6 19h4V5H6v14zm8-14v14h4V5h-4z' />
-        </svg>
-      ) : (
-        // Music note icon
-        <svg className='h-5 w-5' fill='currentColor' viewBox='0 0 24 24'>
-          <path d='M12 3v10.55A4 4 0 1014 17V7h4V3h-6z' />
-        </svg>
-      )}
+      <svg
+        className={`h-5 w-5 ${isPlaying ? 'animate-spin' : ''}`}
+        fill='currentColor'
+        viewBox='0 0 24 24'>
+        <path d='M12 3v10.55A4 4 0 1014 17V7h4V3h-6z' />
+      </svg>
     </button>
   )
 }

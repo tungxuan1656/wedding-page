@@ -8,7 +8,7 @@
   - **feat-010 (Floating CTA)**: Implemented `components/shared/floating-cta.tsx` for mobile sticky navigation.
   - **feat-011 (Gift Registry)**: Implemented `components/event/gift-registry-section.tsx` with bank QR placeholders and copy-to-clipboard functionality.
   - **feat-013 (Footer Thank You)**: Implemented `components/shared/footer.tsx` with branded thank you message.
-  - **feat-012 (Background Audio)**: Implemented `components/shared/audio-player.tsx` with 0.25 volume, persistent across route changes, and a floating button in the top right.
+  - **feat-012 (Background Audio)**: Implemented `components/shared/audio-player.tsx` with 0.2 volume, persistent across route changes, and a floating button in the top right. Added spinning music note animation when playing and autoplay logic.
   - Integrated all components into `app/page.tsx` and `app/layout.tsx`.
   - Updated harness state and execution plans.
   - Verified with `./init.sh` (lint, typecheck, build pass).
