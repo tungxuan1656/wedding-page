@@ -9,48 +9,23 @@ const VOLUME = 0.15
 export const AudioPlayer = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null)
   const [isPlaying, setIsPlaying] = useState(false)
+  const unmutedRef = useRef(false)
 
-  useEffect(() => {
-    const audio = new Audio(AUDIO_SRC)
-    audio.loop = true
-    audio.volume = VOLUME
-    audioRef.current = audio
+  // Unmute after browser allows muted autoplay
+  const handlePlay = () => {
+    if (unmutedRef.current) return
+    unmutedRef.current = true
 
-    const playAudio = () => {
-      audio
-        .play()
-        .then(() => {
-          setIsPlaying(true)
-          // Remove listener once played
-          window.removeEventListener('click', playAudio)
-          window.removeEventListener('touchstart', playAudio)
-          window.removeEventListener('scroll', playAudio)
-        })
-        .catch(() => {
-          // Still blocked
-        })
-    }
+    setTimeout(() => {
+      const audio = audioRef.current
+      if (!audio) return
+      audio.muted = false
+      audio.volume = VOLUME
+      setIsPlaying(true)
+    }, 1000)
+  }
 
-    // Try to autoplay immediately
-    playAudio()
-
-    // Add listeners for interaction to unlock audio
-    window.addEventListener('click', playAudio)
-    window.addEventListener('touchstart', playAudio)
-    window.addEventListener('scroll', playAudio)
-
-    return () => {
-      audio.pause()
-      audio.src = ''
-      window.removeEventListener('click', playAudio)
-      window.removeEventListener('touchstart', playAudio)
-      window.removeEventListener('scroll', playAudio)
-    }
-  }, [])
-
-  const toggle = (e: React.MouseEvent) => {
-    e.stopPropagation() // Prevent triggering the window listener
-
+  const toggle = () => {
     const audio = audioRef.current
     if (!audio) return
 
@@ -58,6 +33,9 @@ export const AudioPlayer = () => {
       audio.pause()
       setIsPlaying(false)
     } else {
+      audio.muted = false
+      audio.volume = VOLUME
+
       audio
         .play()
         .then(() => setIsPlaying(true))
@@ -65,18 +43,39 @@ export const AudioPlayer = () => {
     }
   }
 
+  // Sync state if audio stops/ends unexpectedly
+  useEffect(() => {
+    const audio = audioRef.current
+    if (!audio) return
+
+    const onPause = () => setIsPlaying(false)
+    audio.addEventListener('pause', onPause)
+
+    return () => audio.removeEventListener('pause', onPause)
+  }, [])
+
   return (
-    <button
-      aria-label={isPlaying ? 'Tắt nhạc nền' : 'Bật nhạc nền'}
-      className={`fixed top-6 right-4 z-50 flex h-10 w-10 items-center justify-center rounded-full border border-gold/30 bg-wine/80 text-cream shadow-lg backdrop-blur-sm transition-all hover:bg-wine active:scale-95 md:top-8 md:right-8`}
-      type='button'
-      onClick={toggle}>
-      <svg
-        className={`h-5 w-5 ${isPlaying ? 'animate-spin-slow' : ''}`}
-        fill='currentColor'
-        viewBox='0 0 24 24'>
-        <path d='M12 3v10.55A4 4 0 1014 17V7h4V3h-6z' />
-      </svg>
-    </button>
+    <>
+      <audio
+        ref={audioRef}
+        autoPlay
+        loop
+        muted
+        src={AUDIO_SRC}
+        onPlay={handlePlay}
+      />
+      <button
+        aria-label={isPlaying ? 'Tắt nhạc nền' : 'Bật nhạc nền'}
+        className='fixed top-6 right-4 z-50 flex h-10 w-10 items-center justify-center rounded-full border border-gold/30 bg-wine/80 text-cream shadow-lg backdrop-blur-sm transition-all hover:bg-wine active:scale-95 md:top-8 md:right-8'
+        type='button'
+        onClick={toggle}>
+        <svg
+          className={`h-5 w-5 ${isPlaying ? 'animate-spin-slow' : ''}`}
+          fill='currentColor'
+          viewBox='0 0 24 24'>
+          <path d='M12 3v10.55A4 4 0 1014 17V7h4V3h-6z' />
+        </svg>
+      </button>
+    </>
   )
 }
