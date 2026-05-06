@@ -3,8 +3,8 @@
   "name": "RSVP System",
   "description": "RSVP form with name field and 2 event attendance checkboxes, submitting to Google Apps Script, with success/error feedback. Google Sheets as data store",
   "dependencies": ["feat-001"],
-  "status": "in-progress",
-  "evidence": "ExecPlan created at docs/exec-plans/plans/feat-004-rsvp-system.md on 2026-05-05. Implementation pending.",
+  "status": "done",
+  "evidence": "Implemented lib/api.ts (submitRsvp, RsvpFormData, RsvpPayload, RsvpApiResponse with env guard and defensive JSON parse), components/rsvp/rsvp-form.tsx (client component: name field, 2 event checkboxes, client validation, idle/submitting/success/error states, retry on error), components/rsvp/index.ts public barrel. Replaced placeholder in rsvp-section.tsx with real RsvpForm. Apps Script contract and sheet column mapping documented in docs/product-specs/feat-004-rsvp-system.md. Verified pnpm lint --fix, pnpm typecheck, pnpm build on 2026-05-06.",
   "plan": "docs/exec-plans/plans/feat-004-rsvp-system.md",
   "acceptanceCriteria": [
     "RSVP form with fields: Họ tên (name) + 2 event checkboxes",

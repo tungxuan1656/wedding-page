@@ -1,6 +1,6 @@
 'use client'
 
-import { HERO_COPY } from '@/components/hero/hero-copy'
+import { RsvpForm } from '@/components/rsvp/rsvp-form'
 import { SectionWrapper } from '@/components/shared'
 
 export const RsvpSection = () => {
@@ -8,17 +8,24 @@ export const RsvpSection = () => {
     <div className='bg-cream'>
       <SectionWrapper
         aria-labelledby='rsvp-heading'
-        className='px-6 py-12 sm:px-8 md:px-12 md:py-20'
+        className='px-6 py-12 sm:px-8 md:px-12 md:py-24'
         id='rsvp'>
-        <div className='mx-auto max-w-4xl rounded-4xl border border-beige/60 bg-white/90 p-8 text-center shadow-xl shadow-wine/5 transition-all duration-300 hover:shadow-wine/10 md:p-12'>
-          <h2
-            className='text-sm font-semibold tracking-[0.25em] text-wine-light uppercase'
-            id='rsvp-heading'>
-            {HERO_COPY.ctaRsvp}
-          </h2>
-          <p className='mx-auto mt-4 max-w-2xl text-base leading-7 text-text-secondary'>
-            {HERO_COPY.rsvpPlaceholder}
-          </p>
+        <div className='mx-auto max-w-lg overflow-hidden rounded-3xl border border-beige/60 bg-white shadow-2xl shadow-wine/5 md:rounded-[2.5rem]'>
+          <div className='bg-linear-to-b from-beige/20 to-transparent p-8 md:p-12'>
+            <div className='mb-8 text-center'>
+              <h2
+                className='font-serif text-3xl font-medium tracking-tight text-wine'
+                id='rsvp-heading'>
+                Xác nhận tham dự
+              </h2>
+              <div className='mx-auto mt-3 h-0.5 w-12 bg-gold/40' />
+              <p className='mt-4 text-sm leading-relaxed text-text-muted'>
+                Vui lòng điền thông tin để chúng mình chuẩn bị đón tiếp bạn một
+                cách chu đáo nhất.
+              </p>
+            </div>
+            <RsvpForm />
+          </div>
         </div>
       </SectionWrapper>
     </div>

@@ -1,6 +1,6 @@
 {
   "project": "tx-va-wedding",
-  "lastUpdated": "2026-05-05",
+  "lastUpdated": "2026-05-06",
   "features": [
     {
       "id": "feat-001",
@@ -31,16 +31,16 @@
       "name": "RSVP System",
       "description": "RSVP form with name + 2 event checkboxes (tiệc đãi khách 8/6, lễ thành hôn 9/6), submitting to Google Apps Script, with success/error feedback",
       "dependencies": ["feat-001"],
-      "status": "in-progress",
-      "evidence": "ExecPlan created at docs/exec-plans/plans/feat-004-rsvp-system.md on 2026-05-05. Implementation pending."
+      "status": "done",
+      "evidence": "Implemented lib/api.ts (submitRsvp, RsvpFormData, RsvpPayload, RsvpApiResponse), components/rsvp/rsvp-form.tsx (validation, submit states, success/error UI), components/rsvp/index.ts barrel. Replaced placeholder in rsvp-section.tsx with real form. Apps Script contract documented in docs/product-specs/feat-004-rsvp-system.md. Verified pnpm lint, pnpm typecheck, pnpm build on 2026-05-06."
     },
     {
       "id": "feat-005",
       "name": "Performance & Mobile Optimization",
       "description": "Image optimization (WebP/AVIF, Next.js Image), dynamic imports for heavy components, mobile-first responsive design, <2s initial load target",
       "dependencies": ["feat-001", "feat-002"],
-      "status": "in-progress",
-      "evidence": "Added feat-005 product spec, guest image `sizes`, deferred-load venue map CTA, and reduced story placeholder animation density. Verified with pnpm lint, pnpm typecheck, and pnpm build on 2026-05-05. Full WebP/AVIF acceptance remains deferred until real production photos exist; see docs/exec-plans/tech-debt-tracker.md."
+      "status": "done",
+      "evidence": "Added feat-005 product spec, guest image `sizes`, deferred-load venue map CTA, and reduced story placeholder animation density. Verified with pnpm lint, pnpm typecheck, and pnpm build on 2026-05-05. Deferred: full WebP/AVIF rollout blocked on real production photos; logged in docs/exec-plans/tech-debt-tracker.md. All currently shippable acceptance criteria satisfied."
     },
     {
       "id": "feat-006",

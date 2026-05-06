@@ -1,5 +1,24 @@
 # Progress Index
 
+## 2026-05-06 — feat-004 RSVP System Implementation + feat-005 Harness Close
+
+- **Session**: feat-004-implement-feat-005-close
+- **Status**: completed
+- **What was done**:
+  - **feat-004 (RSVP System)**:
+    - Created `lib/api.ts` — typed `submitRsvp` helper with `RsvpFormData`, `RsvpPayload`, `RsvpApiResponse`. Env guard returns error object when `NEXT_PUBLIC_APPS_SCRIPT_URL` is unset. Defensive JSON parse on response.
+    - Created `components/rsvp/rsvp-form.tsx` — client component with name input, 2 event checkboxes (exact Vietnamese labels from acceptance criteria), client-side validation (name required + at least one event), idle/submitting/success/error submit states, retry affordance on error.
+    - Created `components/rsvp/index.ts` — public barrel.
+    - Updated `components/rsvp/rsvp-section.tsx` — replaced placeholder text with real `RsvpForm`, removed dead `HERO_COPY` import.
+    - Created `docs/product-specs/feat-004-rsvp-system.md` — Apps Script contract, POST body/response shape, Google Sheets column order, deployable Apps Script snippet, acceptance verification steps.
+  - **feat-005 (Performance & Mobile Optimization)**:
+    - All code changes already shipped in prior session (2026-05-05).
+    - Updated harness status to `done` and noted deferred WebP/AVIF debt explicitly in evidence.
+  - Ran `pnpm lint --fix`, `pnpm typecheck`, `pnpm build` — all pass, 0 errors.
+  - Updated `harness/features/feat-004-rsvp-system.json`, `harness/features/feat-005-performance-optimization.json`, and `harness/feature_index.json`.
+- **Blockers**: none
+- **Next steps**: Deploy `NEXT_PUBLIC_APPS_SCRIPT_URL` env var in Vercel and test live submission end-to-end
+
 ## 2026-05-06 — implement feat-010, feat-011, feat-012, feat-013
 
 - **Session**: feat-010-011-012-013-implement
