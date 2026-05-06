@@ -10,6 +10,9 @@ Do not move files between folders; update sections below to reflect status.
 
 ## Completed
 
+- **feat-012-background-audio** — Background Audio Player (Music player with controls). Plan: `plans/feat-012-background-audio.md`
+- **feat-011-gift-registry** — Gift Registry (Gửi quà cưới section with Bank QR). Plan: `plans/feat-011-gift-registry.md`
+- **feat-013-footer-thank-you** — Footer Thank You (Thank you message at the bottom of the page). Plan: `plans/feat-013-footer-thank-you.md`
 - **feat-010-homepage-floating-cta** — Homepage Floating CTA (Mobile-first sticky button for 'Xem hành trình'). Plan: `plans/feat-010-homepage-floating-cta.md`
 - **feat-009-accessibility-compliance** — Accessibility Compliance (skip-to-content link, ARIA landmarks, screen reader announcements, focus management, color contrast fixes, semantic HTML improvements). Plan: `plans/feat-009-accessibility-compliance.md`
 - **feat-008-story-animation-polish** — Story Animation Polish (per-image fade-in + gentle zoom reveal animations for story chapter photos, scroll-triggered Framer Motion, reduced-motion support, mobile performance). Plan: `plans/feat-008-story-animation-polish.md`

@@ -1,9 +1,9 @@
 {
   "id": "feat-012",
   "name": "Background Audio Player",
-  "description": "Optional background music player to enhance the emotional storytelling experience, with play/pause controls",
+  "description": "Background music player with toggle control, persistent across routes, using external MP3 source",
   "dependencies": ["feat-001"],
-  "status": "in-progress",
-  "evidence": "ExecPlan created at docs/exec-plans/plans/feat-012-background-audio.md",
+  "status": "done",
+  "evidence": "Implemented components/shared/audio-player.tsx in root layout. Volume 0.25, top-right floating button. Verified with ./init.sh on 2026-05-06.",
   "updated_at": "2026-05-06"
 }

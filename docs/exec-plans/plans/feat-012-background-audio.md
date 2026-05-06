@@ -14,12 +14,14 @@ Add an optional background music player to the website to enhance the emotional 
 - Must persist audio state across route changes.
 
 ## Progress
-- [ ] Create `AudioPlayer` component.
-- [ ] Integrate into `app/layout.tsx` or an overarching client provider.
-- [ ] Verify audio playback and control toggles.
+- [x] Create `AudioPlayer` component.
+- [x] Integrate into `app/layout.tsx`.
+- [x] Verify audio playback and control toggles.
 
 ## Surprises & Discoveries
-- (To be filled during implementation)
+- Volume set to 0.25 as requested.
+- Floating button moved to top-right corner.
+- Used `useEffect` to manage audio instance to ensure persistence across route changes.
 
 ## Decision Log
 - Decision: Place the audio player component in the global layout.

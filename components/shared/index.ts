@@ -1,3 +1,4 @@
+export { AudioPlayer } from './audio-player'
 export { FloatingCta } from './floating-cta'
 export { Footer } from './footer'
 export { MapPinIcon } from './icons'

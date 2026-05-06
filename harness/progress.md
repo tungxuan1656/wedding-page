@@ -1,5 +1,20 @@
 # Progress Index
 
+## 2026-05-06 — implement feat-010, feat-011, feat-012, feat-013
+
+- **Session**: feat-010-011-012-013-implement
+- **Status**: completed
+- **What was done**:
+  - **feat-010 (Floating CTA)**: Implemented `components/shared/floating-cta.tsx` for mobile sticky navigation.
+  - **feat-011 (Gift Registry)**: Implemented `components/event/gift-registry-section.tsx` with bank QR placeholders and copy-to-clipboard functionality.
+  - **feat-013 (Footer Thank You)**: Implemented `components/shared/footer.tsx` with branded thank you message.
+  - **feat-012 (Background Audio)**: Implemented `components/shared/audio-player.tsx` with 0.25 volume, persistent across route changes, and a floating button in the top right.
+  - Integrated all components into `app/page.tsx` and `app/layout.tsx`.
+  - Updated harness state and execution plans.
+  - Verified with `./init.sh` (lint, typecheck, build pass).
+- **Blockers**: none
+- **Next steps**: Implement feat-004 (RSVP System) or feat-005 (Performance & Mobile Optimization)
+
 ## 2026-05-05 — ImageModal Component + Gallery Button Enhancement
 
 - **Session**: gallery-modal-enhance

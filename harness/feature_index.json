@@ -97,6 +97,14 @@
       "dependencies": ["feat-001"],
       "status": "done",
       "evidence": "Implemented components/shared/footer.tsx with couple names, date, and thank you message in wine theme. Verified with pnpm build on 2026-05-06."
+    },
+    {
+      "id": "feat-012",
+      "name": "Background Audio Player",
+      "description": "Background music player with toggle control, persistent across routes, using external MP3 source",
+      "dependencies": ["feat-001"],
+      "status": "done",
+      "evidence": "Implemented components/shared/audio-player.tsx in root layout. Volume 0.25, top-right floating button. Verified with ./init.sh on 2026-05-06."
     }
   ]
 }

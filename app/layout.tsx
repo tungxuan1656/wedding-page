@@ -53,6 +53,8 @@ export const metadata: Metadata = {
   },
 }
 
+import { AudioPlayer } from '@/components/shared'
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -71,6 +73,7 @@ export default function RootLayout({
           href='#main-content'>
           Chuyển đến nội dung chính
         </a>
+        <AudioPlayer />
         {children}
       </body>
     </html>
