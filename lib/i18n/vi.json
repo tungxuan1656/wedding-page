@@ -141,17 +141,17 @@
     "qrCodeAlt": "Mã QR chuyển khoản",
     "groom": {
       "title": "Nhà Trai",
-      "bankName": "Vietcombank",
+      "bankName": "Techcombank",
       "accountName": "DOAN XUAN TUNG",
       "accountNumber": "9668866889",
-      "qrImage": "/images/qr-groom.svg"
+      "qrImage": "/images/qr-groom.jpg"
     },
     "bride": {
       "title": "Nhà Gái",
       "bankName": "Techcombank",
-      "accountName": "VAN ANH",
-      "accountNumber": "9876543210",
-      "qrImage": "/images/qr-bride.svg"
+      "accountName": "NGUYEN VAN ANH",
+      "accountNumber": "6339866431",
+      "qrImage": "/images/qr-bride.jpg"
     }
   },
   "rsvp": {

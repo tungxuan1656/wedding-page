@@ -62,12 +62,12 @@ const AccountCard = ({ data }: { data: AccountData }) => {
   return (
     <div className='flex flex-col items-center rounded-3xl border border-gold/20 bg-white/60 p-8 shadow-[0_0_40px_rgba(212,175,55,0.05)] backdrop-blur-md'>
       <h4 className='mb-6 font-serif text-2xl text-wine'>{data.title}</h4>
-      <div className='relative mb-8 aspect-square w-52 overflow-hidden rounded-2xl border border-gold/20 bg-white shadow-md'>
+      <div className='relative mb-8 aspect-4/5 w-52 overflow-hidden rounded-2xl border border-gold/20 bg-white shadow-md'>
         {/* Replace src with real QR image path when available */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           alt={`${s.qrCodeAlt} - ${data.bankName} - ${data.accountName}`}
-          className='h-full w-full object-cover'
+          className='h-full w-full object-contain'
           src={data.qrImage}
         />
       </div>
@@ -75,7 +75,7 @@ const AccountCard = ({ data }: { data: AccountData }) => {
       <div className='w-full space-y-1.5 text-center'>
         <p className='font-medium text-text-primary'>{data.bankName}</p>
         <p className='text-sm text-text-secondary'>{data.accountName}</p>
-        <div className='mt-4 flex items-center justify-center gap-3'>
+        <div className='mt-4 ml-4 flex items-center justify-center gap-1'>
           <p className='font-mono text-xl tracking-wider text-wine'>
             {data.accountNumber}
           </p>
