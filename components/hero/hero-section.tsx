@@ -91,16 +91,24 @@ export const HeroSection = ({ guest }: HeroSectionProps) => {
           </div>
 
           <motion.div
-            className='relative aspect-3/4 w-full max-w-100 overflow-hidden rounded-2xl border border-cream/20 shadow-2xl md:w-2/5'
+            className='group relative aspect-3/4 w-full max-w-100 overflow-hidden rounded-2xl border-2 border-gold/30 shadow-[0_20px_50px_rgba(0,0,0,0.3)] md:w-2/5'
             variants={itemVariants}>
             <Image
               fill
               priority
               alt='Tùng & Vân — Ảnh cưới'
-              className='object-cover'
+              className='object-cover transition-transform duration-700 group-hover:scale-105'
               sizes='(max-width: 768px) 100vw, 40vw'
               src='/images/hero-portrait.webp'
             />
+            {/* Subtle color-correcting overlay to unify the red tones */}
+            <div className='pointer-events-none absolute inset-0 bg-wine/5 mix-blend-multiply' />
+
+            {/* Premium inner border decoration */}
+            <div className='pointer-events-none absolute inset-3 rounded-xl border border-gold/20' />
+
+            {/* Glossy overlay for a glass-like finish */}
+            <div className='pointer-events-none absolute inset-0 bg-linear-to-tr from-white/5 via-transparent to-white/10' />
           </motion.div>
         </motion.div>
       </SectionWrapper>
