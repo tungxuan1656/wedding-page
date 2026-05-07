@@ -48,7 +48,7 @@ export const HeroSection = ({ guest }: HeroSectionProps) => {
           className='mx-auto flex max-w-6xl flex-col items-center gap-12 md:flex-row md:items-start md:justify-between'
           initial='hidden'
           variants={containerVariants}>
-          <div className='w-full space-y-12 md:max-w-2xl'>
+          <div className='w-full space-y-12 md:max-w-2xl md:pt-10'>
             <motion.div
               suppressHydrationWarning
               className='space-y-6'
@@ -91,16 +91,24 @@ export const HeroSection = ({ guest }: HeroSectionProps) => {
           </div>
 
           <motion.div
-            className='group relative aspect-3/4 w-full max-w-100 overflow-hidden rounded-2xl border border-white/10 bg-[#8b1a2b] shadow-[0_20px_50px_rgba(0,0,0,0.3)] md:w-2/5'
+            className='group relative aspect-4/5 w-full max-w-100 overflow-hidden rounded-2xl border border-white/10 bg-[#8b1a2b] shadow-[0_20px_50px_rgba(0,0,0,0.3)] md:w-2/5'
             variants={itemVariants}>
             <Image
               fill
               priority
               alt='Tùng & Vân — Ảnh cưới'
-              className='object-contain transition-transform duration-700'
+              className='object-contain pb-4 transition-transform duration-700'
               sizes='(max-width: 768px) 100vw, 40vw'
               src='/images/hero-portrait.webp'
             />
+            {/* Subtle color-correcting overlay to unify the red tones */}
+            <div className='pointer-events-none absolute inset-0 bg-wine/5 mix-blend-multiply' />
+
+            {/* Premium inner border decoration */}
+            <div className='pointer-events-none absolute inset-3 rounded-xl border border-gold/20' />
+
+            {/* Glossy overlay for a glass-like finish */}
+            <div className='pointer-events-none absolute inset-0 bg-linear-to-tr from-white/5 via-transparent to-white/10' />
           </motion.div>
         </motion.div>
       </SectionWrapper>
