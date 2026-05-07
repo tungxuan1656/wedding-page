@@ -1,6 +1,5 @@
 export { StoryChapterCard } from './story-chapter-card'
 export { StoryChapterList } from './story-chapter-list'
-export { STORY_CHAPTERS, STORY_COPY } from './story-copy'
 export { StoryImageSlot } from './story-image-slot'
 export { StoryPageShell } from './story-page-shell'
 export type { StoryChapter } from './story-types'

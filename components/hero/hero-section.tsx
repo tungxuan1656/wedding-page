@@ -4,9 +4,11 @@ import { motion, useReducedMotion, type Variants } from 'framer-motion'
 import { useEffect, useState } from 'react'
 
 import { GuestPersonalization } from '@/components/guest'
-import { HERO_COPY } from '@/components/hero/hero-copy'
 import { SectionWrapper } from '@/components/shared'
 import type { GuestData } from '@/lib/guests'
+import { strings } from '@/lib/i18n'
+
+const { hero: s } = strings
 
 type HeroSectionProps = {
   guest: GuestData | null
@@ -57,26 +59,26 @@ export const HeroSection = ({ guest }: HeroSectionProps) => {
               className='space-y-6'
               variants={itemVariants}>
               <p className='text-sm font-semibold tracking-[0.35em] text-gold-light uppercase'>
-                {HERO_COPY.eyebrow}
+                {s.eyebrow}
               </p>
               <div className='space-y-4'>
                 <h1
                   className='font-script text-6xl leading-tight font-normal text-balance sm:text-7xl md:text-8xl'
                   id='hero-heading'>
-                  {HERO_COPY.coupleNames}
+                  {s.coupleNames}
                 </h1>
                 <div className='h-px w-24 bg-gold/70' />
                 <p className='max-w-2xl text-base leading-7 text-cream/85 sm:text-lg'>
                   {guest ? (
                     <>
-                      {HERO_COPY.invitation.leading}{' '}
+                      {s.invitation.leading}{' '}
                       <span className='font-semibold text-gold-light'>
                         {guest.name}
                       </span>{' '}
-                      {HERO_COPY.invitation.trailing}
+                      {s.invitation.trailing}
                     </>
                   ) : (
-                    HERO_COPY.intro
+                    s.intro
                   )}
                 </p>
               </div>
@@ -106,7 +108,7 @@ export const HeroSection = ({ guest }: HeroSectionProps) => {
                 />
               </svg>
               <span className='text-xs font-medium tracking-widest uppercase'>
-                Ảnh cưới của bạn
+                {s.heroPhotoPlaceholder}
               </span>
             </div>
             {/* 

@@ -3,6 +3,11 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Be_Vietnam_Pro, Great_Vibes, Noto_Serif } from 'next/font/google'
 
+import { AudioPlayer } from '@/components/shared'
+import { strings } from '@/lib/i18n'
+
+const { meta, shared } = strings
+
 const sans = Be_Vietnam_Pro({
   weight: ['400', '500', '600', '700'],
   variable: '--font-sans',
@@ -25,13 +30,11 @@ const SITE_URL =
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: 'Xuân Tùng & Vân Anh — Thiệp cưới',
-  description:
-    'Thiệp cưới Xuân Tùng & Vân Anh. Tiệc đãi khách 08/06/2026, lễ thành hôn 09/06/2026 tại Sân đình thôn Gia Lương, Đông Anh, Hà Nội.',
+  title: meta.home.title,
+  description: meta.home.description,
   openGraph: {
-    title: 'Xuân Tùng & Vân Anh — Thiệp cưới',
-    description:
-      'Thiệp cưới Xuân Tùng & Vân Anh. Tiệc đãi khách 08/06/2026, lễ thành hôn 09/06/2026 tại Sân đình thôn Gia Lương, Đông Anh, Hà Nội.',
+    title: meta.home.title,
+    description: meta.home.description,
     type: 'website',
     locale: 'vi_VN',
     siteName: 'Xuân Tùng & Vân Anh',
@@ -40,20 +43,17 @@ export const metadata: Metadata = {
         url: '/images/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Thiệp cưới Xuân Tùng & Vân Anh',
+        alt: meta.home.ogImageAlt,
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Xuân Tùng & Vân Anh — Thiệp cưới',
-    description:
-      'Thiệp cưới Xuân Tùng & Vân Anh. Tiệc đãi khách 08/06/2026, lễ thành hôn 09/06/2026 tại Sân đình thôn Gia Lương, Đông Anh, Hà Nội.',
+    title: meta.home.title,
+    description: meta.home.description,
     images: ['/images/og-image.png'],
   },
 }
-
-import { AudioPlayer } from '@/components/shared'
 
 export default function RootLayout({
   children,
@@ -71,7 +71,7 @@ export default function RootLayout({
         <a
           className='sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-lg focus:bg-wine focus:px-4 focus:py-2 focus:text-cream focus:outline-2 focus:outline-offset-2 focus:outline-gold-light'
           href='#main-content'>
-          Chuyển đến nội dung chính
+          {shared.skipToContent}
         </a>
         <AudioPlayer />
         {children}

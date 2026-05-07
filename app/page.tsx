@@ -7,10 +7,12 @@ import { MapSection } from '@/components/event/map-section'
 import { FamilySection } from '@/components/family/family-section'
 import { PhotoGallerySection } from '@/components/gallery/mini-gallery-section'
 import { HeroSection } from '@/components/hero'
-import { HERO_COPY } from '@/components/hero/hero-copy'
 import { RsvpSection } from '@/components/rsvp/rsvp-section'
 import { FloatingCta, Footer } from '@/components/shared'
 import { getGuestById } from '@/lib/guests'
+import { strings } from '@/lib/i18n'
+
+const { meta, hero } = strings
 
 type HomePageProps = {
   searchParams?: Promise<{
@@ -22,8 +24,8 @@ const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL || 'https://tx-va-wedding.vercel.app'
 
 export async function generateMetadata(): Promise<Metadata> {
-  const title = `${HERO_COPY.coupleNames} — Thiệp cưới`
-  const description = HERO_COPY.intro
+  const title = `${hero.coupleNames} — Thiệp cưới`
+  const description = hero.intro
 
   return {
     title,
@@ -37,7 +39,7 @@ export async function generateMetadata(): Promise<Metadata> {
           url: '/images/og-image.png',
           width: 1200,
           height: 630,
-          alt: `Thiệp cưới ${HERO_COPY.coupleNames}`,
+          alt: `${meta.home.ogImageAlt}`,
         },
       ],
     },
@@ -62,13 +64,13 @@ export default async function HomePage({ searchParams }: HomePageProps) {
     '@context': 'https://schema.org',
     '@type': 'Event',
     eventType: 'WeddingEvent',
-    name: `Đám cưới ${HERO_COPY.coupleNames}`,
-    description: HERO_COPY.intro,
+    name: `Đám cưới ${hero.coupleNames}`,
+    description: hero.intro,
     startDate: '2026-06-08',
     endDate: '2026-06-09',
     location: {
       '@type': 'Place',
-      name: HERO_COPY.venue.name,
+      name: hero.venue.name,
       address: {
         '@type': 'PostalAddress',
         addressLocality: 'Đông Anh, Hà Nội',

@@ -1,5 +1,8 @@
 import { RsvpForm } from '@/components/rsvp/rsvp-form'
 import { SectionWrapper } from '@/components/shared'
+import { strings } from '@/lib/i18n'
+
+const { rsvp: s } = strings
 
 type RsvpSectionProps = {
   slug?: string
@@ -19,12 +22,11 @@ export const RsvpSection = ({ slug, guestName }: RsvpSectionProps) => {
               <h2
                 className='font-serif text-3xl font-medium tracking-tight text-wine'
                 id='rsvp-heading'>
-                Xác nhận tham dự
+                {s.heading}
               </h2>
               <div className='mx-auto mt-3 h-0.5 w-12 bg-gold/40' />
               <p className='mt-4 text-sm leading-relaxed text-text-muted'>
-                Vui lòng điền thông tin để chúng mình chuẩn bị đón tiếp bạn một
-                cách chu đáo nhất.
+                {s.subheading}
               </p>
             </div>
             <RsvpForm guestName={guestName} slug={slug} />

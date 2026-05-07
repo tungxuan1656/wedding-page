@@ -4,6 +4,9 @@ import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 
 import { SectionWrapper } from '@/components/shared'
+import { strings } from '@/lib/i18n'
+
+const { countdown: s } = strings
 
 const TARGET_DATE = new Date('2026-06-08T16:30:00+07:00').getTime()
 
@@ -43,10 +46,10 @@ export const CountdownSection = () => {
   if (!isMounted) return null
 
   const timeUnits = [
-    { label: 'Ngày', value: timeLeft.days },
-    { label: 'Giờ', value: timeLeft.hours },
-    { label: 'Phút', value: timeLeft.minutes },
-    { label: 'Giây', value: timeLeft.seconds },
+    { label: s.units.days, value: timeLeft.days },
+    { label: s.units.hours, value: timeLeft.hours },
+    { label: s.units.minutes, value: timeLeft.minutes },
+    { label: s.units.seconds, value: timeLeft.seconds },
   ]
 
   return (
@@ -62,7 +65,7 @@ export const CountdownSection = () => {
           <div className='pointer-events-none absolute top-0 left-1/2 h-32 w-full max-w-md -translate-x-1/2 rounded-full bg-gold/10 blur-[60px]' />
 
           <h2 className='relative mb-4 text-xs font-semibold tracking-wider text-gold-light uppercase sm:mb-8 sm:text-sm'>
-            Đếm ngược tới ngày chung đôi
+            {s.heading}
           </h2>
           <div className='relative flex justify-center gap-3 sm:gap-8'>
             {timeUnits.map((unit) => (

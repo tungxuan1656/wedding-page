@@ -3,43 +3,9 @@
 import { motion } from 'framer-motion'
 
 import { SectionWrapper } from '@/components/shared'
+import { strings } from '@/lib/i18n'
 
-const EVENTS = {
-  groom: {
-    party: {
-      time: '16:30',
-      date: 'Thứ Hai',
-      fullDate: '08/06/2026',
-      lunar: '23/4 âm lịch (Bính Ngọ)',
-      location: 'Sân đình thôn Gia Lương, xã Đông Anh, TP Hà Nội',
-    },
-    ceremony: {
-      title: 'Lễ Thành Hôn',
-      time: '10:30',
-      date: 'Thứ Ba',
-      fullDate: '09/06/2026',
-      lunar: '24/4 âm lịch',
-      location: 'Sân đình thôn Gia Lương, xã Đông Anh, TP Hà Nội',
-    },
-  },
-  bride: {
-    party: {
-      time: '16:30',
-      date: 'Thứ Hai',
-      fullDate: '08/06/2026',
-      lunar: '23/4 âm lịch (Bính Ngọ)',
-      location: 'Nhà văn hoá thôn Gia Lương, xã Đông Anh, TP Hà Nội',
-    },
-    ceremony: {
-      title: 'Lễ Vu Quy',
-      time: '09:00',
-      date: 'Thứ Ba',
-      fullDate: '09/06/2026',
-      lunar: '24/4 âm lịch',
-      location: 'Tư gia nhà gái, thôn Gia Lương, xã Đông Anh, TP Hà Nội',
-    },
-  },
-}
+const { events: s } = strings
 
 const MAPS_URLS = {
   groom: 'https://maps.app.goo.gl/xBVg6Gs3JPenCaC89',
@@ -76,7 +42,7 @@ const LocationLink = ({
 )
 
 const Calendar = () => {
-  const days = ['T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'CN']
+  const days = s.calendarDays
   // June 2026 starts on Monday. 01 = Mon.
   const dates = Array.from({ length: 30 }, (_, i) => i + 1)
 
@@ -89,7 +55,7 @@ const Calendar = () => {
       <div className='absolute right-3 bottom-3 h-4 w-4 border-r border-b border-gold/40' />
 
       <div className='mb-6 text-center'>
-        <h4 className='font-serif text-2xl text-wine'>Tháng 6</h4>
+        <h4 className='font-serif text-2xl text-wine'>{s.calendarMonth}</h4>
       </div>
       <div className='mb-2 grid grid-cols-7 gap-x-2 gap-y-4 text-center text-sm'>
         {days.map((d) => (
@@ -132,10 +98,10 @@ export const EventDetailsSection = () => {
           whileInView={{ opacity: 1, y: 0 }}>
           <div className='mb-16 text-center'>
             <p className='font-script text-5xl text-wine sm:text-6xl'>
-              Save The Date
+              {s.saveTheDate}
             </p>
             <p className='mt-4 text-sm tracking-[0.2em] text-text-muted uppercase'>
-              Tham dự lễ thành hôn của chúng mình
+              {s.attendInvitation}
             </p>
           </div>
 
@@ -143,44 +109,41 @@ export const EventDetailsSection = () => {
             {/* Nhà Trai */}
             <div className='order-2 space-y-8 text-center lg:order-1 lg:text-right'>
               <h3 className='inline-block border-b border-wine/20 pb-4 font-serif text-2xl text-wine lg:block'>
-                Sự kiện Nhà Trai
+                {s.groomSide}
               </h3>
 
               <div className='space-y-2'>
                 <p className='text-gold-dark text-sm font-semibold tracking-widest uppercase'>
-                  Tiệc Mời Khách
+                  {s.partyLabel}
                 </p>
                 <p className='font-serif text-3xl text-wine'>
-                  {EVENTS.groom.party.time}
+                  {s.groom.party.time}
                 </p>
                 <p className='text-text-secondary'>
-                  {EVENTS.groom.party.date} | {EVENTS.groom.party.fullDate}
+                  {s.groom.party.date} | {s.groom.party.fullDate}
                 </p>
-                <p className='text-sm text-text-muted'>
-                  {EVENTS.groom.party.lunar}
-                </p>
+                <p className='text-sm text-text-muted'>{s.groom.party.lunar}</p>
                 <LocationLink
-                  location={EVENTS.groom.party.location}
+                  location={s.groom.party.location}
                   mapsUrl={MAPS_URLS.groom}
                 />
               </div>
 
               <div className='space-y-2'>
                 <p className='text-gold-dark text-sm font-semibold tracking-widest uppercase'>
-                  {EVENTS.groom.ceremony.title}
+                  {s.groom.ceremony.label}
                 </p>
                 <p className='font-serif text-3xl text-wine'>
-                  {EVENTS.groom.ceremony.time}
+                  {s.groom.ceremony.time}
                 </p>
                 <p className='text-text-secondary'>
-                  {EVENTS.groom.ceremony.date} |{' '}
-                  {EVENTS.groom.ceremony.fullDate}
+                  {s.groom.ceremony.date} | {s.groom.ceremony.fullDate}
                 </p>
                 <p className='text-sm text-text-muted'>
-                  {EVENTS.groom.ceremony.lunar}
+                  {s.groom.ceremony.lunar}
                 </p>
                 <LocationLink
-                  location={EVENTS.groom.ceremony.location}
+                  location={s.groom.ceremony.location}
                   mapsUrl={MAPS_URLS.groom}
                 />
               </div>
@@ -194,44 +157,41 @@ export const EventDetailsSection = () => {
             {/* Nhà Gái */}
             <div className='order-3 space-y-8 text-center lg:text-left'>
               <h3 className='inline-block border-b border-wine/20 pb-4 font-serif text-2xl text-wine lg:block'>
-                Sự kiện Nhà Gái
+                {s.brideSide}
               </h3>
 
               <div className='space-y-2'>
                 <p className='text-gold-dark text-sm font-semibold tracking-widest uppercase'>
-                  Tiệc Mời Khách
+                  {s.partyLabel}
                 </p>
                 <p className='font-serif text-3xl text-wine'>
-                  {EVENTS.bride.party.time}
+                  {s.bride.party.time}
                 </p>
                 <p className='text-text-secondary'>
-                  {EVENTS.bride.party.date} | {EVENTS.bride.party.fullDate}
+                  {s.bride.party.date} | {s.bride.party.fullDate}
                 </p>
-                <p className='text-sm text-text-muted'>
-                  {EVENTS.bride.party.lunar}
-                </p>
+                <p className='text-sm text-text-muted'>{s.bride.party.lunar}</p>
                 <LocationLink
-                  location={EVENTS.bride.party.location}
+                  location={s.bride.party.location}
                   mapsUrl={MAPS_URLS.brideParty}
                 />
               </div>
 
               <div className='space-y-2'>
                 <p className='text-gold-dark text-sm font-semibold tracking-widest uppercase'>
-                  {EVENTS.bride.ceremony.title}
+                  {s.bride.ceremony.label}
                 </p>
                 <p className='font-serif text-3xl text-wine'>
-                  {EVENTS.bride.ceremony.time}
+                  {s.bride.ceremony.time}
                 </p>
                 <p className='text-text-secondary'>
-                  {EVENTS.bride.ceremony.date} |{' '}
-                  {EVENTS.bride.ceremony.fullDate}
+                  {s.bride.ceremony.date} | {s.bride.ceremony.fullDate}
                 </p>
                 <p className='text-sm text-text-muted'>
-                  {EVENTS.bride.ceremony.lunar}
+                  {s.bride.ceremony.lunar}
                 </p>
                 <LocationLink
-                  location={EVENTS.bride.ceremony.location}
+                  location={s.bride.ceremony.location}
                   mapsUrl={MAPS_URLS.brideCeremony}
                 />
               </div>

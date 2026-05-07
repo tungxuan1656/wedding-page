@@ -6,67 +6,70 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 import { ImageModal, SectionWrapper } from '@/components/shared'
+import { strings } from '@/lib/i18n'
+
+const { gallery: s } = strings
 
 const photos = [
   {
     id: 1,
     src: '/images/og-image.png',
     ratio: 'aspect-4/5',
-    alt: 'Ảnh cưới 1',
+    alt: `${s.photoAlt} 1`,
   },
   {
     id: 2,
     src: '/images/og-image.png',
     ratio: 'aspect-square',
-    alt: 'Ảnh cưới 2',
+    alt: `${s.photoAlt} 2`,
   },
   {
     id: 3,
     src: '/images/og-image.png',
     ratio: 'aspect-4/5',
-    alt: 'Ảnh cưới 3',
+    alt: `${s.photoAlt} 3`,
   },
   {
     id: 4,
     src: '/images/og-image.png',
     ratio: 'aspect-3/2',
-    alt: 'Ảnh cưới 4',
+    alt: `${s.photoAlt} 4`,
   },
   {
     id: 5,
     src: '/images/og-image.png',
     ratio: 'aspect-square',
-    alt: 'Ảnh cưới 5',
+    alt: `${s.photoAlt} 5`,
   },
   {
     id: 6,
     src: '/images/og-image.png',
     ratio: 'aspect-4/5',
-    alt: 'Ảnh cưới 6',
+    alt: `${s.photoAlt} 6`,
   },
   {
     id: 7,
     src: '/images/og-image.png',
     ratio: 'aspect-square',
-    alt: 'Ảnh cưới 7',
+    alt: `${s.photoAlt} 7`,
   },
   {
     id: 8,
     src: '/images/og-image.png',
     ratio: 'aspect-3/4',
-    alt: 'Ảnh cưới 8',
+    alt: `${s.photoAlt} 8`,
   },
   {
     id: 9,
     src: '/images/og-image.png',
     ratio: 'aspect-4/5',
-    alt: 'Ảnh cưới 9',
+    alt: `${s.photoAlt} 9`,
   },
   {
     id: 10,
     src: '/images/og-image.png',
     ratio: 'aspect-square',
-    alt: 'Ảnh cưới 10',
+    alt: `${s.photoAlt} 10`,
   },
 ]
 
@@ -95,10 +98,10 @@ export const PhotoGallerySection = () => {
           whileInView={{ opacity: 1 }}>
           <div className='mb-12 space-y-6 text-center md:mb-16'>
             <h2 className='font-script text-5xl leading-tight text-gold-light drop-shadow-sm sm:text-6xl lg:text-7xl'>
-              Khoảnh khắc hạnh phúc
+              {s.heading}
             </h2>
             <p className='mx-auto max-w-lg text-sm leading-relaxed text-cream/80 italic md:text-base'>
-              "...anh đã quyết định sẽ cùng em đi đến hết cuộc đời."
+              {s.quote}
             </p>
           </div>
 
@@ -107,7 +110,7 @@ export const PhotoGallerySection = () => {
             {photos.map((photo, index) => (
               <motion.div
                 key={photo.id}
-                aria-label={`Mở ${photo.alt}`}
+                aria-label={`${s.openPhotoLabel} ${photo.alt}`}
                 className={`group relative cursor-pointer overflow-hidden rounded-2xl border border-gold/20 bg-wine-dark/50 shadow-lg`}
                 initial={{ opacity: 0, y: 20 }}
                 role='button'
@@ -155,7 +158,7 @@ export const PhotoGallerySection = () => {
               <Link
                 className='inline-flex min-h-14 items-center justify-center rounded-full border-2 border-gold bg-gold-light px-10 py-4 text-base font-semibold text-wine backdrop-blur-sm transition-colors hover:bg-gold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold'
                 href='/story'>
-                Xem hành trình 10 năm của chúng mình
+                {s.ctaStory}
               </Link>
             </motion.div>
           </div>

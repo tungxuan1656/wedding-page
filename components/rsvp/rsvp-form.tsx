@@ -4,6 +4,9 @@ import { useEffect, useState } from 'react'
 
 import type { RsvpFormData } from '@/lib/api'
 import { getRsvp, submitRsvp } from '@/lib/api'
+import { strings } from '@/lib/i18n'
+
+const s = strings.rsvp
 
 type SubmitState = 'idle' | 'submitting' | 'success' | 'error'
 
@@ -17,24 +20,6 @@ type RsvpFormProps = {
   guestName?: string
 }
 
-const COPY = {
-  heading: 'Xác nhận tham dự',
-  subheading: 'Vui lòng điền thông tin để chúng mình chuẩn bị đón tiếp bạn.',
-  namePlaceholder: 'Nhập họ và tên...',
-  nameLabel: 'Họ tên khách mời',
-  eventDaiKhach: 'Tiệc đãi khách (08/06)',
-  eventThanhHon: 'Lễ thành hôn (09/06)',
-  submit: 'Gửi xác nhận tham dự',
-  submitting: 'Đang gửi thông tin...',
-  successTitle: 'Gửi thành công!',
-  successMessage:
-    'Cảm ơn bạn đã xác nhận. Chúng mình rất mong được đón tiếp bạn trong ngày vui sắp tới.',
-  retryLabel: 'Thử lại ngay',
-  errorPrefix: 'Lỗi:',
-  nameRequired: 'Vui lòng nhập họ tên để chúng mình biết bạn là ai.',
-  eventsRequired: 'Vui lòng chọn ít nhất một sự kiện bạn sẽ tham dự.',
-} as const
-
 const INITIAL_FORM: RsvpFormData = {
   name: '',
   eventDaiKhach: false,
@@ -43,9 +28,9 @@ const INITIAL_FORM: RsvpFormData = {
 
 function validate(form: RsvpFormData): FieldErrors {
   const errors: FieldErrors = {}
-  if (!form.name.trim()) errors.name = COPY.nameRequired
+  if (!form.name.trim()) errors.name = s.nameRequired
   if (!form.eventDaiKhach && !form.eventThanhHon)
-    errors.events = COPY.eventsRequired
+    errors.events = s.eventsRequired
 
   return errors
 }
@@ -123,7 +108,7 @@ export function RsvpForm({ slug, guestName }: RsvpFormProps) {
     if (result.status === 'success') {
       setSubmitState('success')
     } else {
-      setErrorMessage(result.message ?? 'Gửi thất bại. Vui lòng thử lại.')
+      setErrorMessage(result.message ?? s.defaultError)
       setSubmitState('error')
     }
   }
@@ -144,10 +129,10 @@ export function RsvpForm({ slug, guestName }: RsvpFormProps) {
         </div>
         <div className='space-y-2'>
           <p className='font-serif text-2xl font-medium text-wine'>
-            {COPY.successTitle}
+            {s.successTitle}
           </p>
           <p className='max-w-xs text-sm leading-relaxed text-text-secondary'>
-            {COPY.successMessage}
+            {s.successMessage}
           </p>
         </div>
       </div>
@@ -161,7 +146,7 @@ export function RsvpForm({ slug, guestName }: RsvpFormProps) {
         <label
           className='text-xs font-bold tracking-wider text-text-muted uppercase'
           htmlFor='rsvp-name'>
-          {COPY.nameLabel}
+          {s.nameLabel}
           <span aria-hidden='true' className='ml-1 text-wine'>
             *
           </span>
@@ -182,7 +167,7 @@ export function RsvpForm({ slug, guestName }: RsvpFormProps) {
             ].join(' ')}
             id='rsvp-name'
             name='name'
-            placeholder={prefilling ? 'Đang tải...' : COPY.namePlaceholder}
+            placeholder={prefilling ? s.nameLoading : s.namePlaceholder}
             type='text'
             value={form.name}
             onChange={handleChange}
@@ -201,7 +186,7 @@ export function RsvpForm({ slug, guestName }: RsvpFormProps) {
       {/* Event checkboxes */}
       <fieldset className='flex flex-col gap-4'>
         <legend className='mb-2 text-xs font-bold tracking-wider text-text-muted uppercase'>
-          Sự kiện tham dự
+          {s.eventsLegend}
           <span aria-hidden='true' className='ml-1 text-wine'>
             *
           </span>
@@ -232,7 +217,7 @@ export function RsvpForm({ slug, guestName }: RsvpFormProps) {
             </div>
             <div className='flex flex-col gap-0.5'>
               <span className='text-sm font-semibold text-text-primary'>
-                {COPY.eventDaiKhach}
+                {s.eventDaiKhach}
               </span>
             </div>
           </label>
@@ -262,7 +247,7 @@ export function RsvpForm({ slug, guestName }: RsvpFormProps) {
             </div>
             <div className='flex flex-col gap-0.5'>
               <span className='text-sm font-semibold text-text-primary'>
-                {COPY.eventThanhHon}
+                {s.eventThanhHon}
               </span>
             </div>
           </label>
@@ -280,13 +265,13 @@ export function RsvpForm({ slug, guestName }: RsvpFormProps) {
           aria-live='assertive'
           className='flex flex-col gap-1 rounded-2xl border border-red-100 bg-red-50/50 px-5 py-4 text-sm text-red-800'
           role='alert'>
-          <p className='font-bold'>{COPY.errorPrefix}</p>
+          <p className='font-bold'>{s.errorPrefix}</p>
           <p className='text-xs opacity-80'>{errorMessage}</p>
           <button
             className='mt-2 w-fit text-[11px] font-bold tracking-wider text-red-700 uppercase underline underline-offset-4'
             type='button'
             onClick={handleRetry}>
-            {COPY.retryLabel}
+            {s.retryLabel}
           </button>
         </div>
       )}
@@ -303,7 +288,7 @@ export function RsvpForm({ slug, guestName }: RsvpFormProps) {
         disabled={submitState === 'submitting'}
         type='submit'>
         <span className='relative z-10'>
-          {submitState === 'submitting' ? COPY.submitting : COPY.submit}
+          {submitState === 'submitting' ? s.submitting : s.submit}
         </span>
         {submitState !== 'submitting' && (
           <div className='absolute inset-0 z-0 -translate-x-full bg-linear-to-r from-transparent via-white/5 to-transparent transition-transform duration-1000 group-hover:translate-x-full' />

@@ -2,7 +2,15 @@
 
 import { motion } from 'framer-motion'
 
-import { MapPinIcon, SectionWrapper } from '@/components/shared'
+import { SectionWrapper } from '@/components/shared'
+import { MapPinIcon } from '@/components/shared/icons'
+import { strings } from '@/lib/i18n'
+
+const { map: s } = strings
+
+const MAP_EMBED_URL =
+  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d930.4050381042838!2d105.8835711181912!3d21.12770474761061!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31350731159aaaab%3A0x52a04fef5702bb1f!2zxJDDrG5oIEdpYSBM4buZYw!5e0!3m2!1svi!2s!4v1777986135055!5m2!1svi!2s'
+const MAPS_OPEN_URL = 'https://maps.app.goo.gl/xBVg6Gs3JPenCaC89'
 
 export const MapSection = () => {
   return (
@@ -19,10 +27,10 @@ export const MapSection = () => {
               <MapPinIcon className='text-wine' />
             </div>
             <h2 className='mb-4 font-script text-5xl text-wine drop-shadow-sm'>
-              Bản đồ chỉ đường
+              {s.heading}
             </h2>
             <p className='mx-auto max-w-md text-sm text-text-secondary'>
-              Sân đình thôn Gia Lương, xã Đông Anh, TP Hà Nội
+              {s.address}
             </p>
           </div>
 
@@ -32,9 +40,9 @@ export const MapSection = () => {
               height='100%'
               loading='lazy'
               referrerPolicy='no-referrer-when-downgrade'
-              src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d930.4050381042838!2d105.8835711181912!3d21.12770474761061!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31350731159aaaab%3A0x52a04fef5702bb1f!2zxJDDrG5oIEdpYSBM4buZYw!5e0!3m2!1svi!2s!4v1777986135055!5m2!1svi!2s'
+              src={MAP_EMBED_URL}
               style={{ border: 0 }}
-              title='Bản đồ đường đi'
+              title={s.iframeTitle}
               width='100%'
             />
           </div>
@@ -42,10 +50,10 @@ export const MapSection = () => {
           <div className='mt-8 text-center'>
             <a
               className='inline-flex min-h-12 items-center justify-center rounded-full border border-gold bg-wine px-8 py-3 text-sm font-semibold text-cream shadow-lg shadow-wine/20 transition-all hover:bg-gold hover:text-wine focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold'
-              href='https://maps.app.goo.gl/xBVg6Gs3JPenCaC89'
+              href={MAPS_OPEN_URL}
               rel='noopener noreferrer'
               target='_blank'>
-              Mở trong Google Maps
+              {s.openMapsLabel}
             </a>
           </div>
         </motion.div>

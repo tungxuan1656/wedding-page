@@ -1,34 +1,36 @@
 import type { Metadata } from 'next'
 import dynamic from 'next/dynamic'
 
+import { strings } from '@/lib/i18n'
+
+const {
+  meta: { story: storyMeta },
+} = strings
+
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL || 'https://tx-va-wedding.vercel.app'
 
 export async function generateMetadata(): Promise<Metadata> {
-  const title = 'Hành trình yêu — Xuân Tùng & Vân Anh'
-  const description =
-    'Câu chuyện tình yêu 10 năm của Xuân Tùng & Vân Anh — từ lần đầu gặp đến ngày trọng đại.'
-
   return {
-    title,
-    description,
+    title: storyMeta.title,
+    description: storyMeta.description,
     openGraph: {
-      title,
-      description,
+      title: storyMeta.title,
+      description: storyMeta.description,
       url: `${SITE_URL}/story`,
       images: [
         {
           url: '/images/og-image.png',
           width: 1200,
           height: 630,
-          alt: title,
+          alt: storyMeta.title,
         },
       ],
     },
     twitter: {
       card: 'summary_large_image',
-      title,
-      description,
+      title: storyMeta.title,
+      description: storyMeta.description,
       images: ['/images/og-image.png'],
     },
   }

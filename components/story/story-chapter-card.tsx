@@ -1,10 +1,19 @@
 import { SectionWrapper } from '@/components/shared/section-wrapper'
+import { strings } from '@/lib/i18n'
 
 import { StoryImageSlot } from './story-image-slot'
-import type { StoryChapter } from './story-types'
+
+const { story: s } = strings
+
+type ChapterData = {
+  year: number
+  title: string
+  paragraphs: string[]
+  imageSlotCount: number
+}
 
 type StoryChapterCardProps = {
-  chapter: StoryChapter
+  chapter: ChapterData
   index: number
 }
 
@@ -20,7 +29,7 @@ export const StoryChapterCard = ({ chapter, index }: StoryChapterCardProps) => {
             {chapter.year}
           </span>
           <span className='text-sm font-semibold tracking-wider text-gold uppercase'>
-            Chương {String(index + 1).padStart(2, '0')}
+            {s.chapterLabel} {String(index + 1).padStart(2, '0')}
           </span>
         </div>
 

@@ -3,7 +3,9 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 
-import { STORY_COPY } from './story-copy'
+import { strings } from '@/lib/i18n'
+
+const { story: s } = strings
 
 type StoryImageSlotProps = {
   chapterIndex: number
@@ -14,7 +16,7 @@ export const StoryImageSlot = ({
   chapterIndex,
   slotIndex,
 }: StoryImageSlotProps) => {
-  const label = STORY_COPY.imageSlotLabel(slotIndex)
+  const label = `${s.imageSlotLabel} ${String(slotIndex + 1).padStart(2, '0')}`
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
@@ -37,7 +39,7 @@ export const StoryImageSlot = ({
         {label}
       </span>
       <span className='mt-1 text-[10px] text-text-muted/70'>
-        Chương {chapterIndex + 1}
+        {s.imageSlotChapter} {chapterIndex + 1}
       </span>
     </motion.div>
   )

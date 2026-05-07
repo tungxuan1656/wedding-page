@@ -4,23 +4,9 @@ import { motion } from 'framer-motion'
 import { useState } from 'react'
 
 import { SectionWrapper } from '@/components/shared'
+import { strings } from '@/lib/i18n'
 
-const ACCOUNTS = {
-  groom: {
-    title: 'Nhà Trai',
-    bankName: 'Vietcombank',
-    accountName: 'XUAN TUNG',
-    accountNumber: '0123456789',
-    qrImage: '/images/qr-groom.svg', // Replace with real QR PNG
-  },
-  bride: {
-    title: 'Nhà Gái',
-    bankName: 'Techcombank',
-    accountName: 'VAN ANH',
-    accountNumber: '9876543210',
-    qrImage: '/images/qr-bride.svg', // Replace with real QR PNG
-  },
-}
+const { giftRegistry: s } = strings
 
 const CopyIcon = () => (
   <svg
@@ -52,7 +38,15 @@ const CheckIcon = () => (
   </svg>
 )
 
-const AccountCard = ({ data }: { data: typeof ACCOUNTS.groom }) => {
+type AccountData = {
+  title: string
+  bankName: string
+  accountName: string
+  accountNumber: string
+  qrImage: string
+}
+
+const AccountCard = ({ data }: { data: AccountData }) => {
   const [copied, setCopied] = useState(false)
 
   const handleCopy = async () => {
@@ -86,7 +80,7 @@ const AccountCard = ({ data }: { data: typeof ACCOUNTS.groom }) => {
             {data.accountNumber}
           </p>
           <button
-            aria-label='Copy account number'
+            aria-label={s.copyAccountLabel}
             className='flex h-10 w-10 items-center justify-center rounded-full bg-cream text-text-secondary transition-all hover:bg-gold/20 hover:text-wine active:scale-95'
             type='button'
             onClick={handleCopy}>
@@ -114,19 +108,17 @@ export const GiftRegistrySection = () => {
           whileInView={{ opacity: 1, y: 0 }}>
           <div className='mb-16 text-center'>
             <h2 className='font-script text-5xl text-wine sm:text-6xl'>
-              Gửi Quà Cưới
+              {s.heading}
             </h2>
             <div className='mx-auto mt-6 h-px w-24 bg-gold/30' />
             <p className='mx-auto mt-6 max-w-2xl text-base leading-relaxed text-text-secondary'>
-              Sự hiện diện của bạn là món quà quý giá nhất đối với chúng mình.
-              Nếu bạn không thể tham dự và muốn gửi lời chúc phúc, xin nhận tấm
-              lòng chân thành từ gia đình hai bên.
+              {s.description}
             </p>
           </div>
 
           <div className='grid gap-8 md:grid-cols-2 md:gap-12'>
-            <AccountCard data={ACCOUNTS.groom} />
-            <AccountCard data={ACCOUNTS.bride} />
+            <AccountCard data={s.groom} />
+            <AccountCard data={s.bride} />
           </div>
         </motion.div>
       </SectionWrapper>

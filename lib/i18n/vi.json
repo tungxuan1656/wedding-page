@@ -1,0 +1,312 @@
+{
+  "meta": {
+    "home": {
+      "title": "Xuân Tùng & Vân Anh — Thiệp cưới",
+      "description": "Thiệp cưới Xuân Tùng & Vân Anh. Tiệc đãi khách 08/06/2026, lễ thành hôn 09/06/2026 tại Sân đình thôn Gia Lương, Đông Anh, Hà Nội.",
+      "ogImageAlt": "Thiệp cưới Xuân Tùng & Vân Anh"
+    },
+    "story": {
+      "title": "Hành trình yêu — Xuân Tùng & Vân Anh",
+      "description": "Câu chuyện tình yêu 10 năm của Xuân Tùng & Vân Anh — từ lần đầu gặp đến ngày trọng đại."
+    }
+  },
+  "shared": {
+    "skipToContent": "Chuyển đến nội dung chính"
+  },
+  "hero": {
+    "eyebrow": "Wedding Invitation",
+    "coupleNames": "Xuân Tùng & Vân Anh",
+    "intro": "Trân trọng mời bạn cùng gia đình đến chung vui trong ngày trọng đại của chúng mình.",
+    "invitation": {
+      "leading": "Thân mời",
+      "trailing": "đến dự và chung vui cùng gia đình trong ngày đặc biệt này."
+    },
+    "reception": {
+      "label": "Tiệc đãi khách",
+      "solarDate": "08/06/2026",
+      "lunarDate": "23/4 âm lịch (Bính Ngọ)"
+    },
+    "ceremony": {
+      "label": "Lễ thành hôn",
+      "solarDate": "09/06/2026",
+      "lunarDate": "24/4 âm lịch"
+    },
+    "venue": {
+      "label": "Địa điểm",
+      "name": "Sân đình thôn Gia Lương",
+      "address": "Xã Đông Anh, TP Hà Nội"
+    },
+    "ctaRsvp": "Xác nhận tham dự",
+    "ctaStory": "Xem hành trình",
+    "heroPhotoPlaceholder": "Ảnh cưới của bạn",
+    "rsvpPlaceholder": "Khu vực xác nhận tham dự sẽ sớm được mở trong bước tiếp theo."
+  },
+  "countdown": {
+    "heading": "Đếm ngược tới ngày chung đôi",
+    "units": {
+      "days": "Ngày",
+      "hours": "Giờ",
+      "minutes": "Phút",
+      "seconds": "Giây"
+    }
+  },
+  "family": {
+    "sectionEyebrow": "WEDDING",
+    "labels": {
+      "father": "Ông:",
+      "mother": "Bà:"
+    },
+    "groom": {
+      "title": "Nhà Trai",
+      "name": "Đoàn Xuân Tùng",
+      "father": "Đoàn Xuân Phung",
+      "mother": "Nguyễn Thị Thành",
+      "address": "Thôn Gia Lương, xã Đông Anh, TP Hà Nội"
+    },
+    "bride": {
+      "title": "Nhà Gái",
+      "name": "Nguyễn Vân Anh",
+      "father": "Nguyễn Trọng Ngọc",
+      "mother": "Trần Thị Tuyết Lăng",
+      "address": "Thôn Gia Lương, xã Đông Anh, TP Hà Nội"
+    }
+  },
+  "events": {
+    "saveTheDate": "Save The Date",
+    "attendInvitation": "Tham dự lễ thành hôn của chúng mình",
+    "groomSide": "Sự kiện Nhà Trai",
+    "brideSide": "Sự kiện Nhà Gái",
+    "partyLabel": "Tiệc Mời Khách",
+    "sectionTitle": "Lịch Trình",
+    "sectionEyebrow": "Chương trình sự kiện",
+    "calendarMonth": "Tháng 6",
+    "calendarDays": ["T2", "T3", "T4", "T5", "T6", "T7", "CN"],
+    "groom": {
+      "party": {
+        "label": "Tiệc Đãi Khách",
+        "time": "16:30",
+        "date": "Thứ Hai",
+        "fullDate": "08/06/2026",
+        "lunar": "23/4 âm lịch (Bính Ngọ)",
+        "location": "Sân đình thôn Gia Lương, xã Đông Anh, TP Hà Nội"
+      },
+      "ceremony": {
+        "label": "Lễ Thành Hôn",
+        "time": "10:30",
+        "date": "Thứ Ba",
+        "fullDate": "09/06/2026",
+        "lunar": "24/4 âm lịch",
+        "location": "Sân đình thôn Gia Lương, xã Đông Anh, TP Hà Nội"
+      }
+    },
+    "bride": {
+      "party": {
+        "label": "Tiệc Đãi Khách",
+        "time": "16:30",
+        "date": "Thứ Hai",
+        "fullDate": "08/06/2026",
+        "lunar": "23/4 âm lịch (Bính Ngọ)",
+        "location": "Nhà văn hoá thôn Gia Lương, xã Đông Anh, TP Hà Nội"
+      },
+      "ceremony": {
+        "label": "Lễ Vu Quy",
+        "time": "09:00",
+        "date": "Thứ Ba",
+        "fullDate": "09/06/2026",
+        "lunar": "24/4 âm lịch",
+        "location": "Tư gia nhà gái, thôn Gia Lương, xã Đông Anh, TP Hà Nội"
+      }
+    }
+  },
+  "gallery": {
+    "heading": "Khoảnh khắc hạnh phúc",
+    "quote": "\"...anh đã quyết định sẽ cùng em đi đến hết cuộc đời.\"",
+    "ctaStory": "Xem hành trình 10 năm của chúng mình",
+    "photoAlt": "Ảnh cưới",
+    "openPhotoLabel": "Mở"
+  },
+  "map": {
+    "heading": "Bản đồ chỉ đường",
+    "address": "Sân đình thôn Gia Lương, xã Đông Anh, TP Hà Nội",
+    "iframeTitle": "Bản đồ đường đi",
+    "openMapsLabel": "Mở trong Google Maps"
+  },
+  "giftRegistry": {
+    "heading": "Gửi Quà Cưới",
+    "description": "Sự hiện diện của bạn là món quà quý giá nhất đối với chúng mình. Nếu bạn không thể tham dự và muốn gửi lời chúc phúc, xin nhận tấm lòng chân thành từ gia đình hai bên.",
+    "copyAccountLabel": "Copy account number",
+    "groom": {
+      "title": "Nhà Trai",
+      "bankName": "Vietcombank",
+      "accountName": "XUAN TUNG",
+      "accountNumber": "0123456789",
+      "qrImage": "/images/qr-groom.svg"
+    },
+    "bride": {
+      "title": "Nhà Gái",
+      "bankName": "Techcombank",
+      "accountName": "VAN ANH",
+      "accountNumber": "9876543210",
+      "qrImage": "/images/qr-bride.svg"
+    }
+  },
+  "rsvp": {
+    "heading": "Xác nhận tham dự",
+    "subheading": "Vui lòng điền thông tin để chúng mình chuẩn bị đón tiếp bạn một cách chu đáo nhất.",
+    "namePlaceholder": "Nhập họ và tên...",
+    "nameLabel": "Họ tên khách mời",
+    "nameLoading": "Đang tải...",
+    "eventsLegend": "Sự kiện tham dự",
+    "eventDaiKhach": "Tiệc đãi khách (08/06)",
+    "eventThanhHon": "Lễ thành hôn (09/06)",
+    "submit": "Gửi xác nhận tham dự",
+    "submitting": "Đang gửi thông tin...",
+    "successTitle": "Gửi thành công!",
+    "successMessage": "Cảm ơn bạn đã xác nhận. Chúng mình rất mong được đón tiếp bạn trong ngày vui sắp tới.",
+    "retryLabel": "Thử lại ngay",
+    "errorPrefix": "Lỗi:",
+    "defaultError": "Gửi thất bại. Vui lòng thử lại.",
+    "nameRequired": "Vui lòng nhập họ tên để chúng mình biết bạn là ai.",
+    "eventsRequired": "Vui lòng chọn ít nhất một sự kiện bạn sẽ tham dự."
+  },
+  "footer": {
+    "thankYou": "Cảm ơn bạn đã ghé thăm trang thiệp cưới của chúng mình. Sự hiện diện và tình cảm của bạn là món quà quý giá nhất trong ngày trọng đại này. Chúng mình rất mong được gặp bạn!",
+    "weddingDate": "08 · 06 · 2026"
+  },
+  "floatingCta": {
+    "label": "Xem hành trình 10 năm"
+  },
+  "guest": {
+    "personalMessageLabel": "Lời nhắn riêng",
+    "greeting": "Xin chào"
+  },
+  "imageModal": {
+    "closeLabel": "Đóng",
+    "prevLabel": "Ảnh trước",
+    "nextLabel": "Ảnh sau",
+    "zoomHint": "Cuộn / chụm để phóng to • Nhấp đúp để đặt lại"
+  },
+  "story": {
+    "eyebrow": "Hành trình 11 năm",
+    "title": "Xuân Tùng & Vân Anh",
+    "intro": "Từ những ngày đầu gặp gỡ cho đến khi quyết định cùng nhau đi hết quãng đời còn lại — đây là câu chuyện của chúng mình.",
+    "backLink": "Quay lại thiệp cưới",
+    "chapterLabel": "Chương",
+    "chapterSectionLabel": "Các chương câu chuyện",
+    "imageSlotLabel": "Ảnh kỷ niệm",
+    "imageSlotChapter": "Chương",
+    "chapters": [
+      {
+        "year": 2016,
+        "title": "Lần đầu gặp gỡ",
+        "paragraphs": [
+          "Năm ấy, chúng mình gặp nhau trong một hoàn cảnh không thể ngờ tới. Một cái nhìn, một câu chào, và những rung động đầu tiên lặng lẽ bắt đầu.",
+          "Nội dung chi tiết sẽ được cập nhật sau khi có thông tin từ cô dâu chú rể."
+        ],
+        "imageSlotCount": 4
+      },
+      {
+        "year": 2017,
+        "title": "Những buổi hẹn đầu",
+        "paragraphs": [
+          "Từ những cuộc trò chuyện dài đến những buổi cà phê đầu tiên, chúng mình dần hiểu về nhau nhiều hơn.",
+          "Nội dung chi tiết sẽ được cập nhật sau khi có thông tin từ cô dâu chú rể."
+        ],
+        "imageSlotCount": 3
+      },
+      {
+        "year": 2018,
+        "title": "Yêu xa",
+        "paragraphs": [
+          "Khoảng cách địa lý không thể ngăn được hai trái tim đồng điệu. Những cuộc gọi đêm khuya và tin nhắn dài trở thành cầu nối.",
+          "Nội dung chi tiết sẽ được cập nhật sau khi có thông tin từ cô dâu chú rể."
+        ],
+        "imageSlotCount": 5
+      },
+      {
+        "year": 2019,
+        "title": "Gắn kết",
+        "paragraphs": [
+          "Một năm đầy kỷ niệm đẹp, những chuyến đi chơi và những khoảnh khắc không thể quên.",
+          "Nội dung chi tiết sẽ được cập nhật sau khi có thông tin từ cô dâu chú rể."
+        ],
+        "imageSlotCount": 4
+      },
+      {
+        "year": 2020,
+        "title": "Biến cố & vượt qua",
+        "paragraphs": [
+          "Năm 2020 mang đến nhiều thử thách, nhưng cũng là lúc chúng mình nhận ra tầm quan trọng của nhau.",
+          "Nội dung chi tiết sẽ được cập nhật sau khi có thông tin từ cô dâu chú rể."
+        ],
+        "imageSlotCount": 3
+      },
+      {
+        "year": 2021,
+        "title": "Bên nhau mỗi ngày",
+        "paragraphs": [
+          "Sau những tháng ngày cách xa, chúng mình đã có thể ở bên nhau nhiều hơn và xây dựng những thói quen chung.",
+          "Nội dung chi tiết sẽ được cập nhật sau khi có thông tin từ cô dâu chú rể."
+        ],
+        "imageSlotCount": 4
+      },
+      {
+        "year": 2022,
+        "title": "Trưởng thành cùng nhau",
+        "paragraphs": [
+          "Hai con người, hai sự nghiệp, và một tình yêu ngày càng sâu sắc. Chúng mình cùng nhau lớn lên qua từng trải nghiệm.",
+          "Nội dung chi tiết sẽ được cập nhật sau khi có thông tin từ cô dâu chú rể."
+        ],
+        "imageSlotCount": 5
+      },
+      {
+        "year": 2023,
+        "title": "Những dự định lớn",
+        "paragraphs": [
+          "Bắt đầu nghĩ về tương lai chung, về một mái ấm và những kế hoạch dài hơi hơn.",
+          "Nội dung chi tiết sẽ được cập nhật sau khi có thông tin từ cô dâu chú rể."
+        ],
+        "imageSlotCount": 4
+      },
+      {
+        "year": 2024,
+        "title": "Chuẩn bị cho đám cưới",
+        "paragraphs": [
+          "Những tháng ngày bận rộn với kế hoạch cưới xin, nhưng ánh mắt nhìn nhau vẫn đầy hạnh phúc.",
+          "Nội dung chi tiết sẽ được cập nhật sau khi có thông tin từ cô dâu chú rể."
+        ],
+        "imageSlotCount": 3
+      },
+      {
+        "year": 2025,
+        "title": "Quyết định cưới",
+        "paragraphs": [
+          "Và rồi đến một ngày, cả hai cùng nói \"Mình cưới nhau nhé!\". Không cần quá nhiều lời, vì đáp án đã rõ từ lâu.",
+          "Nội dung chi tiết sẽ được cập nhật sau khi có thông tin từ cô dâu chú rể."
+        ],
+        "imageSlotCount": 4
+      },
+      {
+        "year": 2026,
+        "title": "Ngày cưới",
+        "paragraphs": [
+          "Và cuối cùng, sau 10 năm yêu thương, chúng mình đã chính thức về chung một nhà. Khoảnh khắc khoác lên mình bộ váy cưới và bộ vest, nhìn nhau và nói \"Em đồng ý\" — đó là ngày hạnh phúc nhất của cuộc đời.",
+          "Nội dung chi tiết sẽ được cập nhật sau khi có thông tin từ cô dâu chú rể."
+        ],
+        "imageSlotCount": 3
+      }
+    ]
+  },
+  "errors": {
+    "notFound": {
+      "heading": "404",
+      "message": "Trang bạn tìm kiếm không tồn tại.",
+      "backHome": "Về lại trang chính"
+    },
+    "error": {
+      "heading": "Đã xảy ra lỗi",
+      "message": "Có lỗi không mong muốn xảy ra. Vui lòng thử lại.",
+      "retry": "Thử lại"
+    }
+  }
+}

@@ -5,6 +5,10 @@ import Image from 'next/image'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 
+import { strings } from '@/lib/i18n'
+
+const { imageModal: s } = strings
+
 export type ImageItem = {
   src: string
   alt: string
@@ -248,7 +252,7 @@ export const ImageModal = ({
 
           {/* Close button */}
           <button
-            aria-label='Đóng'
+            aria-label={s.closeLabel}
             className='absolute top-4 right-4 z-50 flex h-10 w-10 items-center justify-center rounded-full bg-wine-dark/60 text-cream backdrop-blur-sm transition-colors hover:bg-wine-dark hover:text-gold'
             onClick={(e) => {
               e.stopPropagation()
@@ -277,7 +281,7 @@ export const ImageModal = ({
           {images.length > 1 && (
             <>
               <button
-                aria-label='Ảnh trước'
+                aria-label={s.prevLabel}
                 className='absolute left-2 z-50 flex h-10 w-10 items-center justify-center rounded-full bg-wine-dark/60 text-cream backdrop-blur-sm transition-colors hover:bg-wine-dark hover:text-gold disabled:opacity-30 disabled:hover:bg-wine-dark/60 disabled:hover:text-cream sm:left-4 md:h-12 md:w-12'
                 disabled={currentIndex === 0}
                 onClick={(e) => {
@@ -297,7 +301,7 @@ export const ImageModal = ({
                 </svg>
               </button>
               <button
-                aria-label='Ảnh sau'
+                aria-label={s.nextLabel}
                 className='absolute right-2 z-50 flex h-10 w-10 items-center justify-center rounded-full bg-wine-dark/60 text-cream backdrop-blur-sm transition-colors hover:bg-wine-dark hover:text-gold disabled:opacity-30 disabled:hover:bg-wine-dark/60 disabled:hover:text-cream sm:right-4 md:h-12 md:w-12'
                 disabled={currentIndex === images.length - 1}
                 onClick={(e) => {
@@ -351,7 +355,7 @@ export const ImageModal = ({
 
           {/* Zoom hint */}
           <div className='absolute bottom-4 left-1/2 z-50 -translate-x-1/2 rounded-full bg-wine-dark/60 px-3 py-1 text-[10px] text-cream/60 backdrop-blur-sm sm:text-xs'>
-            Cuộn / chụm để phóng to • Nhấp đúp để đặt lại
+            {s.zoomHint}
           </div>
         </motion.div>
       )}

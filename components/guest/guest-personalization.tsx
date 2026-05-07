@@ -1,6 +1,9 @@
 import Image from 'next/image'
 
 import type { GuestData } from '@/lib/guests'
+import { strings } from '@/lib/i18n'
+
+const { guest: s } = strings
 
 type GuestPersonalizationProps = {
   guest: GuestData
@@ -9,15 +12,15 @@ type GuestPersonalizationProps = {
 export const GuestPersonalization = ({ guest }: GuestPersonalizationProps) => {
   return (
     <div
-      aria-label='Lời nhắn riêng'
+      aria-label={s.personalMessageLabel}
       className='grid gap-5 rounded-4xl border border-cream/15 bg-cream/10 p-5 backdrop-blur-sm sm:p-6 md:grid-cols-[minmax(0,1fr)_160px] md:items-center'>
       <div className='space-y-3'>
         <p className='text-sm font-semibold tracking-[0.25em] text-gold-light uppercase'>
-          Lời nhắn riêng
+          {s.personalMessageLabel}
         </p>
         <div className='space-y-2'>
           <h2 className='font-serif text-3xl text-cream sm:text-4xl'>
-            Xin chào {guest.name}
+            {s.greeting} {guest.name}
           </h2>
           <p className='text-sm leading-7 text-cream/85 sm:text-base'>
             {guest.message}

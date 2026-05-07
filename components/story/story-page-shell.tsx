@@ -2,8 +2,11 @@
 
 import Link from 'next/link'
 
+import { strings } from '@/lib/i18n'
+
 import { StoryChapterList } from './story-chapter-list'
-import { STORY_COPY } from './story-copy'
+
+const { story: s } = strings
 
 export const StoryPageShell = () => {
   return (
@@ -14,15 +17,15 @@ export const StoryPageShell = () => {
         className='px-6 pt-16 pb-10 sm:px-8 sm:pt-20 md:px-12 md:pt-24'>
         <div className='mx-auto max-w-3xl text-center'>
           <p className='mb-4 text-sm font-semibold tracking-[0.25em] text-wine-light uppercase'>
-            {STORY_COPY.eyebrow}
+            {s.eyebrow}
           </p>
           <h1
             className='mb-6 font-serif text-4xl text-wine sm:text-5xl md:text-6xl'
             id='story-heading'>
-            {STORY_COPY.title}
+            {s.title}
           </h1>
           <p className='mx-auto max-w-xl text-base leading-7 text-text-secondary'>
-            {STORY_COPY.intro}
+            {s.intro}
           </p>
         </div>
       </section>
@@ -34,7 +37,7 @@ export const StoryPageShell = () => {
 
       {/* Chapter list */}
       <section
-        aria-label='Các chương câu chuyện'
+        aria-label={s.chapterSectionLabel}
         className='px-6 py-16 sm:px-8 sm:py-20 md:px-12 md:py-24'>
         <div className='mx-auto max-w-4xl'>
           <StoryChapterList />
@@ -48,7 +51,7 @@ export const StoryPageShell = () => {
           <Link
             className='inline-flex min-h-12 items-center justify-center rounded-full border border-wine bg-transparent px-6 py-3 text-sm font-semibold text-wine transition hover:bg-wine hover:text-cream focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-wine'
             href='/'>
-            {STORY_COPY.backLink}
+            {s.backLink}
           </Link>
         </div>
       </section>

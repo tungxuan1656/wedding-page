@@ -4,6 +4,10 @@ import { motion, useMotionValueEvent, useScroll } from 'framer-motion'
 import Link from 'next/link'
 import { useState } from 'react'
 
+import { strings } from '@/lib/i18n'
+
+const { floatingCta: s } = strings
+
 export const FloatingCta = () => {
   const { scrollY } = useScroll()
   const [isVisible, setIsVisible] = useState(false)
@@ -29,7 +33,7 @@ export const FloatingCta = () => {
       <Link
         className='mx-auto flex w-3/4 items-center justify-center rounded-full border border-gold-light/60 bg-wine/90 px-6 py-3 text-center text-sm font-medium tracking-wide text-cream shadow-[0_8px_20px_rgb(0,0,0,0.15)] backdrop-blur-xs transition-transform active:scale-95'
         href='/story'>
-        Xem hành trình 10 năm
+        {s.label}
         <svg
           className='ml-2 h-5 w-5'
           fill='none'
