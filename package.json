@@ -10,7 +10,7 @@
     "lint:fix": "eslint --fix",
     "typecheck": "tsc --noEmit",
     "prepare": "husky",
-    "fetch-guests": "tsx scripts/fetch-guests.ts"
+    "fetch-guests": "npx tsx scripts/fetch-guests.ts"
   },
   "lint-staged": {
     "*.{ts,tsx}": [

@@ -4,8 +4,8 @@ export type RsvpFormData = {
   eventThanhHon: boolean
 }
 
-// Outgoing POST body — includes optional slug for guest identification
-export type RsvpPayload = RsvpFormData & { slug?: string }
+// Outgoing POST body — includes sheet routing, optional slug
+export type RsvpPayload = RsvpFormData & { sheet: 'rsvp'; slug?: string }
 
 export type RsvpApiResponse = {
   status: 'success' | 'error'
@@ -29,13 +29,15 @@ export type RsvpGetResponse = {
 // Returns null data if no prior submission exists.
 // Silently returns error shape on any network/parse failure — callers should treat as no prior RSVP.
 export async function getRsvp(slug: string): Promise<RsvpGetResponse> {
-  const url = process.env.NEXT_PUBLIC_RSVP_SCRIPT_URL
+  const url = process.env.NEXT_PUBLIC_APPS_SCRIPT_URL
   if (!url) {
     return { status: 'error', data: null, message: 'Endpoint not configured' }
   }
 
   try {
-    const res = await fetch(`${url}?slug=${encodeURIComponent(slug)}`)
+    const res = await fetch(
+      `${url}?sheet=rsvp&slug=${encodeURIComponent(slug)}`,
+    )
     if (!res.ok) {
       return { status: 'error', data: null }
     }
@@ -57,10 +59,7 @@ export async function submitRsvp(
   formData: RsvpFormData,
   slug?: string,
 ): Promise<RsvpApiResponse> {
-  // Prefer slug-aware endpoint; fall back to legacy POST-only endpoint
-  const url =
-    process.env.NEXT_PUBLIC_RSVP_SCRIPT_URL ||
-    process.env.NEXT_PUBLIC_APPS_SCRIPT_URL
+  const url = process.env.NEXT_PUBLIC_APPS_SCRIPT_URL
 
   if (!url) {
     return {
@@ -70,6 +69,7 @@ export async function submitRsvp(
   }
 
   const payload: RsvpPayload = {
+    sheet: 'rsvp',
     name: formData.name.trim(),
     eventDaiKhach: formData.eventDaiKhach,
     eventThanhHon: formData.eventThanhHon,
@@ -79,7 +79,9 @@ export async function submitRsvp(
   try {
     const response = await fetch(url, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      // text/plain avoids CORS preflight — Apps Script doesn't handle OPTIONS.
+      // Body is still JSON; Apps Script reads it via e.postData.contents.
+      headers: { 'Content-Type': 'text/plain' },
       body: JSON.stringify(payload),
     })
 

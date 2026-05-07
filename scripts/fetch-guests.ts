@@ -3,8 +3,8 @@
 // then write lib/guests-generated.json.
 //
 // Usage:
-//   GUEST_SCRIPT_URL=<url> pnpm fetch-guests
-//   Or set GUEST_SCRIPT_URL in .env.local and run: pnpm fetch-guests
+//   NEXT_PUBLIC_APPS_SCRIPT_URL=<url> pnpm fetch-guests
+//   Or set NEXT_PUBLIC_APPS_SCRIPT_URL in .env.local and run: pnpm fetch-guests
 //
 // This script reads dotenv manually so it works without next.js context.
 
@@ -40,15 +40,16 @@ type GeneratedGuestEntry = {
 async function main() {
   loadDotEnvLocal()
 
-  const url = process.env.GUEST_SCRIPT_URL
+  const url = process.env.NEXT_PUBLIC_APPS_SCRIPT_URL
   if (!url) {
     throw new Error(
-      'GUEST_SCRIPT_URL is not set. Add it to .env.local or pass as environment variable.',
+      'NEXT_PUBLIC_APPS_SCRIPT_URL is not set. Add it to .env.local or pass as environment variable.',
     )
   }
 
   console.log('Fetching guest list...')
-  const res = await fetch(url)
+  const fetchUrl = `${url}?sheet=guests`
+  const res = await fetch(fetchUrl)
   if (!res.ok) {
     throw new Error(`Fetch failed: HTTP ${res.status} ${res.statusText}`)
   }

@@ -1,14 +1,11 @@
 {
-  "anhtu": {
-    "name": "Anh Tú",
+  "test": {
+    "name": "Test",
     "photo": {
       "src": "/guests/anh-tu.svg",
-      "alt": "Ảnh khách mời Anh Tú",
+      "alt": "Ảnh khách mời Test",
       "width": 320,
       "height": 320
     }
-  },
-  "thuha": {
-    "name": "Thu Hà"
   }
 }
