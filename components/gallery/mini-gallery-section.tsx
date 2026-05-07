@@ -97,7 +97,7 @@ export const PhotoGallerySection = () => {
           viewport={{ once: true }}
           whileInView={{ opacity: 1 }}>
           <div className='mb-12 space-y-6 text-center md:mb-16'>
-            <h2 className='font-script text-5xl leading-tight text-gold-light drop-shadow-sm sm:text-6xl lg:text-7xl'>
+            <h2 className='font-script text-5xl leading-tight text-balance text-gold-light drop-shadow-sm sm:text-6xl lg:text-7xl'>
               {s.heading}
             </h2>
             <p className='mx-auto max-w-lg text-sm leading-relaxed text-cream/80 italic md:text-base'>

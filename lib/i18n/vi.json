@@ -15,7 +15,8 @@
   },
   "hero": {
     "eyebrow": "Wedding Invitation",
-    "coupleNames": "Xuân Tùng & Vân Anh",
+    "groomName": "Xuân Tùng",
+    "brideName": "Vân Anh",
     "intro": "Trân trọng mời bạn cùng gia đình đến chung vui trong ngày trọng đại của chúng mình.",
     "invitation": {
       "leading": "Thân mời",
@@ -24,12 +25,12 @@
     "reception": {
       "label": "Tiệc đãi khách",
       "solarDate": "08/06/2026",
-      "lunarDate": "23/4 âm lịch (Bính Ngọ)"
+      "lunarDate": "23/4 năm Bính Ngọ"
     },
     "ceremony": {
       "label": "Lễ thành hôn",
       "solarDate": "09/06/2026",
-      "lunarDate": "24/4 âm lịch"
+      "lunarDate": "24/4 năm Bính Ngọ"
     },
     "venue": {
       "label": "Địa điểm",
@@ -61,14 +62,14 @@
       "name": "Đoàn Xuân Tùng",
       "father": "Đoàn Xuân Phung",
       "mother": "Nguyễn Thị Thành",
-      "address": "Thôn Gia Lương, xã Đông Anh, TP Hà Nội"
+      "address": "Thôn Gia Lương, Xã Đông Anh, TP Hà Nội"
     },
     "bride": {
       "title": "Nhà Gái",
       "name": "Nguyễn Vân Anh",
       "father": "Nguyễn Trọng Ngọc",
       "mother": "Trần Thị Tuyết Lăng",
-      "address": "Thôn Gia Lương, xã Đông Anh, TP Hà Nội"
+      "address": "Thôn Gia Lương, Xã Đông Anh, TP Hà Nội"
     }
   },
   "events": {
@@ -76,7 +77,7 @@
     "attendInvitation": "Tham dự lễ thành hôn của chúng mình",
     "groomSide": "Sự kiện Nhà Trai",
     "brideSide": "Sự kiện Nhà Gái",
-    "partyLabel": "Tiệc Mời Khách",
+    "partyLabel": "Tiệc Cưới",
     "sectionTitle": "Lịch Trình",
     "sectionEyebrow": "Chương trình sự kiện",
     "calendarMonth": "Tháng 6",
@@ -87,16 +88,16 @@
         "time": "16:30",
         "date": "Thứ Hai",
         "fullDate": "08/06/2026",
-        "lunar": "23/4 âm lịch (Bính Ngọ)",
-        "location": "Sân đình thôn Gia Lương, xã Đông Anh, TP Hà Nội"
+        "lunar": "23/4 năm Bính Ngọ",
+        "location": "Sân đình Thôn Gia Lương, Xã Đông Anh, TP Hà Nội"
       },
       "ceremony": {
         "label": "Lễ Thành Hôn",
         "time": "10:30",
         "date": "Thứ Ba",
         "fullDate": "09/06/2026",
-        "lunar": "24/4 âm lịch",
-        "location": "Sân đình thôn Gia Lương, xã Đông Anh, TP Hà Nội"
+        "lunar": "24/4 năm Bính Ngọ",
+        "location": "Sân đình Thôn Gia Lương, Xã Đông Anh, TP Hà Nội"
       }
     },
     "bride": {
@@ -105,16 +106,16 @@
         "time": "16:30",
         "date": "Thứ Hai",
         "fullDate": "08/06/2026",
-        "lunar": "23/4 âm lịch (Bính Ngọ)",
-        "location": "Nhà văn hoá thôn Gia Lương, xã Đông Anh, TP Hà Nội"
+        "lunar": "23/4 năm Bính Ngọ",
+        "location": "Nhà văn hoá Thôn Gia Lương, Xã Đông Anh, TP Hà Nội"
       },
       "ceremony": {
         "label": "Lễ Vu Quy",
         "time": "09:00",
         "date": "Thứ Ba",
         "fullDate": "09/06/2026",
-        "lunar": "24/4 âm lịch",
-        "location": "Tư gia nhà gái, thôn Gia Lương, xã Đông Anh, TP Hà Nội"
+        "lunar": "24/4 năm Bính Ngọ",
+        "location": "Tư gia nhà gái, Thôn Gia Lương, Xã Đông Anh, TP Hà Nội"
       }
     }
   },
@@ -127,7 +128,7 @@
   },
   "map": {
     "heading": "Bản đồ chỉ đường",
-    "address": "Sân đình thôn Gia Lương, xã Đông Anh, TP Hà Nội",
+    "address": "Sân đình Thôn Gia Lương, Xã Đông Anh, TP Hà Nội",
     "iframeTitle": "Bản đồ đường đi",
     "openMapsLabel": "Mở trong Google Maps"
   },

@@ -65,7 +65,11 @@ export const HeroSection = ({ guest }: HeroSectionProps) => {
                 <h1
                   className='font-script text-6xl leading-tight font-normal text-balance sm:text-7xl md:text-8xl'
                   id='hero-heading'>
-                  {s.coupleNames}
+                  {s.groomName}
+                  <span className='mx-4 inline-block scale-65 align-middle text-gold-light opacity-80 md:mx-8'>
+                    &
+                  </span>
+                  {s.brideName}
                 </h1>
                 <div className='h-px w-24 bg-gold/70' />
                 <p className='max-w-2xl text-base leading-7 text-cream/85 sm:text-lg'>
