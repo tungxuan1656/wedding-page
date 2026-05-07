@@ -7,6 +7,7 @@ import { GuestPersonalization } from '@/components/guest'
 import { SectionWrapper } from '@/components/shared'
 import type { GuestData } from '@/lib/guests'
 import { strings } from '@/lib/i18n'
+import heroPortrait from '@/public/images/hero-portrait.webp'
 
 const { hero: s } = strings
 
@@ -97,9 +98,9 @@ export const HeroSection = ({ guest }: HeroSectionProps) => {
               fill
               priority
               alt='Tùng & Vân — Ảnh cưới'
-              className='object-contain pb-4 transition-transform duration-700'
+              className='object-contain p-10 pb-4 transition-transform duration-700'
               sizes='(max-width: 768px) 100vw, 40vw'
-              src='/images/hero-portrait.webp'
+              src={heroPortrait}
             />
             {/* Subtle color-correcting overlay to unify the red tones */}
             <div className='pointer-events-none absolute inset-0 bg-wine/5 mix-blend-multiply' />

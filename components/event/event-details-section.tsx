@@ -105,7 +105,7 @@ export const EventDetailsSection = () => {
             </p>
           </div>
 
-          <div className='grid items-center gap-12 lg:grid-cols-3'>
+          <div className='grid items-start gap-12 lg:grid-cols-3'>
             {/* Groom's side */}
             <div className='order-2 space-y-8 text-center lg:order-1 lg:text-right'>
               <h3 className='inline-block border-b border-wine/20 pb-4 font-serif text-2xl text-wine lg:block'>
