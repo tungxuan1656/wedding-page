@@ -3,14 +3,14 @@ import './globals.css'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import type { Metadata, Viewport } from 'next'
-import { Google_Sans, Great_Vibes, Noto_Serif } from 'next/font/google'
+import { Be_Vietnam_Pro, Great_Vibes, Noto_Serif } from 'next/font/google'
 
 import { AudioPlayer } from '@/components/shared'
 import { strings } from '@/lib/i18n'
 
 const { meta, shared } = strings
 
-const sans = Google_Sans({
+const sans = Be_Vietnam_Pro({
   weight: ['400', '500', '600', '700'],
   variable: '--font-sans',
   subsets: ['latin', 'vietnamese'],
