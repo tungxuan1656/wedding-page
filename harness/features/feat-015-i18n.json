@@ -1,0 +1,20 @@
+{
+  "id": "feat-015",
+  "name": "Internationalization (i18n)",
+  "description": "Centralized i18n architecture mapping all UI strings to `lib/i18n/vi.json` to eliminate hardcoded text, allowing for scalable language localization without logic modification.",
+  "dependencies": [
+    "feat-001",
+    "feat-002",
+    "feat-003",
+    "feat-004",
+    "feat-006",
+    "feat-007",
+    "feat-009",
+    "feat-010",
+    "feat-011",
+    "feat-012",
+    "feat-013"
+  ],
+  "status": "done",
+  "evidence": "Refactored components, pages, and metadata to use the `useI18n` hook and `t` translation function, mapped all strings in `vi.json`. Verified with pnpm lint, typecheck, build."
+}

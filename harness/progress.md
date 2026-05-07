@@ -1,5 +1,19 @@
 # Progress Index
 
+## 2026-05-07 — feat-015 Internationalization (i18n)
+
+- **Session**: feat-015-i18n-implement
+- **Status**: completed
+- **What was done**:
+  - Implemented centralized i18n architecture mapping all UI strings to `lib/i18n/vi.json`
+  - Created `useI18n` hook in `lib/i18n/index.ts`
+  - Extracted all hardcoded UI text from components (RSVP, Hero, Story, Gallery, etc.) and layout metadata to `vi.json`
+  - Refactored API error messages and accessibility labels to use localized strings
+  - Restored personalized guest messages in `lib/guests.ts` to their original Vietnamese context using the centralized architecture
+  - Verified with `pnpm lint`, `pnpm typecheck`, `pnpm build`, and `./init.sh`
+- **Blockers**: none
+- **Next steps**: none
+
 ## 2026-05-06 — feat-014 Guest Sheet + RSVP API (GET/POST with Slug)
 
 - **Session**: feat-014-implement
