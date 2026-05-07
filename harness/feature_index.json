@@ -147,8 +147,8 @@
       "name": "Add to Calendar Button",
       "description": "Google Calendar deeplink button in EventDetailsSection that pre-fills the wedding event (08/06/2026 17:00 – 09/06/2026 11:45 ICT, venue location link).",
       "dependencies": ["feat-001", "feat-015"],
-      "status": "planned",
-      "plan": "docs/exec-plans/plans/feat-017-add-to-calendar.md"
+      "status": "done",
+      "evidence": "lib/calendar.ts buildGoogleCalendarUrl util (all-day format), events.addToCalendar i18n key, and <a> button in event-details-section.tsx. Verified with pnpm lint, typecheck, build."
     }
   ]
 }

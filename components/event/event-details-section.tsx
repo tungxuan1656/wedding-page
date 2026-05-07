@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 
 import { SectionWrapper } from '@/components/shared'
+import { buildGoogleCalendarUrl } from '@/lib/calendar'
 import { strings } from '@/lib/i18n'
 
 const { events: s } = strings
@@ -150,8 +151,28 @@ export const EventDetailsSection = () => {
             </div>
 
             {/* Calendar */}
-            <div className='order-1 flex justify-center lg:order-2'>
+            <div className='order-1 flex flex-col items-center gap-4 lg:order-2'>
               <Calendar />
+              <a
+                aria-label={s.addToCalendar}
+                className='inline-flex items-center gap-2 rounded-full border border-wine/30 bg-white/70 px-5 py-2 text-sm font-medium text-wine shadow-sm backdrop-blur-sm transition-colors hover:bg-wine hover:text-cream'
+                href={buildGoogleCalendarUrl()}
+                rel='noopener noreferrer'
+                target='_blank'>
+                <svg
+                  aria-hidden='true'
+                  className='h-4 w-4 shrink-0'
+                  fill='none'
+                  stroke='currentColor'
+                  strokeWidth='2'
+                  viewBox='0 0 24 24'>
+                  <rect height='18' rx='2' ry='2' width='18' x='3' y='4' />
+                  <line x1='16' x2='16' y1='2' y2='6' />
+                  <line x1='8' x2='8' y1='2' y2='6' />
+                  <line x1='3' x2='21' y1='10' y2='10' />
+                </svg>
+                {s.addToCalendar}
+              </a>
             </div>
 
             {/* Bride's side */}

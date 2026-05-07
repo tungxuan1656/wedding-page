@@ -1,22 +1,17 @@
 # Progress Index
 
-## 2026-05-07 — feat-017: Add to Calendar Button (Plan)
+## 2026-05-07 — feat-017: Add to Calendar Button
 
-- **Session**: feat-017-add-to-calendar-plan
-- **Status**: planned
+- **Session**: feat-017-add-to-calendar-implement
+- **Status**: completed
 - **What was done**:
-  - Created ExecPlan at `docs/exec-plans/plans/feat-017-add-to-calendar.md`
-  - Registered `feat-017` in `harness/feature_index.json` (status: planned)
-  - Created `harness/features/feat-017-add-to-calendar.json`
-  - Updated `docs/exec-plans/index.md` (Active section)
+  - Created `lib/calendar.ts` with `buildGoogleCalendarUrl()` (using all-day format for June 8-9).
+  - Added `events.addToCalendar` key to `lib/i18n/vi.json`.
+  - Added deeplink button below `<Calendar />` in `event-details-section.tsx`.
+  - Verified with `pnpm lint && pnpm typecheck && pnpm build` (all pass).
+  - Updated harness and plans index.
 - **Blockers**: none
-- **Next steps**:
-  1. Create `lib/calendar.ts` with `buildGoogleCalendarUrl()`
-  2. Add `events.addToCalendar` key to `lib/i18n/vi.json`
-  3. Add deeplink button below `<Calendar />` in `event-details-section.tsx`
-  4. Run `pnpm lint && pnpm typecheck && pnpm build`
-  5. Manual browser verify — button visible, deeplink opens Google Calendar with correct event data
-  6. Update harness status to done
+- **Next steps**: none
 
 ## 2026-05-07 — feat-016 Analytics & Speed Insights
 
