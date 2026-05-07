@@ -133,6 +133,14 @@
       ],
       "status": "done",
       "evidence": "Refactored components, pages, and metadata to use the `useI18n` hook and `t` translation function, mapped all strings in `vi.json`. Verified with pnpm lint, typecheck, build."
+    },
+    {
+      "id": "feat-016",
+      "name": "Analytics & Speed Insights",
+      "description": "Integration of @vercel/analytics and @vercel/speed-insights for production monitoring and performance tracking.",
+      "dependencies": ["feat-001"],
+      "status": "done",
+      "evidence": "Installed @vercel/analytics and @vercel/speed-insights. Added <Analytics /> and <SpeedInsights /> to root layout. Verified with ./init.sh on 2026-05-07."
     }
   ]
 }

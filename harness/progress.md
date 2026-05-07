@@ -1,5 +1,17 @@
 # Progress Index
 
+## 2026-05-07 — feat-016 Analytics & Speed Insights
+
+- **Session**: feat-016-analytics-implement
+- **Status**: completed
+- **What was done**:
+  - Installed `@vercel/analytics` and `@vercel/speed-insights`
+  - Added `<Analytics />` and `<SpeedInsights />` to `app/layout.tsx`
+  - Fixed lint errors in `app/layout.tsx` (import sorting)
+  - Verified with `./init.sh` (lint, typecheck, build pass)
+- **Blockers**: none
+- **Next steps**: none
+
 ## 2026-05-07 — feat-015 Internationalization (i18n)
 
 - **Session**: feat-015-i18n-implement

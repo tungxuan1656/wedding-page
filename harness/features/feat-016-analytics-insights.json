@@ -1,0 +1,15 @@
+{
+  "id": "feat-016",
+  "name": "Analytics & Speed Insights",
+  "description": "Integration of @vercel/analytics and @vercel/speed-insights for production monitoring and performance tracking.",
+  "status": "done",
+  "dependencies": ["feat-001"],
+  "evidence": "Installed @vercel/analytics and @vercel/speed-insights. Added <Analytics /> and <SpeedInsights /> to the root layout. Verified with ./init.sh (lint, typecheck, build pass).",
+  "history": [
+    {
+      "date": "2026-05-07",
+      "action": "implementation",
+      "summary": "Installed packages and updated root layout."
+    }
+  ]
+}
