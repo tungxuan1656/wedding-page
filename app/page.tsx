@@ -24,7 +24,7 @@ const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL || 'https://tx-va-wedding.vercel.app'
 
 export async function generateMetadata(): Promise<Metadata> {
-  const title = `${hero.coupleNames} — Thiệp cưới`
+  const title = `${hero.coupleNames} — Wedding Invitation`
   const description = hero.intro
 
   return {
@@ -64,7 +64,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
     '@context': 'https://schema.org',
     '@type': 'Event',
     eventType: 'WeddingEvent',
-    name: `Đám cưới ${hero.coupleNames}`,
+    name: `Wedding of ${hero.coupleNames}`,
     description: hero.intro,
     startDate: '2026-06-08',
     endDate: '2026-06-09',
@@ -73,7 +73,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
       name: hero.venue.name,
       address: {
         '@type': 'PostalAddress',
-        addressLocality: 'Đông Anh, Hà Nội',
+        addressLocality: 'Dong Anh, Hanoi',
         addressCountry: 'VN',
       },
     },

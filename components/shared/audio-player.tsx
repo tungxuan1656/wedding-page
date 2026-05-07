@@ -82,7 +82,9 @@ export const AudioPlayer = () => {
     <>
       <audio ref={audioRef} loop src={AUDIO_SRC} />
       <button
-        aria-label={isPlaying ? 'Tắt nhạc nền' : 'Bật nhạc nền'}
+        aria-label={
+          isPlaying ? 'Pause background music' : 'Play background music'
+        }
         className='fixed top-6 right-4 z-50 flex h-10 w-10 items-center justify-center rounded-full border border-gold/30 bg-wine/80 text-cream shadow-lg backdrop-blur-sm transition-all hover:bg-wine active:scale-95 md:top-8 md:right-8'
         type='button'
         onClick={toggle}>

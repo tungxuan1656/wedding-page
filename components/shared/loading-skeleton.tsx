@@ -11,7 +11,7 @@ type LoadingSkeletonProps = {
 export const LoadingSkeleton = ({
   lines = 3,
   heading = false,
-  'aria-label': ariaLabel = 'Đang tải nội dung',
+  'aria-label': ariaLabel = 'Loading content',
   className,
 }: LoadingSkeletonProps) => {
   return (

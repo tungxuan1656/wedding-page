@@ -1,436 +1,281 @@
-# 💍 Wedding Website Project – Technical Specification & Implementation Plan
+# 💍 Wedding Website Project – Product Specification
 
-## 1. 🎯 Project Overview
+## 1. Project Overview
 
-### 1.1 Mục tiêu
-Xây dựng một **website thiệp cưới hiện đại, cá nhân hóa và giàu cảm xúc**, không chỉ cung cấp thông tin sự kiện mà còn kể lại hành trình 10 năm yêu nhau thông qua trải nghiệm tương tác (interactive storytelling).
+### 1.1 Goal
 
-### 1.2 Triết lý sản phẩm
-- Không phải “thiệp cưới online” thông thường  
-- Là một **trải nghiệm kể chuyện (story-driven experience)**  
-- Tập trung vào:
-  - cảm xúc
-  - cá nhân hóa
-  - trải nghiệm người dùng (UX)
+Build a **modern, personalized, and emotionally rich wedding invitation website** — not just an event info page, but an interactive story-driven experience that retells a 10-year love journey.
+
+### 1.2 Product Philosophy
+
+- Not a typical "online invitation card"
+- A **story-driven experience**
+- Focused on:
+  - Emotion
+  - Personalization
+  - User experience (UX)
 
 ---
 
-## 2. 🧱 Tech Stack
+## 2. Tech Stack
 
 ### 2.1 Frontend
-- Framework: **Next.js (App Router hoặc Pages Router đều được)**
-- Styling:
-  - TailwindCSS (khuyến nghị)
-  - hoặc CSS Modules
-- Animation:
-  - Framer Motion (đơn giản, React-friendly)
-  - hoặc GSAP (nâng cao)
 
----
+- Framework: **Next.js 16 (App Router)**
+- Styling: Tailwind CSS v4
+- Animation: Framer Motion (simple, React-friendly)
 
 ### 2.2 Backend (Lightweight)
-- Google Apps Script (Web App API)
-- Google Sheets (database)
 
----
+- Google Apps Script (Web App API)
+- Google Sheets (as database)
 
 ### 2.3 Hosting & Deployment
+
 - Vercel:
-  - CI/CD tự động từ GitHub
-  - CDN global
-  - SSL sẵn
+  - Automatic CI/CD from GitHub
+  - Global CDN
+  - SSL included
 
----
-
-### 2.4 Data Flow Summary
+### 2.4 Data Flow
 
 ```
-
 User → Next.js frontend → (fetch POST)
 → Google Apps Script → Google Sheets
-
 ```
 
 ---
 
-## 3. 🧩 Core Features
+## 3. Core Features
+
+### 3.1 Landing Page
+
+**Purpose**
+- Deliver key event information
+- Create a strong first impression
+
+**Content**
+- Hero section: couple names, wedding photo
+- Event dates and times
+- Venue: address, Google Maps embed
+- CTAs: "Confirm Attendance", "View Our Story"
 
 ---
 
-# 3.1 Landing Page (Thiệp cưới chính)
+### 3.2 Our Story (10-year storytelling)
 
-## Mục đích
-- Cung cấp thông tin chính
-- Tạo ấn tượng ban đầu
+**Goal**
+- Turn a photo album into an emotionally engaging narrative
+- Scroll-based experience
 
-## Nội dung
-- Hero section:
-  - tên cô dâu + chú rể
-  - ảnh cưới
-- Thời gian:
-  - ngày giờ tổ chức
-- Địa điểm:
-  - địa chỉ
-  - Google Maps embed
-- CTA:
-  - “Xác nhận tham dự”
-  - “Xem hành trình”
-
----
-
-# 3.2 Our Story (Storytelling 10 năm)
-
-## Mục tiêu
-- Biến album ảnh → câu chuyện có cảm xúc
-- Trải nghiệm dạng scroll
-
-## Cấu trúc
-
-### Chapter-based storytelling
+**Structure — chapter-based storytelling**
 
 ```
-
-2015 – Lần đầu gặp
-2017 – Yêu xa
-2020 – Biến cố
-2022 – Trưởng thành
-2025 – Quyết định cưới
-
+2015 – First meeting
+2017 – Long distance
+2020 – Challenges
+2022 – Growing together
+2025 – The proposal
 ```
 
----
+**Each chapter contains:**
+- Title (year + event name)
+- 3–5 photos
+- 1–2 short paragraphs
+- Subtle animations: fade-in, slide-up, image zoom
 
-## Mỗi chapter gồm:
-- Title (năm + sự kiện)
-- 3–5 ảnh
-- 1–2 đoạn text ngắn
-- Animation nhẹ:
-  - fade in
-  - slide up
-  - zoom image
-
----
-
-## UX Flow
-
+**UX flow:**
+```
+Scroll down → each chapter appears
+→ photos + text animate in
+→ smooth scene transitions
 ```
 
-Scroll xuống → từng chapter xuất hiện
-→ ảnh + text animate vào
-→ chuyển cảnh mềm
+**Design principles:**
+- No more than 40 photos total
+- Quality over quantity
+- Every section must have meaning
 
+---
+
+### 3.3 Guest Personalization
+
+**Goal**
+- Each guest sees personalized content
+- Increases emotional impact and engagement
+
+**How it works — URL pattern:**
+```
+https://yourdomain.com?g=anhtu
 ```
 
----
-
-## Nguyên tắc thiết kế
-
-- Không quá 40 ảnh tổng
-- Ưu tiên chất lượng hơn số lượng
-- Mỗi section phải có ý nghĩa
-
----
-
-# 3.3 Guest Personalization (Cá nhân hóa khách mời)
-
-## Mục tiêu
-- Mỗi khách thấy nội dung riêng
-- Tăng cảm xúc & trải nghiệm
-
----
-
-## Cách hoạt động
-
-### URL pattern
-
-```
-
-[https://yourdomain.com?g=anhtu](https://yourdomain.com?g=anhtu)
-
-````
-
----
-
-## Data structure (JSON)
-
+**Data structure:**
 ```json
 {
   "anhtu": {
-    "name": "Anh Tuấn",
-    "message": "Nhớ đến sớm nhé!",
+    "name": "Anh Tuan",
+    "message": "See you soon!",
     "image": "/guests/anhtu.jpg"
   }
 }
-````
-
----
-
-## Logic xử lý
-
-```js
-const params = new URLSearchParams(window.location.search);
-const guestId = params.get("g");
-const guest = data[guestId];
 ```
 
----
-
-## UI hiển thị
-
-* “Xin chào Anh Tuấn”
-* Message riêng
-* Highlight tên trong thiệp
-
----
-
-## Nâng cao (optional)
-
-* QR code riêng cho từng khách
-* Ẩn/hiện nội dung theo guest
-
----
-
-# 3.4 RSVP System
-
-## Mục tiêu
-
-* Thu thập xác nhận tham dự
-* Không cần backend phức tạp
-
----
-
-## Form fields
-
-* Name
-* Attending (Yes/No)
-* Number of guests
-* Note
-
----
-
-## Frontend submit
-
+**Processing logic:**
 ```js
-fetch("YOUR_SCRIPT_URL", {
-  method: "POST",
-  body: JSON.stringify({
-    name,
-    attending,
-    guests,
-    note
-  })
-});
+const params = new URLSearchParams(window.location.search)
+const guestId = params.get('g')
+const guest = data[guestId]
 ```
 
+**UI display:**
+- "Hello, Anh Tuan"
+- Personal message
+- Name highlighted in the invitation
+
+**Optional enhancements:**
+- Per-guest QR code
+- Show/hide content based on guest type
+
 ---
 
-## Apps Script (API)
+### 3.4 RSVP System
 
+**Goal**
+- Collect attendance confirmations
+- No complex backend required
+
+**Form fields:**
+- Name
+- Events attending (checkboxes)
+- Optional note
+
+**Frontend submit:**
+```js
+fetch(APPS_SCRIPT_URL, {
+  method: 'POST',
+  body: JSON.stringify({ name, eventDaiKhach, eventThanhHon, slug })
+})
+```
+
+**Apps Script handler:**
 ```javascript
 function doPost(e) {
-  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-  const data = JSON.parse(e.postData.contents);
-
-  sheet.appendRow([
-    data.name,
-    data.attending,
-    data.guests,
-    data.note
-  ]);
-
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet()
+  const data = JSON.parse(e.postData.contents)
+  sheet.appendRow([data.name, data.eventDaiKhach, data.eventThanhHon])
   return ContentService
-    .createTextOutput(JSON.stringify({ status: "success" }))
-    .setMimeType(ContentService.MimeType.JSON);
+    .createTextOutput(JSON.stringify({ status: 'success' }))
+    .setMimeType(ContentService.MimeType.JSON)
 }
 ```
 
----
-
-## Output
-
-* Lưu vào Google Sheets
-* Quản lý dễ dàng
+**Output:** Saved to Google Sheets, easy to manage.
 
 ---
 
-# 3.5 Performance Optimization
+### 3.5 Performance Optimization
 
-## Ảnh
+**Images:**
+- Format: WebP / AVIF
+- Resize before upload
+- Lazy loading via `next/image`
 
-* Format: WebP / AVIF
-* Resize trước khi upload
-* Lazy loading
+**Code:**
+- Dynamic import for animation-heavy components
+- Avoid large JS bundles
 
----
-
-## Code
-
-* Dynamic import cho animation
-* Avoid bundle quá lớn
-
----
-
-## UX
-
-* Load nhanh trên mobile
-* Scroll mượt
+**UX:**
+- Fast load on mobile
+- Smooth scrolling
 
 ---
 
-# 3.6 Mobile Optimization
+### 3.6 Mobile Optimization
 
-## Rất quan trọng
+> 80–90% of users will be on mobile.
 
-> 80–90% user sẽ dùng mobile
-
----
-
-## Checklist
-
-* Responsive layout
-* Font size dễ đọc
-* Button đủ lớn
-* Không lag khi scroll
+**Checklist:**
+- Responsive layout
+- Readable font sizes
+- Touch-friendly button sizes
+- No jank during scroll
 
 ---
 
-# 3.7 Optional Features (Nice-to-have)
+### 3.7 Optional Features (Nice-to-have)
 
-* 🎵 Nhạc nền
-* 📷 Gallery fullscreen
-* 🌙 Dark mode
-* 📍 Map tương tác
-* 📲 QR code
+- 🎵 Background music
+- 📷 Fullscreen gallery lightbox
+- 📍 Interactive map
+- 📲 Per-guest QR code
 
 ---
 
-## 4. 🗂️ Project Structure (Next.js)
+## 4. Project Structure (Next.js)
 
 ```
-/app
-  /page.tsx          → Landing
-  /story/page.tsx    → Our Story
+app/
+  page.tsx          → Landing page
+  story/page.tsx    → Our Story
 
-/components
-  Hero.tsx
-  StorySection.tsx
-  RSVPForm.tsx
-  GuestBanner.tsx
+components/
+  hero/             → Hero section
+  story/            → Story chapters
+  rsvp/             → RSVP form
+  guest/            → Guest personalization banner
+  shared/           → Reusable components
 
-/lib
-  guests.ts
-  api.ts
+lib/
+  guests.ts         → Guest data & lookup
+  api.ts            → Apps Script API client
+  i18n/
+    vi.json         → All UI strings (Vietnamese)
+    index.ts        → i18n utility
 
-/public
-  /images
-  /guests
+public/
+  images/           → Wedding photos
+  guests/           → Guest-specific photos
 ```
 
 ---
 
-## 5. 🔄 Development Timeline
+## 5. Development Timeline
 
-### Day 1
-
-* Setup project
-* Deploy Vercel
-* Build landing
-
----
-
-### Day 2
-
-* Build story sections
-* Add content
+| Day | Focus |
+|-----|-------|
+| 1 | Project setup, Vercel deploy, landing page |
+| 2 | Story sections, content |
+| 3 | Animations, UI polish |
+| 4 | RSVP (Apps Script integration) |
+| 5 | Guest personalization, testing |
 
 ---
 
-### Day 3
+## 6. Risks & Pitfalls
 
-* Animation
-* Polish UI
-
----
-
-### Day 4
-
-* RSVP (Apps Script)
-* Connect API
+1. **Over-engineering** — Too many animations, wasted time. Keep it simple.
+2. **Too many photos** — Slows the site, loses focus. Max 40 total.
+3. **Not testing on mobile** — Poor UX. Test on 3G throttle.
+4. **RSVP failures** — Test thoroughly before the wedding date.
 
 ---
 
-### Day 5
+## 7. Success Criteria
 
-* Guest personalization
-* Testing
-
----
-
-## 6. ⚠️ Risks & Pitfalls
-
-### 1. Over-engineering
-
-* Làm quá nhiều animation
-* Tốn thời gian
+- Load time < 2s on mobile
+- Smooth scroll experience
+- Story is clear and emotionally resonant
+- RSVP works reliably end-to-end
+- Guest personalization renders correctly
 
 ---
 
-### 2. Quá nhiều ảnh
-
-* Làm chậm site
-* Mất focus
-
----
-
-### 3. Không test mobile
-
-* UX kém
-
----
-
-### 4. RSVP lỗi
-
-* Test kỹ trước ngày cưới
-
----
-
-## 7. ✅ Success Criteria
-
-* Load nhanh (<2s)
-* Mobile mượt
-* Story rõ ràng, cảm xúc
-* RSVP hoạt động ổn định
-* Cá nhân hóa hoạt động đúng
-
----
-
-## 8. 🧠 Final Notes
-
-* Đây là sản phẩm cảm xúc → UX quan trọng hơn kỹ thuật
-* Ưu tiên:
-
-  * đơn giản
-  * mượt
-  * có câu chuyện
-
----
-
-## 9. 🚀 Kết luận
-
-Kiến trúc:
+## 8. Architecture Summary
 
 ```
 Next.js + Vercel + Apps Script + Google Sheets
 ```
 
-→ Là giải pháp:
+A fast, lightweight, easy-to-build stack — powerful enough for a high-quality wedding experience.
 
-* nhanh
-* nhẹ
-* dễ build
-* đủ mạnh
-
----
-
-> Nếu triển khai đúng, đây không chỉ là website cưới
-> mà là một trải nghiệm đáng nhớ cho khách mời.
+> When done right, this is not just a wedding website — it's a memorable experience for every guest.

@@ -64,7 +64,7 @@ export async function submitRsvp(
   if (!url) {
     return {
       status: 'error',
-      message: 'Endpoint không được cấu hình. Vui lòng liên hệ ban tổ chức.',
+      message: 'Endpoint not configured. Please contact the organizer.',
     }
   }
 
@@ -89,7 +89,7 @@ export async function submitRsvp(
     try {
       data = (await response.json()) as RsvpApiResponse
     } catch {
-      return { status: 'error', message: 'Phản hồi từ máy chủ không hợp lệ.' }
+      return { status: 'error', message: 'Invalid response from server.' }
     }
 
     if (data.status === 'success') {
@@ -98,12 +98,12 @@ export async function submitRsvp(
 
     return {
       status: 'error',
-      message: data.message ?? 'Gửi thất bại. Vui lòng thử lại.',
+      message: data.message ?? 'Submission failed. Please try again.',
     }
   } catch {
     return {
       status: 'error',
-      message: 'Không thể kết nối. Vui lòng kiểm tra mạng và thử lại.',
+      message: 'Connection failed. Please check your network and try again.',
     }
   }
 }

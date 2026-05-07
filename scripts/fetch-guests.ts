@@ -73,7 +73,7 @@ async function main() {
         ? {
             photo: {
               src: g.image,
-              alt: `Ảnh khách mời ${g.name}`,
+              alt: `Guest photo - ${g.name}`,
               width: 320,
               height: 320,
             },

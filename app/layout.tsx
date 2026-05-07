@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     description: meta.home.description,
     type: 'website',
     locale: 'vi_VN',
-    siteName: 'Xuân Tùng & Vân Anh',
+    siteName: strings.hero.coupleNames,
     images: [
       {
         url: '/images/og-image.png',
