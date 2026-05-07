@@ -1,3 +1,7 @@
+import { strings } from '@/lib/i18n'
+
+const e = strings.apiErrors
+
 export type RsvpFormData = {
   name: string
   eventDaiKhach: boolean
@@ -31,7 +35,7 @@ export type RsvpGetResponse = {
 export async function getRsvp(slug: string): Promise<RsvpGetResponse> {
   const url = process.env.NEXT_PUBLIC_APPS_SCRIPT_URL
   if (!url) {
-    return { status: 'error', data: null, message: 'Endpoint not configured' }
+    return { status: 'error', data: null, message: e.endpointNotConfigured }
   }
 
   try {
@@ -64,7 +68,7 @@ export async function submitRsvp(
   if (!url) {
     return {
       status: 'error',
-      message: 'Endpoint not configured. Please contact the organizer.',
+      message: e.endpointNotConfigured,
     }
   }
 
@@ -89,7 +93,7 @@ export async function submitRsvp(
     try {
       data = (await response.json()) as RsvpApiResponse
     } catch {
-      return { status: 'error', message: 'Invalid response from server.' }
+      return { status: 'error', message: e.invalidResponse }
     }
 
     if (data.status === 'success') {
@@ -98,12 +102,12 @@ export async function submitRsvp(
 
     return {
       status: 'error',
-      message: data.message ?? 'Submission failed. Please try again.',
+      message: data.message ?? e.submitFailed,
     }
   } catch {
     return {
       status: 'error',
-      message: 'Connection failed. Please check your network and try again.',
+      message: e.networkError,
     }
   }
 }

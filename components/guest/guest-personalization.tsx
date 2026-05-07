@@ -31,7 +31,7 @@ export const GuestPersonalization = ({ guest }: GuestPersonalizationProps) => {
       {guest.photo ? (
         <div className='mx-auto w-full max-w-40 overflow-hidden rounded-[1.75rem] border border-cream/20 bg-cream/5'>
           <Image
-            alt={guest.photo.alt}
+            alt={`${strings.guestPhotoAlt} - ${guest.name}`}
             className='h-full w-full object-cover'
             height={guest.photo.height}
             sizes='(min-width: 768px) 160px, 128px'

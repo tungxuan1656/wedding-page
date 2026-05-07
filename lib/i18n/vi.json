@@ -135,6 +135,7 @@
     "heading": "Gửi Quà Cưới",
     "description": "Sự hiện diện của bạn là món quà quý giá nhất đối với chúng mình. Nếu bạn không thể tham dự và muốn gửi lời chúc phúc, xin nhận tấm lòng chân thành từ gia đình hai bên.",
     "copyAccountLabel": "Copy account number",
+    "qrCodeAlt": "Mã QR chuyển khoản",
     "groom": {
       "title": "Nhà Trai",
       "bankName": "Vietcombank",
@@ -308,5 +309,12 @@
       "message": "Có lỗi không mong muốn xảy ra. Vui lòng thử lại.",
       "retry": "Thử lại"
     }
-  }
+  },
+  "apiErrors": {
+    "endpointNotConfigured": "Endpoint chưa được cấu hình. Vui lòng liên hệ ban tổ chức.",
+    "invalidResponse": "Phản hồi từ máy chủ không hợp lệ.",
+    "submitFailed": "Gửi thất bại. Vui lòng thử lại.",
+    "networkError": "Không thể kết nối. Vui lòng kiểm tra mạng và thử lại."
+  },
+  "guestPhotoAlt": "Ảnh khách mời"
 }

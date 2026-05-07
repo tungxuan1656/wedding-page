@@ -66,7 +66,7 @@ const AccountCard = ({ data }: { data: AccountData }) => {
         {/* Replace src with real QR image path when available */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          alt={`QR code - ${data.bankName} - ${data.accountName}`}
+          alt={`${s.qrCodeAlt} - ${data.bankName} - ${data.accountName}`}
           className='h-full w-full object-cover'
           src={data.qrImage}
         />
