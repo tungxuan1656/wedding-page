@@ -10,7 +10,7 @@ export const Footer = () => {
 
         <p className='font-script text-4xl sm:text-5xl'>
           {hero.groomName}
-          <span className='mx-2 inline-block scale-75 align-middle text-gold-light opacity-80'>
+          <span className='mx-3 inline-block scale-75 align-middle text-gold-light opacity-80 md:mx-6'>
             &
           </span>
           {hero.brideName}
