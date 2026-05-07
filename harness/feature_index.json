@@ -141,6 +141,14 @@
       "dependencies": ["feat-001"],
       "status": "done",
       "evidence": "Installed @vercel/analytics and @vercel/speed-insights. Added <Analytics /> and <SpeedInsights /> to root layout. Verified with ./init.sh on 2026-05-07."
+    },
+    {
+      "id": "feat-017",
+      "name": "Add to Calendar Button",
+      "description": "Google Calendar deeplink button in EventDetailsSection that pre-fills the wedding event (08/06/2026 17:00 – 09/06/2026 11:45 ICT, venue location link).",
+      "dependencies": ["feat-001", "feat-015"],
+      "status": "planned",
+      "plan": "docs/exec-plans/plans/feat-017-add-to-calendar.md"
     }
   ]
 }
