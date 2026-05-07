@@ -2,13 +2,13 @@
   "meta": {
     "home": {
       "title": "Xuân Tùng & Vân Anh — Thiệp cưới",
-      "description": "Thiệp cưới Xuân Tùng & Vân Anh. Tiệc đãi khách 08/06/2026, lễ thành hôn 09/06/2026 tại Sân đình thôn Gia Lương, Đông Anh, Hà Nội.",
+      "description": "Thiệp cưới Xuân Tùng & Vân Anh. Trân trọng kính mời tới dự tiệc cưới ngày 08/06/2026 và lễ thành hôn ngày 09/06/2026 tại Sân đình Thôn Gia Lương, Xã Đông Anh, Hà Nội.",
       "ogImageAlt": "Thiệp cưới Xuân Tùng & Vân Anh",
-      "keywords": "đám cưới Xuân Tùng Vân Anh, thiệp cưới online, wedding invitation, Gia Lương Đông Anh, thiệp cưới Xuân Tùng, thiệp cưới Vân Anh"
+      "keywords": "đám cưới Xuân Tùng Vân Anh, thiệp cưới online, thiệp mời đám cưới, Gia Lương Đông Anh, thiệp cưới Xuân Tùng, thiệp cưới Vân Anh"
     },
     "story": {
       "title": "Hành trình yêu — Xuân Tùng & Vân Anh",
-      "description": "Câu chuyện tình yêu 10 năm của Xuân Tùng & Vân Anh — từ lần đầu gặp đến ngày trọng đại.",
+      "description": "Câu chuyện tình yêu của Xuân Tùng & Vân Anh — từ những ngày đầu gặp gỡ đến ngày về chung một nhà.",
       "keywords": "hành trình yêu, câu chuyện tình yêu, Xuân Tùng Vân Anh, kỷ niệm 10 năm, hành trình 10 năm"
     }
   },
@@ -19,10 +19,10 @@
     "eyebrow": "Thiệp mời đám cưới",
     "groomName": "Xuân Tùng",
     "brideName": "Vân Anh",
-    "intro": "Trân trọng mời bạn cùng gia đình đến chung vui trong ngày trọng đại của chúng mình.",
+    "intro": "Trân trọng kính mời bạn cùng gia đình tới dự và chung vui cùng chúng mình trong ngày trọng đại.",
     "invitation": {
       "leading": "Thân mời",
-      "trailing": "đến dự và chung vui cùng gia đình trong ngày đặc biệt này."
+      "trailing": "tới dự và chung vui cùng gia đình hai bên trong ngày vui của chúng mình."
     },
     "reception": {
       "label": "Tiệc đãi khách",
@@ -37,15 +37,15 @@
     "venue": {
       "label": "Địa điểm",
       "name": "Sân đình thôn Gia Lương",
-      "address": "Xã Đông Anh, TP Hà Nội"
+      "address": "Xã Đông Anh, Hà Nội"
     },
     "ctaRsvp": "Xác nhận tham dự",
     "ctaStory": "Xem hành trình",
     "heroPhotoPlaceholder": "Ảnh cưới của bạn",
-    "rsvpPlaceholder": "Khu vực xác nhận tham dự sẽ sớm được mở trong bước tiếp theo."
+    "rsvpPlaceholder": "Phần xác nhận tham dự sẽ sớm được cập nhật."
   },
   "countdown": {
-    "heading": "Đếm ngược tới ngày chung đôi",
+    "heading": "Đếm ngược tới lễ cưới",
     "units": {
       "days": "Ngày",
       "hours": "Giờ",
@@ -54,7 +54,7 @@
     }
   },
   "family": {
-    "sectionEyebrow": "LỄ CƯỚI",
+    "sectionEyebrow": "Gia đình",
     "labels": {
       "father": "Ông:",
       "mother": "Bà:"
@@ -64,29 +64,29 @@
       "name": "Đoàn Xuân Tùng",
       "father": "Đoàn Xuân Phung",
       "mother": "Nguyễn Thị Thành",
-      "address": "Thôn Gia Lương, Xã Đông Anh, TP Hà Nội"
+      "address": "Thôn Gia Lương, Xã Đông Anh, Hà Nội"
     },
     "bride": {
       "title": "Nhà Gái",
       "name": "Nguyễn Vân Anh",
       "father": "Nguyễn Trọng Ngọc",
       "mother": "Trần Thị Tuyết Lăng",
-      "address": "Thôn Gia Lương, Xã Đông Anh, TP Hà Nội"
+      "address": "Thôn Gia Lương, Xã Đông Anh, Hà Nội"
     }
   },
   "events": {
     "saveTheDate": "Save The Date",
-    "attendInvitation": "Tham dự lễ thành hôn của chúng mình",
-    "groomSide": "Sự kiện Nhà Trai",
-    "brideSide": "Sự kiện Nhà Gái",
-    "partyLabel": "Tiệc Cưới",
-    "sectionTitle": "Lịch Trình",
+    "attendInvitation": "Trân trọng kính mời tới dự lễ thành hôn của chúng mình",
+    "groomSide": "Lịch trình nhà trai",
+    "brideSide": "Lịch trình nhà gái",
+    "partyLabel": "Tiệc cưới",
+    "sectionTitle": "Lịch trình",
     "sectionEyebrow": "Chương trình sự kiện",
     "calendarMonth": "Tháng 6",
     "calendarDays": ["T2", "T3", "T4", "T5", "T6", "T7", "CN"],
     "groom": {
       "party": {
-        "label": "Tiệc Đãi Khách",
+        "label": "Tiệc cưới",
         "time": "16:30",
         "date": "Thứ Hai",
         "fullDate": "08/06/2026",
@@ -94,7 +94,7 @@
         "location": "Sân đình Thôn Gia Lương, Xã Đông Anh, HN"
       },
       "ceremony": {
-        "label": "Lễ Thành Hôn",
+        "label": "Lễ thành hôn",
         "time": "10:30",
         "date": "Thứ Ba",
         "fullDate": "09/06/2026",
@@ -104,12 +104,12 @@
     },
     "bride": {
       "party": {
-        "label": "Tiệc Đãi Khách",
+        "label": "Tiệc cưới",
         "time": "16:30",
         "date": "Thứ Hai",
         "fullDate": "08/06/2026",
         "lunar": "23 tháng 4 năm Bính Ngọ",
-        "location": "Nhà văn hoá Thôn Gia Lương, Xã Đông Anh, HN"
+        "location": "Nhà văn hóa Thôn Gia Lương, Xã Đông Anh, HN"
       },
       "ceremony": {
         "label": "Lễ Vu Quy",
@@ -123,27 +123,27 @@
   },
   "gallery": {
     "heading": "Khoảnh khắc hạnh phúc",
-    "quote": "\"...anh đã quyết định sẽ cùng em đi đến hết cuộc đời.\"",
+    "quote": "\"...anh đã tự nhủ sẽ nắm tay em đi hết quãng đời còn lại.\"",
     "ctaStory": "Xem hành trình 10 năm của chúng mình",
     "photoAlt": "Ảnh cưới",
     "openPhotoLabel": "Mở"
   },
   "map": {
     "heading": "Bản đồ chỉ đường",
-    "address": "Sân đình Thôn Gia Lương, Xã Đông Anh, TP Hà Nội",
+    "address": "Sân đình Thôn Gia Lương, Xã Đông Anh, HN",
     "iframeTitle": "Bản đồ đường đi",
     "openMapsLabel": "Mở trong Google Maps"
   },
   "giftRegistry": {
-    "heading": "Gửi Quà Cưới",
-    "description": "Sự hiện diện của bạn là món quà quý giá nhất đối với chúng mình. Nếu bạn không thể tham dự và muốn gửi lời chúc phúc, xin nhận tấm lòng chân thành từ gia đình hai bên.",
-    "copyAccountLabel": "Copy account number",
+    "heading": "Mừng cưới",
+    "description": "Sự hiện diện của bạn là món quà quý giá nhất đối với chúng mình. Nếu bạn ở xa hoặc không tiện tới dự mà vẫn muốn gửi lời chúc phúc, chúng mình xin được trân trọng đón nhận tấm lòng của bạn.",
+    "copyAccountLabel": "Sao chép số tài khoản",
     "qrCodeAlt": "Mã QR chuyển khoản",
     "groom": {
       "title": "Nhà Trai",
       "bankName": "Vietcombank",
-      "accountName": "XUAN TUNG",
-      "accountNumber": "0123456789",
+      "accountName": "DOAN XUAN TUNG",
+      "accountNumber": "9668866889",
       "qrImage": "/images/qr-groom.svg"
     },
     "bride": {
@@ -156,44 +156,44 @@
   },
   "rsvp": {
     "heading": "Xác nhận tham dự",
-    "subheading": "Vui lòng điền thông tin để chúng mình chuẩn bị đón tiếp bạn một cách chu đáo nhất.",
+    "subheading": "Vui lòng điền thông tin để chúng mình được chuẩn bị đón tiếp bạn chu đáo hơn trong ngày vui.",
     "namePlaceholder": "Nhập họ và tên...",
     "nameLabel": "Họ tên khách mời",
     "nameLoading": "Đang tải...",
     "eventsLegend": "Sự kiện tham dự",
-    "eventDaiKhach": "Tiệc đãi khách (08/06)",
+    "eventDaiKhach": "Tiệc cưới (08/06)",
     "eventThanhHon": "Lễ thành hôn (09/06)",
-    "submit": "Gửi xác nhận tham dự",
+    "submit": "Gửi thông tin xác nhận",
     "submitting": "Đang gửi thông tin...",
     "successTitle": "Gửi thành công!",
     "successMessage": "Cảm ơn bạn đã xác nhận. Chúng mình rất mong được đón tiếp bạn trong ngày vui sắp tới.",
     "retryLabel": "Thử lại ngay",
     "errorPrefix": "Lỗi:",
     "defaultError": "Gửi thất bại. Vui lòng thử lại.",
-    "nameRequired": "Vui lòng nhập họ tên để chúng mình biết bạn là ai.",
+    "nameRequired": "Vui lòng nhập họ và tên để chúng mình chuẩn bị đón tiếp được chu đáo.",
     "eventsRequired": "Vui lòng chọn ít nhất một sự kiện bạn sẽ tham dự."
   },
   "footer": {
-    "thankYou": "Cảm ơn bạn đã ghé thăm trang thiệp cưới của chúng mình. Sự hiện diện và tình cảm của bạn là món quà quý giá nhất trong ngày trọng đại này. Chúng mình rất mong được gặp bạn!",
+    "thankYou": "Cảm ơn bạn đã ghé thăm trang thiệp cưới của chúng mình. Sự hiện diện và tình cảm của bạn là món quà quý giá nhất trong ngày trọng đại này. Chúng mình rất mong được đón tiếp bạn trong ngày vui của gia đình.",
     "weddingDate": "08 · 06 · 2026"
   },
   "floatingCta": {
     "label": "Xem hành trình 10 năm"
   },
   "guest": {
-    "personalMessageLabel": "Lời nhắn riêng",
+    "personalMessageLabel": "Lời nhắn gửi riêng",
     "greeting": "Xin chào"
   },
   "imageModal": {
     "closeLabel": "Đóng",
     "prevLabel": "Ảnh trước",
     "nextLabel": "Ảnh sau",
-    "zoomHint": "Cuộn / chụm để phóng to • Nhấp đúp để đặt lại"
+    "zoomHint": "Cuộn hoặc chụm để phóng to • Nhấp đúp để đưa ảnh về ban đầu"
   },
   "story": {
     "eyebrow": "Hành trình 11 năm",
     "title": "Xuân Tùng & Vân Anh",
-    "intro": "Từ những ngày đầu gặp gỡ cho đến khi quyết định cùng nhau đi hết quãng đời còn lại — đây là câu chuyện của chúng mình.",
+    "intro": "Từ những ngày đầu gặp gỡ đến khi quyết định về chung một nhà — đây là câu chuyện của chúng mình.",
     "backLink": "Quay lại thiệp cưới",
     "chapterLabel": "Chương",
     "chapterSectionLabel": "Các chương câu chuyện",
@@ -204,7 +204,7 @@
         "year": 2016,
         "title": "Lần đầu gặp gỡ",
         "paragraphs": [
-          "Năm ấy, chúng mình gặp nhau trong một hoàn cảnh không thể ngờ tới. Một cái nhìn, một câu chào, và những rung động đầu tiên lặng lẽ bắt đầu.",
+          "Năm ấy, chúng mình gặp nhau trong một dịp rất tình cờ. Một ánh nhìn, một lời chào, và những rung động đầu tiên cứ thế khẽ khàng bắt đầu.",
           "Nội dung chi tiết sẽ được cập nhật sau khi có thông tin từ cô dâu chú rể."
         ],
         "imageSlotCount": 4
@@ -213,7 +213,7 @@
         "year": 2017,
         "title": "Những buổi hẹn đầu",
         "paragraphs": [
-          "Từ những cuộc trò chuyện dài đến những buổi cà phê đầu tiên, chúng mình dần hiểu về nhau nhiều hơn.",
+          "Từ những cuộc trò chuyện kéo dài đến những buổi cà phê đầu tiên, chúng mình dần hiểu nhau nhiều hơn.",
           "Nội dung chi tiết sẽ được cập nhật sau khi có thông tin từ cô dâu chú rể."
         ],
         "imageSlotCount": 3
@@ -222,7 +222,7 @@
         "year": 2018,
         "title": "Yêu xa",
         "paragraphs": [
-          "Khoảng cách địa lý không thể ngăn được hai trái tim đồng điệu. Những cuộc gọi đêm khuya và tin nhắn dài trở thành cầu nối.",
+          "Khoảng cách địa lý không ngăn được hai trái tim luôn hướng về nhau. Những cuộc gọi đêm khuya và những tin nhắn dài trở thành nhịp cầu nối liền yêu thương.",
           "Nội dung chi tiết sẽ được cập nhật sau khi có thông tin từ cô dâu chú rể."
         ],
         "imageSlotCount": 5
@@ -231,7 +231,7 @@
         "year": 2019,
         "title": "Gắn kết",
         "paragraphs": [
-          "Một năm đầy kỷ niệm đẹp, những chuyến đi chơi và những khoảnh khắc không thể quên.",
+          "Đó là một năm đầy ắp kỷ niệm đẹp, với những chuyến đi và những khoảnh khắc mà chúng mình luôn trân quý.",
           "Nội dung chi tiết sẽ được cập nhật sau khi có thông tin từ cô dâu chú rể."
         ],
         "imageSlotCount": 4
@@ -240,7 +240,7 @@
         "year": 2020,
         "title": "Biến cố & vượt qua",
         "paragraphs": [
-          "Năm 2020 mang đến nhiều thử thách, nhưng cũng là lúc chúng mình nhận ra tầm quan trọng của nhau.",
+          "Năm 2020 mang đến không ít thử thách, nhưng cũng là lúc chúng mình càng hiểu nhau và trân trọng nhau hơn.",
           "Nội dung chi tiết sẽ được cập nhật sau khi có thông tin từ cô dâu chú rể."
         ],
         "imageSlotCount": 3
@@ -249,7 +249,7 @@
         "year": 2021,
         "title": "Bên nhau mỗi ngày",
         "paragraphs": [
-          "Sau những tháng ngày cách xa, chúng mình đã có thể ở bên nhau nhiều hơn và xây dựng những thói quen chung.",
+          "Sau những tháng ngày xa cách, chúng mình đã có thể ở bên nhau nhiều hơn và cùng vun đắp những thói quen rất đỗi bình dị.",
           "Nội dung chi tiết sẽ được cập nhật sau khi có thông tin từ cô dâu chú rể."
         ],
         "imageSlotCount": 4
@@ -258,7 +258,7 @@
         "year": 2022,
         "title": "Trưởng thành cùng nhau",
         "paragraphs": [
-          "Hai con người, hai sự nghiệp, và một tình yêu ngày càng sâu sắc. Chúng mình cùng nhau lớn lên qua từng trải nghiệm.",
+          "Hai con người, hai hành trình riêng, nhưng cùng chung một tình yêu ngày càng sâu đậm. Chúng mình trưởng thành bên nhau qua từng trải nghiệm.",
           "Nội dung chi tiết sẽ được cập nhật sau khi có thông tin từ cô dâu chú rể."
         ],
         "imageSlotCount": 5
@@ -267,7 +267,7 @@
         "year": 2023,
         "title": "Những dự định lớn",
         "paragraphs": [
-          "Bắt đầu nghĩ về tương lai chung, về một mái ấm và những kế hoạch dài hơi hơn.",
+          "Chúng mình bắt đầu nghĩ nhiều hơn về tương lai chung, về một mái ấm và những dự định dài lâu.",
           "Nội dung chi tiết sẽ được cập nhật sau khi có thông tin từ cô dâu chú rể."
         ],
         "imageSlotCount": 4
@@ -276,7 +276,7 @@
         "year": 2024,
         "title": "Chuẩn bị cho đám cưới",
         "paragraphs": [
-          "Những tháng ngày bận rộn với kế hoạch cưới xin, nhưng ánh mắt nhìn nhau vẫn đầy hạnh phúc.",
+          "Những tháng ngày chuẩn bị cho hôn lễ có phần bận rộn, nhưng trong ánh mắt nhìn nhau vẫn luôn đầy ắp niềm vui và sự háo hức.",
           "Nội dung chi tiết sẽ được cập nhật sau khi có thông tin từ cô dâu chú rể."
         ],
         "imageSlotCount": 3
@@ -285,7 +285,7 @@
         "year": 2025,
         "title": "Quyết định cưới",
         "paragraphs": [
-          "Và rồi đến một ngày, cả hai cùng nói \"Mình cưới nhau nhé!\". Không cần quá nhiều lời, vì đáp án đã rõ từ lâu.",
+          "Rồi đến một ngày, cả hai cùng mỉm cười và nói \"Mình cưới nhau nhé!\". Không cần quá nhiều lời, bởi đáp án đã ở trong tim từ rất lâu rồi.",
           "Nội dung chi tiết sẽ được cập nhật sau khi có thông tin từ cô dâu chú rể."
         ],
         "imageSlotCount": 4
@@ -294,7 +294,7 @@
         "year": 2026,
         "title": "Ngày cưới",
         "paragraphs": [
-          "Và cuối cùng, sau 10 năm yêu thương, chúng mình đã chính thức về chung một nhà. Khoảnh khắc khoác lên mình bộ váy cưới và bộ vest, nhìn nhau và nói \"Em đồng ý\" — đó là ngày hạnh phúc nhất của cuộc đời.",
+          "Sau chặng đường dài yêu thương và đồng hành, chúng mình quyết định về chung một nhà. Khoảnh khắc khoác lên mình bộ váy cưới và bộ vest, cùng nhìn nhau trong niềm hạnh phúc trọn vẹn, sẽ mãi là ký ức đẹp nhất trong cuộc đời của chúng mình.",
           "Nội dung chi tiết sẽ được cập nhật sau khi có thông tin từ cô dâu chú rể."
         ],
         "imageSlotCount": 3
@@ -304,20 +304,20 @@
   "errors": {
     "notFound": {
       "heading": "404",
-      "message": "Trang bạn tìm kiếm không tồn tại.",
+      "message": "Trang bạn đang tìm không tồn tại hoặc đã được chuyển đi.",
       "backHome": "Về lại trang chính"
     },
     "error": {
       "heading": "Đã xảy ra lỗi",
-      "message": "Có lỗi không mong muốn xảy ra. Vui lòng thử lại.",
+      "message": "Đã xảy ra lỗi ngoài ý muốn. Vui lòng thử lại sau ít phút.",
       "retry": "Thử lại"
     }
   },
   "apiErrors": {
-    "endpointNotConfigured": "Endpoint chưa được cấu hình. Vui lòng liên hệ ban tổ chức.",
-    "invalidResponse": "Phản hồi từ máy chủ không hợp lệ.",
-    "submitFailed": "Gửi thất bại. Vui lòng thử lại.",
-    "networkError": "Không thể kết nối. Vui lòng kiểm tra mạng và thử lại."
+    "endpointNotConfigured": "Hệ thống xác nhận tham dự hiện chưa sẵn sàng. Vui lòng liên hệ gia đình hoặc thử lại sau.",
+    "invalidResponse": "Hệ thống phản hồi chưa đúng định dạng. Vui lòng thử lại sau ít phút.",
+    "submitFailed": "Chưa thể gửi thông tin xác nhận. Vui lòng thử lại.",
+    "networkError": "Không thể kết nối tới hệ thống. Vui lòng kiểm tra mạng và thử lại."
   },
   "guestPhotoAlt": "Ảnh khách mời"
 }
