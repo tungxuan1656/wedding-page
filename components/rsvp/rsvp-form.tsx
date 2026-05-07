@@ -14,6 +14,7 @@ type FieldErrors = {
 
 type RsvpFormProps = {
   slug?: string
+  guestName?: string
 }
 
 const COPY = {
@@ -49,8 +50,11 @@ function validate(form: RsvpFormData): FieldErrors {
   return errors
 }
 
-export function RsvpForm({ slug }: RsvpFormProps) {
-  const [form, setForm] = useState<RsvpFormData>(INITIAL_FORM)
+export function RsvpForm({ slug, guestName }: RsvpFormProps) {
+  const [form, setForm] = useState<RsvpFormData>({
+    ...INITIAL_FORM,
+    name: guestName ?? '',
+  })
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({})
   const [submitState, setSubmitState] = useState<SubmitState>('idle')
   const [errorMessage, setErrorMessage] = useState<string>('')
@@ -72,6 +76,9 @@ export function RsvpForm({ slug }: RsvpFormProps) {
             eventDaiKhach: res.data.eventDaiKhach,
             eventThanhHon: res.data.eventThanhHon,
           })
+        } else if (guestName) {
+          // No prior RSVP — pre-fill name from guest list
+          setForm((prev) => ({ ...prev, name: guestName }))
         }
       })
       .catch(() => {
@@ -166,19 +173,22 @@ export function RsvpForm({ slug }: RsvpFormProps) {
             aria-invalid={!!fieldErrors.name}
             autoComplete='name'
             className={[
-              'w-full rounded-2xl border-2 px-5 py-4 text-sm font-medium text-text-primary transition-all outline-none',
+              'w-full rounded-2xl border-2 px-5 py-4 text-sm font-medium transition-all outline-none',
               'placeholder:font-normal placeholder:text-text-muted/50',
               prefilling ? 'animate-pulse bg-beige/20' : '',
-              fieldErrors.name
-                ? 'border-red-100 bg-red-50/30 focus:border-red-200'
-                : 'border-beige/40 bg-cream/20 focus:border-gold/50 focus:bg-white focus:shadow-xl focus:shadow-wine/5',
+              guestName
+                ? 'cursor-default border-beige/30 bg-beige/10 text-text-muted'
+                : fieldErrors.name
+                  ? 'border-red-100 bg-red-50/30 text-text-primary focus:border-red-200'
+                  : 'border-beige/40 bg-cream/20 text-text-primary focus:border-gold/50 focus:bg-white focus:shadow-xl focus:shadow-wine/5',
             ].join(' ')}
             id='rsvp-name'
             name='name'
             placeholder={prefilling ? 'Đang tải...' : COPY.namePlaceholder}
+            readOnly={!!guestName}
             type='text'
             value={form.name}
-            onChange={handleChange}
+            onChange={guestName ? undefined : handleChange}
           />
           {fieldErrors.name && (
             <p

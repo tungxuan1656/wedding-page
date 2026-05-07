@@ -3,9 +3,10 @@ import { SectionWrapper } from '@/components/shared'
 
 type RsvpSectionProps = {
   slug?: string
+  guestName?: string
 }
 
-export const RsvpSection = ({ slug }: RsvpSectionProps) => {
+export const RsvpSection = ({ slug, guestName }: RsvpSectionProps) => {
   return (
     <div className='bg-cream'>
       <SectionWrapper
@@ -26,7 +27,7 @@ export const RsvpSection = ({ slug }: RsvpSectionProps) => {
                 cách chu đáo nhất.
               </p>
             </div>
-            <RsvpForm slug={slug} />
+            <RsvpForm guestName={guestName} slug={slug} />
           </div>
         </div>
       </SectionWrapper>

@@ -92,7 +92,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
       <PhotoGallerySection />
       <MapSection />
       <GiftRegistrySection />
-      <RsvpSection slug={slug} />
+      <RsvpSection guestName={guest?.name} slug={slug} />
       <Footer />
       <FloatingCta />
     </main>
