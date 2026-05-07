@@ -12,11 +12,14 @@ export const AudioPlayer = () => {
 
   // Play on first user interaction — satisfies browser autoplay policy
   useEffect(() => {
+    const audio = audioRef.current
+    if (!audio) return
+
+    const onPause = () => setIsPlaying(false)
+    audio.addEventListener('pause', onPause)
+
     const tryPlay = () => {
       if (startedRef.current) return
-
-      const audio = audioRef.current
-      if (!audio) return
 
       audio.volume = VOLUME
 
@@ -26,36 +29,16 @@ export const AudioPlayer = () => {
           startedRef.current = true
           setIsPlaying(true)
         })
-        .catch((err) => {
-          console.log('Play blocked:', err)
-        })
+        .catch(() => {})
     }
 
     const events = ['click', 'keydown', 'touchstart', 'scroll'] as const
-
-    events.forEach((e) => {
-      document.addEventListener(e, tryPlay, { once: true })
-    })
+    events.forEach((e) => document.addEventListener(e, tryPlay, { once: true }))
 
     return () => {
-      events.forEach((e) => {
-        document.removeEventListener(e, tryPlay)
-      })
+      audio.removeEventListener('pause', onPause)
+      events.forEach((e) => document.removeEventListener(e, tryPlay))
     }
-  }, [])
-
-  // Sync state if audio pauses/ends unexpectedly
-  useEffect(() => {
-    const audio = audioRef.current
-    if (!audio) return
-
-    audio.muted = false
-    audio.play()
-
-    const onPause = () => setIsPlaying(false)
-    audio.addEventListener('pause', onPause)
-
-    return () => audio.removeEventListener('pause', onPause)
   }, [])
 
   const toggle = () => {

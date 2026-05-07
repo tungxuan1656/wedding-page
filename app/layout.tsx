@@ -14,17 +14,21 @@ const sans = Be_Vietnam_Pro({
   weight: ['400', '500', '600', '700'],
   variable: '--font-sans',
   subsets: ['latin', 'vietnamese'],
+  display: 'swap',
 })
 
 const notoSerif = Noto_Serif({
+  weight: ['400', '700'],
   variable: '--font-noto-serif',
   subsets: ['latin', 'vietnamese'],
+  display: 'swap',
 })
 
 const greatVibes = Great_Vibes({
   weight: '400',
   variable: '--font-great-vibes',
-  subsets: ['latin', 'vietnamese'],
+  subsets: ['latin'],
+  display: 'swap',
 })
 
 const SITE_URL =
